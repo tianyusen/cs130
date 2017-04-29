@@ -2,6 +2,7 @@ import React from 'react';
 import { storiesOf, action, linkTo } from '@kadira/storybook';
 import Button from './Button';
 import Welcome from './Welcome';
+import PatientCard from './PatientCard';
 import '../styleSheet/bootstrap/css/bootstrap.css';
 import '../styleSheet/font-awsome/css/font-awesome.css';
 
@@ -17,3 +18,8 @@ storiesOf('Button', module)
   .add('with some emoji', () => (
     <Button onClick={action('clicked')}>😀 😎 👍 💯</Button>
   ));
+
+storiesOf('PatientCard', module)
+  .add('PatientCardExample', () => (
+    <PatientCard/>
+  ))
