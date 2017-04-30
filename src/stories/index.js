@@ -3,6 +3,7 @@ import { storiesOf, action, linkTo } from '@kadira/storybook';
 import Button from './Button';
 import Welcome from './Welcome';
 import PatientCard from './PatientCard';
+import Login from './Login';
 import '../styleSheet/bootstrap/css/bootstrap.css';
 import '../styleSheet/font-awsome/css/font-awesome.css';
 
@@ -22,4 +23,9 @@ storiesOf('Button', module)
 storiesOf('PatientCard', module)
   .add('PatientCardExample', () => (
     <PatientCard/>
+  ))
+
+storiesOf('Login', module)
+  .add('LoginExample', () => (
+    <Login/>
   ))
