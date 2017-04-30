@@ -1,56 +1,141 @@
-.PatientCard{
-    width: 250px;
-    height: 130px;
-    background-color: #f1f1f1;
+.UploadForm{
+    width: 300px;
+    height: 700px;
     border-radius: 10px;
+}
+
+.UploadForm-Title{
+    width: 300px;
+    height: 50px;
+    position:relative;
+}
+
+.UploadForm-Title-Name{
+    height: 50px;
+    color: rgb(25,157,237);
+    background-color: rgba(0,0,0,0);
+    font-size: 20px;
+    border-radius: 10px;
+    text-align: center;
+    line-height: 50px;
+}
+
+.UploadForm-Title-Cancel{
+    height: 50px;
+    width: 35px;
+    border-radius: 10px;
+    color: rgb(115, 115, 115);
+    float: right;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position:absolute;
+    right:0;
+    
+}
+.UploadForm-Title-Cancel-i
+{
+    font-size: 35px !important;
+    line-height: 50px;
+}
+
+.UploadForm-Options{
+    box-shadow: inset 0 20px 20px -20px #888888;
+    width: 300px;
+    height: 600px;
+    padding-top: 20px;
     display: flex;
     flex-direction: column;
-}
-
-.PatientCard-Profile{
-    flex: 1;
-    background-color: yellow;
-}
-
-.PatientCard-Profile-Input{
-    border-radius: 10px;
-    border-color: blue;
-    background-color: rgba(0,0,0,0);
-    outline: none;
-    padding-left: 5px; 
-}
-
-.PatientCard-Stats{
-    flex: 1;
-    background-color: blue;
-    display: flex;
-    flex-direction: row;
+    justify-content: flex-start;
     align-items: center;
-    justify-content: space-around;
 }
 
-.PatientCard-Stats-BS{
-    width: 75px;
-    height: 50px;
-    background-color: purple;
+.UploadForm-BP{
+    width: 250px;
+    height: 100px;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
 }
 
-.PatientCard-Stats-BF{
-    width: 75px;
-    height: 50px;
-    background-color: green;
+.UploadForm-BP-Name{
+    width: 250px;
+    height: 30px;
+    font-size: 18px;
+    color:  rgb(115, 115, 115);
+    line-height: 30px;
+    text-align: left;
 }
 
-.PatientCard-Stats-BP{
-    width: 75px;
-    height: 50px;
-    background-color: red;
+.UploadForm-BP-Input{
+    width: 250px;
+    height: 30px;
+    border-radius: 5px;
+    padding-left: 5px;
+    font-size: 18px;
+    color:grey;
+    border-color: rgb(25,157,237);
+    border-style: solid;
 }
 
-.PatientCard-Stats-BS-Avatar{
-    font-size: 35px !important;
+
+.UploadForm-BS{
+    width: 250px;
+    height: 100px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.UploadForm-BS-Name{
+    width: 250px;
+    height: 30px;
+    font-size: 18px;
+    color: rgb(115, 115, 115);
+    line-height: 30px;
+    text-align: left;
+}
+.UploadForm-BS-Lower{
+    width: 250px;
+    height: 30px;
+}
+.UploadForm-BS-Input{
+    padding-right:25px;
+    width: 250px;
+    height: 30px;
+    border-radius: 5px;
+    padding-left: 5px;
+    font-size: 18px;
+    color:grey;
+    border-color: rgb(25,157,237);
+    border-style: solid;
+}
+.UploadForm-BS-Unit{
+    height: 30px;
+    margin-left:-25px;
+    font-size: 18px;
+    color:grey;
+}
+
+
+.UploadForm-Submit{
+    width: 300px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+}
+
+.UploadForm-Submit-Name{
+    width: 270px;
+    height: 40px;
+    font-size: 20px;
     color: white;
+    background-color: rgb(25,157,237);
+    border-radius: 10px;
+    text-align: center;
+    line-height: 40px;
 }
