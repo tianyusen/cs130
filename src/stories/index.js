@@ -4,6 +4,9 @@ import Button from './Button';
 import Welcome from './Welcome';
 import PatientCard from './PatientCard';
 import Login from './Login';
+import SearchBar from './SearchBar';
+import Add from './Add';
+import NameCard from './NameCard';
 import '../styleSheet/bootstrap/css/bootstrap.css';
 import '../styleSheet/font-awsome/css/font-awesome.css';
 
@@ -28,4 +31,21 @@ storiesOf('PatientCard', module)
 storiesOf('Login', module)
   .add('LoginExample', () => (
     <Login/>
+  ))
+
+
+
+storiesOf('SearchBar', module)
+  .add('SearchBarExample', () => (
+    <SearchBar/>
+  ))
+
+storiesOf('Add', module)
+  .add('AddExample', () => (
+    <Add/>
+  ))
+
+storiesOf('NameCard', module)
+  .add('NameCardExample', () => (
+    <NameCard/>
   ))
