@@ -26,6 +26,18 @@ class UploadForm extends Component {
                         </div>
                     </div>
 
+                    <div className="UploadForm-Sex">
+                        <div className="UploadForm-Sex-Name">Sex:</div>
+                        <div className="UploadForm-Sex-Lower">
+                            <div className="UploadForm-Sex-M">
+                                <i className="fa fa-male UploadForm-Sex-M-i" aria-hidden="true"></i>    
+                                </div>
+                            <div className="UploadForm-Sex-F">
+                                <i className="fa fa-female UploadForm-Sex-F-i" aria-hidden="true"></i>    
+                                </div>
+                        </div>
+                    </div>
+
                 </div>
                 <div className="UploadForm-Submit">
                     <div className="UploadForm-Submit-Name">Update</div>
