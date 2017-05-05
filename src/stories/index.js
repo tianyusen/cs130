@@ -3,6 +3,8 @@ import { storiesOf, action, linkTo } from '@kadira/storybook';
 import Button from './Button';
 import Welcome from './Welcome';
 import AgeDoughnutChart from './data_charts';
+import PatientCard from './PatientCard';
+import UploadForm from './UploadForm';
 import '../styleSheet/bootstrap/css/bootstrap.css';
 import '../styleSheet/font-awsome/css/font-awesome.css';
 
@@ -23,3 +25,13 @@ storiesOf('Charts', module)
   .add('Age Doughnut Chart', () => (
     <AgeDoughnutChart/>
   ));
+
+storiesOf('PatientCard', module)
+  .add('PatientCardExample', () => (
+    <PatientCard/>
+  ))
+
+storiesOf('UploadForm', module)
+  .add('UploadFormExample', () => (
+    <UploadForm/>
+  ))
