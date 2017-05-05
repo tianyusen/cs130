@@ -1,0 +1,65 @@
+import React, { Component } from 'react';
+import ReactDOM from 'react-dom';
+import Chart from 'chart.js'
+import './style.css';
+
+
+class AgeDoughnutChart extends Component {
+    constructor(props) {
+        super(props);
+
+        const AgeDoughnutData = {
+            labels: [
+                "30-40",
+                "40-50",
+                "50-60"
+            ],
+            datasets:[{
+                data: [15,25,60],
+                backgroundColor: [
+                    "#FF6384",
+                    "#36A2EB",
+                    "#FFCE56"
+                ],
+                hoverBackgroundColor: [
+                    "#FF6384",
+                    "#36A2EB",
+                    "#FFCE56"
+                ]
+            }]
+        };
+
+        const AgeDoughnutOptions = {
+            legend: {
+                position: "bottom"
+            }
+        };
+
+    }
+
+    renderChart() {
+        this.ctx = ReactDOM.findDOMNode(this);
+        this.chart_instance = new Chart(this.ctx, {
+            type: 'doughnut',
+            data: this.AgeDoughnutData,
+            options: this.AgeDoughnutOptions
+        });
+    }
+
+    componentDidMount() {
+        this.refs.AgeDoughnutChart.addEventListener('load', this.renderChart);
+    };
+
+    render() {
+        return (
+            <div className="SquareBackground">
+                <div className="Title">
+                    Age
+                </div>
+                <canvas id="AgeDoughnutChart" ref="AgeDoughnutChart"> </canvas>
+            </div>
+        );
+    }
+}
+
+export default AgeDoughnutChart;
