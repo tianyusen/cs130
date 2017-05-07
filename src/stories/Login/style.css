@@ -1,0 +1,14 @@
+@import url("//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css");
+
+.login-component .input-group {
+    margin-top: 30px;
+}
+
+.login-component .login-group {
+    margin-top: 30px;
+}
+
+.login-component .panel-default {
+    padding: 20px 30px 30px 30px;
+    background:#AAA;
+}
