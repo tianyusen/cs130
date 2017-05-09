@@ -1,0 +1,215 @@
+{
+  "doctor/patients": [
+    {"name":"taoxiang",
+     "id":323343232,
+     "birthday":"1995-11-24",
+     "last_visit":"2017-03-23",
+     "height":180,
+     "weight":56,
+     "sex":"male",
+     "doctors":[{
+         "doctor_id":"1231233"
+     }],
+     "stats":{
+         "DR_score":{
+            "left":3,
+            "right":2
+         },
+         "blood_sugar":12,
+         "blood_pressure":{
+             "high":120,
+             "low":80
+         },
+         "blood_fat":0.12
+      },
+     "follow_up_time":"2018-03-34-10-12"
+    }
+  ],
+
+  "patients?id=32131231&start_date=20161023&end_date=20171023": {
+     "name":"taoxiang",
+     "id":32131231,
+     "birthday":"1995-11-24",
+     "email":"xiangtao1995@gmail.com",
+     "phone_number":"4243439620",
+     "address":"midvale 527 room 132",
+     "height":180,
+     "weight":56,
+     "sex":"male",
+     "doctors":[{
+         "doctor_id":"1231233"
+     }],
+     "stats":{
+         "visits":[{
+             "visit_time":"2017-03-34-10-12",
+             "follow_up_time":"2018-03-34-10-12",
+             "Note":"you gotta eat an apple a day",
+             "drug_use":[{
+                 "drug":"xxx1",
+                 "dose":"1 pill per day",
+                 "length":"1 year"
+                },{
+                 "drug":"xxx2",
+                 "dose":"2 pill per day",
+                 "length":"2 year"
+             }]
+         },{
+             "visit_time":"2015-03-34-10-12",
+             "follow_up_time":"2016-03-34-10-12",
+             "Note":"you gotta eat an orange a day",
+             "drug_use":[{
+                 "drug":"xxx1",
+                 "dose":"1 pill per day",
+                 "length":"1 year"
+                },{
+                 "drug":"xxx2",
+                 "dose":"2 pill per day",
+                 "length":"2 year"
+             }]
+         }],
+         "DR":[{
+            "Time":"2017-03-34-10-12",
+            "left_score":4,
+            "right_score":3,
+            "left_photo":"http://s3.us.1231231313",
+            "right_photo":"http://s3.us.1231231313",
+            "right_note":"its really bad",
+            "left_note":"its really bad"
+        },{
+            "Time":"2017-03-12-10-12",
+            "left_score":4,
+            "right_score":3,
+            "left_photo":"http://s3.us.1231231313",
+            "right_photo":"http://s3.us.1231231313",
+            "right_note":"its really bad",
+            "left_note":"its really bad"
+        }],
+        "blood_sugar":[{
+            "time":"2017-03-34-10-12",
+            "value":14.32
+        },{
+            "time":"2017-03-3-10-12",
+            "value":14.32
+        },{
+            "time":"2017-03-34-10-12",
+            "value":14.32
+        }],
+        "blood_pressure":[{
+            "time":"2017-03-34-10-12",
+            "high":120,
+            "low":80
+        },{
+            "time":"2017-03-3-10-12",
+            "high":167,
+            "low":60
+        },{
+            "time":"2017-03-34-10-12",
+            "high":130,
+            "low":70
+        }],
+        "blood_fat":[{
+            "time":"2017-03-34-10-12",
+            "value":0.12
+        },{
+            "time":"2017-03-3-10-12",
+            "value":0.15
+        },{
+            "time":"2017-03-34-10-12",
+            "value":0.11
+        }]
+     }
+  },
+
+  "/patient/login": //POST
+  //Post Body
+  {
+      "personal_id":"xiangtao1995@gmail.com",
+      "pass_word":"123456674"
+  }
+  //Result Format
+  { 
+    "token":"12312fsdf2131321321"
+  }
+
+  "/patient/sign_up": //POST
+  //Post Body
+  {
+      "personal_id":"xiangtao1995@gmail.com",
+      "pass_word":"123456674",
+      "name":"taoxiang",
+      "birthday":"1995-11-24",
+      "height":180,
+      "weight":62,
+      "sex":"male"
+  }
+  //Result Format
+  { 
+    "token":"12312fsdf2131321321"
+  }
+
+  "/doctor/login": //POST
+  //Post Body
+  {
+      "personal_id":"xiangtao1995@gmail.com",
+      "pass_word":"123456674"
+  }
+  //Result Format
+  { 
+    "token":"12312fsdf2131321321"
+  },
+
+  /*
+    update patient record
+  */
+  "/patient/id": //update
+  //Post Body
+  {
+      "personal_id":"xiangtao1995@gmail.com",
+      "token":"qeq2132312313",
+      "name":"newName",
+      "weight":60,
+      "height":182,
+      "birthday":"1996-11-24",
+      "last_visit":"2017-11-24",
+      "DR":{
+            "Time":"2017-03-34-10-12",
+            "left_score":4,
+            "right_score":3,
+            "left_photo":"http://s3.us.1231231313",
+            "right_photo":"http://s3.us.1231231313",
+            "right_note":"its really bad",
+            "left_note":"its really bad"
+      },
+      "blood_fat":{
+            "time":"2017-03-34-10-12",
+            "value":0.12
+      },
+      "blood_pressure":{
+            "time":"2017-03-34-10-12",
+            "high":120,
+            "low":80
+      },
+      "blood_sugar":{
+            "time":"2017-03-34-10-12",
+            "value":14.32
+      },
+      "visits":{
+             "visit_time":"2017-03-34-10-12",
+             "follow_up_time":"2018-03-34-10-12",
+             "Note":"you gotta eat an apple a day",
+             "drug_use":[{
+                 "drug":"xxx1",
+                 "dose":"1 pill per day",
+                 "length":"1 year"
+                },{
+                 "drug":"xxx2",
+                 "dose":"2 pill per day",
+                 "length":"2 year"
+             }]
+      }
+  }
+  //Result Format
+  { 
+    "token":"12312fsdf2131321321"
+  }
+}
