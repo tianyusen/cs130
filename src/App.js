@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { Router, Route, browserHistory } from 'react-router'
 import LoginPage from './Pages/LoginPage';
 import PatientOverView from './Pages/PatientOverView';
-import PatientsOverView from './Pages/PatientsOverview';
+import Demography from './Pages/Demography';
 import PatientsRecord from './Pages/PatientsRecord';
 import logo from './logo.svg';
 import './App.css';
@@ -14,7 +14,7 @@ class App extends Component {
           <Route path="/" component={LoginPage}/>
           <Route path="/login" component={LoginPage}/>
           <Route path="/patientoverview" component={PatientOverView}/>
-          <Route path="/patientsoverview" component={PatientsOverView}/>
+          <Route path="/Demography" component={Demography}/>
           <Route path="/patientsrecord" component={PatientsRecord}/>
       </Router>
     );
