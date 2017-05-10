@@ -17,7 +17,16 @@ storiesOf('Charts', module)
 
 storiesOf('NameCard', module)
   .add('NameCardExample', () => (
-    <NameCard/>
+    <NameCard
+      name='xiaomin'
+      id='1323123'
+      birthday="1995/11/24"
+      age={18}
+      blood_sugar={0.5}
+      blood_fat={0.4}
+      blood_pressure_high={180}
+      blood_pressure_low={70}
+    />
   ))
 
 storiesOf('UploadForm', module)

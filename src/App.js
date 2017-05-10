@@ -6,6 +6,8 @@ import Demography from './Pages/Demography';
 import PatientsRecord from './Pages/PatientsRecord';
 import logo from './logo.svg';
 import './App.css';
+import './styleSheet/bootstrap/css/bootstrap.css';
+import './styleSheet/font-awsome/css/font-awesome.css';
 
 class App extends Component {
   render() {
