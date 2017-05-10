@@ -1,8 +1,8 @@
 .SquareBackground{
     display: flex;
     flex-direction: column;
-    height: 500px;
-    width: 500px;
+    height: 300px;
+    width: 300px;
     border-radius: 10px;
     background-color: #f1f1f1;
 }
@@ -11,13 +11,9 @@
     padding-top: 1%;
     padding-left: 6%;
     color: #8D8D8D;
-    font-size: 300%;
-    background-color: red;
+    font-size: 6vh;
 }
 
 .Chart{
     flex: 1;
-    height: 400px;
-    width: 400px;
-    background-color: blue;
 }

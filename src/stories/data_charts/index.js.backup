@@ -37,7 +37,7 @@ class AgeDoughnutChart extends Component {
                     Age
                 </div>
                 <div className="Chart">
-                    <Doughnut data={AgeDoughnutData} options={AgeDoughnutOptions} />
+                    <Doughnut data={AgeDoughnutData} options={AgeDoughnutOptions} width="100%"/>
                 </div>
             </div>
         );
