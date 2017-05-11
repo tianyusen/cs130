@@ -33,9 +33,9 @@ class AgeDoughnutChart extends Component {
     render() {
         return (
             <div className="SquareBackground">
-                <div className="Title">
+                <p className="Title">
                     Age
-                </div>
+                </p>
                 <div className="Chart">
                     <Doughnut data={AgeDoughnutData} options={AgeDoughnutOptions} height="250%"/>
                 </div>
