@@ -131,6 +131,30 @@
     "token":"12312fsdf2131321321"
   }
 
+
+
+  "/doctor/login": //POST
+  //Post Body
+  {
+      "personal_id":"xiangtao1995@gmail.com",
+      "pass_word":"123456674"
+  }
+  //Result Format
+  { 
+    "token":"12312fsdf2131321321"
+  },
+
+
+
+  ###################
+  Yu seng 3* froms
+  ###################
+
+
+  ###################
+  create new patient
+  ###################
+
   "/patient/sign_up": //POST
   //Post Body
   {
@@ -147,21 +171,14 @@
     "token":"12312fsdf2131321321"
   }
 
-  "/doctor/login": //POST
-  //Post Body
-  {
-      "personal_id":"xiangtao1995@gmail.com",
-      "pass_word":"123456674"
-  }
-  //Result Format
-  { 
-    "token":"12312fsdf2131321321"
-  },
-
+  
+  ###################
+  Doctor update pateint info
+  ###################
   /*
     update patient record
   */
-  "/patient/id": //update
+  "/doctor_update/id": //update
   //Post Body
   {
       "personal_id":"xiangtao1995@gmail.com",
@@ -212,4 +229,19 @@
   { 
     "token":"12312fsdf2131321321"
   }
+
+  ###################
+  pateint update his/her own info
+  ###################
+
+  "patient_update"
+  {
+      "blood_sugar":132,
+      "blood_fat":0.3,
+      "blood_pressure":{
+          "high":139,
+          "low":80
+      }
+  }
+
 }

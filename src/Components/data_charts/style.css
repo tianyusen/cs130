@@ -1,23 +1,32 @@
 .SquareBackground{
     display: flex;
     flex-direction: column;
-    height: 500px;
-    width: 500px;
+    height: 320px;
+    width: 320px;
     border-radius: 10px;
     background-color: #f1f1f1;
+    position: relative;
+}
+
+.RectangleBackground{
+    display: flex;
+    flex-direction: column;
+    height: 320px;
+    width: 560px;
+    border-radius: 10px;
+    background-color: #f1f1f1;
+    position: relative;
 }
 
 .Title{
     padding-top: 1%;
     padding-left: 6%;
     color: #8D8D8D;
-    font-size: 300%;
-    background-color: red;
+    font-size: 200%;
 }
 
 .Chart{
-    flex: 1;
-    height: 400px;
-    width: 400px;
-    background-color: blue;
+    padding-left: 5%;
+    height: 85%;
+    width: 95%;
 }

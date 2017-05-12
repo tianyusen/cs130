@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import {Doughnut} from 'react-chartjs-2';
-import './style.css';
+import '../style.css';
 
 const AgeDoughnutData = {
     labels: [
@@ -33,15 +33,16 @@ class AgeDoughnutChart extends Component {
     render() {
         return (
             <div className="SquareBackground">
-                <div className="Title">
+                <p className="Title">
                     Age
-                </div>
+                </p>
                 <div className="Chart">
-                    <Doughnut data={AgeDoughnutData} options={AgeDoughnutOptions} />
+                    <Doughnut data={AgeDoughnutData} options={AgeDoughnutOptions} height="250%"/>
                 </div>
             </div>
         );
     }
 }
+
 
 export default AgeDoughnutChart;
