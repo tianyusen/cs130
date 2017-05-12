@@ -1,0 +1,16 @@
+.btn-logo{
+  border: 0px solid lightpink !important;
+  background: linear-gradient(to bottom right, lightpink, #9b59b6) !important;
+  /*box-shadow: 0 1px 10px rgba(0, 0, 0, 0.46);*/
+  width: 50px;
+  height: 50px;
+  font-weight: bold;
+  font-size: 1.5em !important;
+  text-align: center;
+  vertical-align: middle;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0px !important;
+}

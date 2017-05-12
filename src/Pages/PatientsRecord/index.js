@@ -2,7 +2,9 @@ import React, {Component} from 'react';
 import axios from 'axios';
 import NameCard from './NameCard';
 import SearchBar from '../../Components/SearchBar';
-
+import Add from '../../Components/Add';
+import Logo from '../../Components/Logo';
+import './style.css';
 
 class PatientsRecord extends Component {
     //(1) inherit parent's props
@@ -47,6 +49,7 @@ class PatientsRecord extends Component {
         })
         .map(function(record){
             return (
+                <div className = "PatientsRecord-namecards">
                 <NameCard
                     name={record.name}
                     id={record.id}
@@ -57,19 +60,35 @@ class PatientsRecord extends Component {
                     blood_pressure_high={record.stats.blood_pressure.high}
                     blood_pressure_low={record.stats.blood_pressure.low}
                 />
+                </div>
             )
         })
     }
     
     render() {
         return (
-            <div>
-                <SearchBar
-                    searchTerm={this.state.searchTerm}
-                    setSearchTerm={this.setSearchTerm.bind(this)}
-                />
-                {this.renderRecords()}
+            <div className="PatientsRecord-page">
+                <div className="PatientsRecord-head">
+                    <div className="PatientsRecord-logo PatientsRecord-headcontents">
+                        <Logo/>
+                    </div>
+                    <div className="PatientsRecord-search PatientsRecord-headcontents">
+                        <SearchBar
+                        searchTerm={this.state.searchTerm}
+                        setSearchTerm={this.setSearchTerm.bind(this)}
+                        />
+                    </div>
+                    <div className="PatientsRecord-add PatientsRecord-headcontents">
+                        <Add/>
+                    </div>
+                    
+                     
+                </div>
+                <div className="PatientsRecord-body">
+                    {this.renderRecords()}
+                </div>
             </div>
+                
         );
     }
 }

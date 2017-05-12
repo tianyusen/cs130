@@ -14,7 +14,7 @@ class SearchBar extends Component {
                 <input 
                     value={this.props.searchTerm}
                     onInput={(e)=>this.props.setSearchTerm(e.target.value)} 
-                    className="form-control" 
+                    className="form-control form-search" 
                     type="text" 
                     placeholder="Seach your patients here.." 
                     name="userid"/>
