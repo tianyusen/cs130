@@ -5,6 +5,8 @@ import SearchBar from '../../Components/SearchBar';
 import Add from '../../Components/Add';
 import Logo from '../../Components/Logo';
 import PatientSignUp from '../../Components/patient_sign_up';
+import UploadForm from '../../Components/UploadForm';
+import PatientUpdate from '../../Components/patient_update';
 import './style.css';
 
 class PatientsRecord extends Component {
@@ -14,7 +16,8 @@ class PatientsRecord extends Component {
         super(props);
         this.state={
             records : [],
-            searchTerm:''
+            searchTerm:'',
+            // addPatient: false
         }
     }
 
@@ -37,6 +40,10 @@ class PatientsRecord extends Component {
         this.setState({
             searchTerm
         })
+    }
+    patientSignUp() {
+        var popup = document.getElementById("signUpForm");
+        popup.classList.toggle("show");
     }
 
     renderRecords(){
@@ -66,26 +73,38 @@ class PatientsRecord extends Component {
         })
     }
     
+
     render() {
         return (
-            <div className="PatientsRecord-page">
-                <div className="PatientsRecord-head">
-                    <div className="PatientsRecord-logo PatientsRecord-headcontents">
-                        <Logo/>
+            <div className="PatientsRecord-main">
+                <div className="PatientsRecord-page">
+                    <div className="PatientsRecord-head">
+                        <div className="PatientsRecord-logo PatientsRecord-headcontents">
+                            <Logo/>
+                        </div>
+                        <div className="PatientsRecord-search PatientsRecord-headcontents">
+                            <SearchBar
+                            searchTerm={this.state.searchTerm}
+                            setSearchTerm={this.setSearchTerm.bind(this)}
+                            />
+                        </div>
+                        <div className="PatientsRecord-add PatientsRecord-headcontents">
+                            <Add
+                                patientSignUp={this.patientSignUp.bind(this)}
+                            />
+                        </div>
                     </div>
-                    <div className="PatientsRecord-search PatientsRecord-headcontents">
-                        <SearchBar
-                        searchTerm={this.state.searchTerm}
-                        setSearchTerm={this.setSearchTerm.bind(this)}
+                    <div className="PatientsRecord-body">
+                        {this.renderRecords()}
+                    </div>
+                    <div className="PatientsRecord-form" id="signUpForm">
+                        <PatientSignUp
+                            patientSignUp={this.patientSignUp.bind(this)}
+                            className="PatientsRecord-form-pop"
                         />
-                    </div>
-                    <div className="PatientsRecord-add PatientsRecord-headcontents">
-                        <Add/>
-                    </div>
                 </div>
-                <div className="PatientsRecord-body">
-                    {this.renderRecords()}
                 </div>
+                
             </div>
                 
         );

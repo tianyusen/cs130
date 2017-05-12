@@ -62,7 +62,10 @@ class PatientSignUp extends Component {
                 <div className="UploadForm-Title">
                     
                     
-                    <div className="UploadForm-Title-Cancel">
+                    <div className="UploadForm-Title-Cancel"
+                    onClick={()=>{
+                        this.props.patientSignUp()
+                    }} >
                         <i className="fa fa-times UploadForm-Title-Cancel-i" aria-hidden="true"></i>    
                     </div>
                     <div className="UploadForm-Title-Name noselect">New Patient</div>

@@ -1,12 +1,20 @@
+.PatientsRecord-main{
+    background-color: #f1f1f1;
+    height: 100%;
+}
+
 .PatientsRecord-page{
     display: flex;
     flex-direction: column;
-    background-color: #f1f1f1;
     justify-content: space-around;
     align-content: space-around;
+    z-index: 0;
+    /*background-color: #f1f1f1;*/
 }
 
 .PatientsRecord-head{
+    /*position:fixed;*/
+    top: 0px;
     flex: 1;
     margin-left: 2%;
     margin-right: 2%;
@@ -29,6 +37,7 @@
 
 .PatientsRecord-search{
     flex-grow: 1;
+    z-index: 0;
     /*align-self: center;*/
 }
 
@@ -40,6 +49,7 @@
 
 .PatientsRecord-body{
     flex: 1;
+    /*margin-top: 80px;*/
     margin-left: 5%;
     margin-right: 5%;
     padding: 1%;
@@ -52,4 +62,30 @@
 
 .PatientsRecord-namecards{
     flex: 1;
+}
+
+.PatientsRecord-form{
+    position: fixed;
+    top: 0px;
+    padding: 2%;
+    background-color: rgba(0,0,0,0.7) !important;
+
+    visibility: hidden;
+    /*display: flex;
+    flex-direction: row;
+    justify-content: center !important;
+    align-content: center !important;
+    */
+    z-index: 1;
+    height: 100%;
+    width: 100%
+}
+.PatientsRecord-form-pop{
+    position: fixed ;
+    margin-left: 30% !important;
+}
+.show {
+    visibility: visible;
+    -webkit-animation: fadeIn 1s;
+    animation: fadeIn 1s;
 }
