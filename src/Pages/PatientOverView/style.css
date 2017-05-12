@@ -6,13 +6,15 @@
 
 .info-cards-bg{
     flex: 1;
-    margin-left: 5%;
-    margin-right: 5%;
+    margin-left: 4%;
     display: flex;
     flex-direction: row;
     justify-content: flex-start;
-    align-content: space-around;
     flex-wrap: wrap;  
+}
+
+.card{
+    padding: 1%;
 }
 
 .PatientsRecord-head{

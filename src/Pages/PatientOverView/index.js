@@ -150,34 +150,39 @@ class PatientOverView extends Component {
                     </div>
                 </div>
                 <div className="info-cards-bg">
-                    <LargeNameCard
-                        name={this.state.patientInfo.name}
-                        id={this.state.patientInfo.id}
-                        age={this.state.patientInfo.weight}
-                        birthday={this.state.patientInfo.birthday}
-                        className="card"
-                    />
-
-                    <BloodStatLineChart 
-                        title="Blood Suger Changes"
-                        data={this.state.bloodSugerData}
-                        options={{legend: {
-                            display: false
-                        }}}
-                    />
-
-                    <BloodStatLineChart
-                        title="Blood Pressure Changes"
-                        data={this.state.bloodPressureData}
-                    />
-
-                    <BloodStatLineChart
-                        title="Blood Fat Changes"
-                        data={this.state.bloodFatData}
-                        options={{legend: {
-                            display: false
-                        }}}
-                    />
+                    <div className="card">
+                        <LargeNameCard
+                            name={this.state.patientInfo.name}
+                            id={this.state.patientInfo.id}
+                            age={this.state.patientInfo.weight}
+                            birthday={this.state.patientInfo.birthday}
+                            className="card"
+                        />
+                    </div>
+                    <div className="card">
+                        <BloodStatLineChart 
+                            title="Blood Suger Changes"
+                            data={this.state.bloodSugerData}
+                            options={{legend: {
+                                display: false
+                            }}}
+                        />
+                    </div>
+                    <div className="card">
+                        <BloodStatLineChart
+                            title="Blood Pressure Changes"
+                            data={this.state.bloodPressureData}
+                        />
+                    </div>
+                    <div className="card">
+                        <BloodStatLineChart
+                            title="Blood Fat Changes"
+                            data={this.state.bloodFatData}
+                            options={{legend: {
+                                display: false
+                            }}}
+                        />
+                    </div>
                 </div>
             </div>
         );
