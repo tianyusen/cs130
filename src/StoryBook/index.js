@@ -15,6 +15,11 @@ import '../styleSheet/bootstrap/css/bootstrap.css';
 import '../styleSheet/font-awsome/css/font-awesome.css';
 
 
+storiesOf('Charts', module)
+  .add('Age Doughnut Chart', () => (
+    <AgeDoughnutChart/>
+  ));
+
 
 storiesOf('Charts', module)
   .add('Blood Line Chart', () => (
