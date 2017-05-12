@@ -13,10 +13,10 @@ class LargeNameCard extends Component {
                     </div>
                     <div className="info-block">
                         <div className="col-sm-10 name-component">
-                            <strong>Patient name</strong>
+                            <strong>{this.props.name}</strong>
                         </div>
                         <div className="col-sm-10 name-component">
-                            123124121
+                            {this.props.id}
                         </div>
                     </div>
                 </div>
@@ -27,7 +27,7 @@ class LargeNameCard extends Component {
                         </div>
                     </div>
                     <div className="info-block">
-                         18
+                         {this.props.age}
                     </div>
                 </div>
                 <div className="info-row">
@@ -37,7 +37,7 @@ class LargeNameCard extends Component {
                         </div>
                     </div>
                     <div className="info-block">
-                         1994-9-9
+                         {this.props.birthday}
                     </div> 
                 </div>
             </div>

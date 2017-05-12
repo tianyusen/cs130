@@ -3,6 +3,8 @@ import axios from 'axios';
 import BloodStatLineChart from '../../Components/data_charts/line';
 import LargeNameCard from '../../Components/large_patient_card';
 import SearchBar from '../../Components/SearchBar';
+import Add from '../../Components/Add';
+import Logo from '../../Components/Logo';
 import './style.css';
 
 
@@ -135,30 +137,48 @@ class PatientOverView extends Component {
 
     render() {
         return (
-            <div>
-                <SearchBar/>
-                <LargeNameCard/>
+            <div className="PatientOverview">
+                <div className="PatientsRecord-head">
+                    <div className="PatientsRecord-logo PatientsRecord-headcontents">
+                        <Logo/>
+                    </div>
+                    <div className="PatientsRecord-search PatientsRecord-headcontents">
+                        <SearchBar/>
+                    </div>
+                    <div className="PatientsRecord-add PatientsRecord-headcontents">
+                        <Add/>
+                    </div>
+                </div>
+                <div className="info-cards-bg">
+                    <LargeNameCard
+                        name={this.state.patientInfo.name}
+                        id={this.state.patientInfo.id}
+                        age={this.state.patientInfo.weight}
+                        birthday={this.state.patientInfo.birthday}
+                        className="card"
+                    />
 
-                <BloodStatLineChart 
-                    title="Blood Suger Changes"
-                    data={this.state.bloodSugerData}
-                    options={{legend: {
-                        display: false
-                    }}}
-                />
+                    <BloodStatLineChart 
+                        title="Blood Suger Changes"
+                        data={this.state.bloodSugerData}
+                        options={{legend: {
+                            display: false
+                        }}}
+                    />
 
-                <BloodStatLineChart
-                    title="Blood Pressure Changes"
-                    data={this.state.bloodPressureData}
-                />
+                    <BloodStatLineChart
+                        title="Blood Pressure Changes"
+                        data={this.state.bloodPressureData}
+                    />
 
-                <BloodStatLineChart
-                    title="Blood Fat Changes"
-                    data={this.state.bloodFatData}
-                    options={{legend: {
-                        display: false
-                    }}}
-                />
+                    <BloodStatLineChart
+                        title="Blood Fat Changes"
+                        data={this.state.bloodFatData}
+                        options={{legend: {
+                            display: false
+                        }}}
+                    />
+                </div>
             </div>
         );
     }
