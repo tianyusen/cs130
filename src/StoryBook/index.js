@@ -5,6 +5,9 @@ import BloodStatLineChart from '../Components/data_charts/line';
 import LargeNameCard from '../Components/large_patient_card';
 import NameCard from '../Pages/PatientsRecord/NameCard';
 import UploadForm from '../Components/UploadForm';
+import PatientSignUp from '../Components/patient_sign_up';
+import PatientUpdate from '../Components/patient_update';
+import DoctorUpdate from '../Components/doctor_update';
 import Login from '../Pages/LoginPage/Login';
 import Add from '../Components/Add';
 import SearchBar from '../Components/SearchBar';
@@ -12,10 +15,6 @@ import '../styleSheet/bootstrap/css/bootstrap.css';
 import '../styleSheet/font-awsome/css/font-awesome.css';
 
 
-storiesOf('Charts', module)
-  .add('Age Doughnut Chart', () => (
-    <AgeDoughnutChart/>
-  ));
 
 storiesOf('Charts', module)
   .add('Blood Line Chart', () => (
@@ -45,6 +44,22 @@ storiesOf('UploadForm', module)
   .add('UploadFormExample', () => (
     <UploadForm/>
   ))
+
+  storiesOf('PatientSignUp', module)
+  .add('PatientSignUp', () => (
+    <PatientSignUp/>
+  ))
+
+  storiesOf('PatientUpdate', module)
+  .add('PatientUpdate', () => (
+    <PatientUpdate/>
+  ))
+
+  storiesOf('DoctorUpdate', module)
+  .add('DoctorUpdate', () => (
+    <DoctorUpdate/>
+  ))
+  
 
 storiesOf('Login', module)
   .add('Login', () => (
