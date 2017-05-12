@@ -94,14 +94,15 @@ class PatientsRecord extends Component {
                             />
                         </div>
                     </div>
-                    <div className="PatientsRecord-body">
+                    <div className="PatientsRecord-body" >
                         {this.renderRecords()}
                     </div>
                     <div className="PatientsRecord-form" id="signUpForm">
+                    <div className="PatientsRecord-form-pop">
                         <PatientSignUp
                             patientSignUp={this.patientSignUp.bind(this)}
-                            className="PatientsRecord-form-pop"
                         />
+                    </div>
                 </div>
                 </div>
                 
