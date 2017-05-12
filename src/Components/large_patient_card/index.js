@@ -6,38 +6,38 @@ class LargeNameCard extends Component {
         return (
             <div className="largeNameCard">
                 <div className="name-row">
-                    <div className="col-sm-2 avatar-component">
+                    <div className="icon-block">
                         <div className="text-left">
                         <font color="Gray"><i className="fa fa-user-circle-o"></i></font>
                         </div>
                     </div>
-                    <div className="col-sm-10">
+                    <div className="info-block">
                         <div className="col-sm-10 name-component">
-                            <strong>Patient name</strong>
+                            <strong>{this.props.name}</strong>
                         </div>
                         <div className="col-sm-10 name-component">
-                            123124121
+                            {this.props.id}
                         </div>
                     </div>
                 </div>
                 <div className="info-row">
-                    <div className="col-sm-2 avatar-component">
+                    <div className="icon-block">
                         <div className="text-left">
                         <font color="Gray"><i className="fa fa-birthday-cake"></i></font>
                         </div>
                     </div>
-                    <div className="col-sm-10">
-                         18
+                    <div className="info-block">
+                         {this.props.age}
                     </div>
                 </div>
                 <div className="info-row">
-                    <div className="col-sm-2 avatar-component">
+                    <div className="icon-block">
                         <div className="text-left">
                         <font color="Gray"><i className="fa fa-calendar"></i></font>
                         </div>
                     </div>
-                    <div className="col-sm-10">
-                         1994-9-9
+                    <div className="info-block">
+                         {this.props.birthday}
                     </div> 
                 </div>
             </div>

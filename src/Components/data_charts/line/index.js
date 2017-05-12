@@ -39,10 +39,10 @@ class BloodStatLineChart extends Component {
         return (
             <div className="RectangleBackground">
                 <p className="Title">
-                    Blood Stats Line Chart
+                    {this.props.title}
                 </p>
                 <div className="Chart">
-                    <Line data={data} options={options}/>
+                    <Line data={this.props.data} options={this.props.options}/>
                 </div>
             </div>
         );

@@ -1,0 +1,49 @@
+.PatientsOverview{
+    display: flex;
+    flex-direction: column;
+    background-color: #f1f1f1;
+    justify-content: flex-start;
+}
+
+.info-cards-bg{
+    margin-left: 4%;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    flex-wrap: wrap;  
+}
+
+.card{
+    padding: 1%;
+}
+
+.PatientsRecord-head{
+    margin-left: 2%;
+    margin-right: 2%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items:  center;
+    /*height: 60px;*/
+}
+.PatientsRecord-headcontents{
+    /*height: 100%;*/
+   padding-top: 2%;
+   padding-bottom: 2%;
+}
+.PatientsRecord-logo{
+    flex-grow: 1;
+    padding-right: 2%;
+    /*align-self: flex-start;*/
+}
+
+.PatientsRecord-search{
+    flex-grow: 1;
+    /*align-self: center;*/
+}
+
+.PatientsRecord-add{
+    flex-grow: 1;
+    padding-left: 1%
+    /*align-self: flex-end;*/
+}
