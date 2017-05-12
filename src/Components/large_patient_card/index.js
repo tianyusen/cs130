@@ -6,12 +6,12 @@ class LargeNameCard extends Component {
         return (
             <div className="largeNameCard">
                 <div className="name-row">
-                    <div className="col-sm-2 avatar-component">
+                    <div className="icon-block">
                         <div className="text-left">
                         <font color="Gray"><i className="fa fa-user-circle-o"></i></font>
                         </div>
                     </div>
-                    <div className="col-sm-10">
+                    <div className="info-block">
                         <div className="col-sm-10 name-component">
                             <strong>Patient name</strong>
                         </div>
@@ -21,22 +21,22 @@ class LargeNameCard extends Component {
                     </div>
                 </div>
                 <div className="info-row">
-                    <div className="col-sm-2 avatar-component">
+                    <div className="icon-block">
                         <div className="text-left">
                         <font color="Gray"><i className="fa fa-birthday-cake"></i></font>
                         </div>
                     </div>
-                    <div className="col-sm-10">
+                    <div className="info-block">
                          18
                     </div>
                 </div>
                 <div className="info-row">
-                    <div className="col-sm-2 avatar-component">
+                    <div className="icon-block">
                         <div className="text-left">
                         <font color="Gray"><i className="fa fa-calendar"></i></font>
                         </div>
                     </div>
-                    <div className="col-sm-10">
+                    <div className="info-block">
                          1994-9-9
                     </div> 
                 </div>

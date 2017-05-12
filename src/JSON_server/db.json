@@ -388,7 +388,7 @@
         }
   ],
 
-  "patient":[{
+  "patient":{
      "id":1,
      "name":"taoxiang",
      "birthday":"1995-11-24",
@@ -481,5 +481,5 @@
         }]
      }
   }
-  ]
+  
 }
