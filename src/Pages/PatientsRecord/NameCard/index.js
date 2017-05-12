@@ -16,7 +16,7 @@ class NameCard extends Component {
                     <div className="col-sm-10">
                         <div className="row">
                             <div className="col-sm-10 name-component">
-                                <strong>First Last</strong> 123456789
+                                <strong>{this.props.name}</strong> {this.props.id}
                             </div>
                             <div className="col-sm-2 id-component">
                                 <div className="text-right">
@@ -27,12 +27,12 @@ class NameCard extends Component {
                         <div className="row">
                             <div className="col-sm-8 birthday-component">
                                 <div className="text-left">
-                                <i className="fa fa-calendar"></i> 0000-00-00
+                                <i className="fa fa-calendar"></i> {this.props.birthday}
                                 </div>
                             </div>
                             <div className="col-sm-4 year-component">
                                 <div className="text-right">
-                                <i className="fa fa-birthday-cake"></i> 00 yrs
+                                <i className="fa fa-birthday-cake"></i> {`${this.props.age}`}
                                 </div>
                             </div>
                         </div>
@@ -43,7 +43,7 @@ class NameCard extends Component {
 
                 <div className="row">
                     <div className="col-sm-5">
-                        <div className="row"><font color="skyblue"><strong>120/80</strong></font> mmHg
+                        <div className="row"><font color="skyblue"><strong>{`${this.props.blood_pressure_high}/${this.props.blood_pressure_low}`}</strong></font> mmHg
                         </div>
                         <div className="row ">
                             <font color="#C8C8C8"><lighter>Blood Pressure</lighter></font>
@@ -51,7 +51,7 @@ class NameCard extends Component {
                     </div>
                     <div className="col-sm-4">
                         
-                        <div className="row"><font color="skyblue"><strong>0.5</strong></font> Kg
+                        <div className="row"><font color="skyblue"><strong>{this.props.blood_sugar}</strong></font> Kg
                         </div>
                         <div className="row">
                            <font color="#C8C8C8"><lighter>Blood Sugar</lighter></font> 
@@ -61,7 +61,7 @@ class NameCard extends Component {
                     
                     <div className="col-sm-3">
                         
-                        <div className="row"><font color="skyblue"><strong>0.7</strong></font> Kg
+                        <div className="row"><font color="skyblue"><strong>{this.props.blood_fat}</strong></font> Kg
                         </div>
                         <div className="row">
                             <font color="#C8C8C8"><lighter>Blood Fat</lighter></font>

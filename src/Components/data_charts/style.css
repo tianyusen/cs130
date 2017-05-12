@@ -1,8 +1,18 @@
 .SquareBackground{
     display: flex;
     flex-direction: column;
-    height: 500px;
-    width: 500px;
+    height: 320px;
+    width: 320px;
+    border-radius: 10px;
+    background-color: #f1f1f1;
+    position: relative;
+}
+
+.RectangleBackground{
+    display: flex;
+    flex-direction: column;
+    height: 320px;
+    width: 560px;
     border-radius: 10px;
     background-color: #f1f1f1;
     position: relative;
@@ -16,5 +26,7 @@
 }
 
 .Chart{
-    flex: 1;
+    padding-left: 5%;
+    height: 85%;
+    width: 95%;
 }
