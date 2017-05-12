@@ -7,6 +7,7 @@ import Logo from '../../Components/Logo';
 import PatientSignUp from '../../Components/patient_sign_up';
 import UploadForm from '../../Components/UploadForm';
 import PatientUpdate from '../../Components/patient_update';
+import {Link} from 'react-router';
 import './style.css';
 
 class PatientsRecord extends Component {
@@ -58,16 +59,18 @@ class PatientsRecord extends Component {
         .map(function(record){
             return (
                 <div className = "PatientsRecord-namecards">
-                <NameCard
-                    name={record.name}
-                    id={record.id}
-                    birthday={record.birthday}
-                    age={record.weight}
-                    blood_sugar={record.stats.blood_sugar}
-                    blood_fat={record.stats.blood_fat}
-                    blood_pressure_high={record.stats.blood_pressure.high}
-                    blood_pressure_low={record.stats.blood_pressure.low}
-                />
+                    <Link to="patientoverview">
+                        <NameCard
+                            name={record.name}
+                            id={record.id}
+                            birthday={record.birthday}
+                            age={record.weight}
+                            blood_sugar={record.stats.blood_sugar}
+                            blood_fat={record.stats.blood_fat}
+                            blood_pressure_high={record.stats.blood_pressure.high}
+                            blood_pressure_low={record.stats.blood_pressure.low}
+                        />
+                    </Link>
                 </div>
             )
         })
