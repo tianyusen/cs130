@@ -1,6 +1,6 @@
 import React from 'react';
 import { storiesOf, action, linkTo } from '@kadira/storybook';
-import AgeDoughnutChart from '../Components/data_charts/doughnut';
+import DoughnutChart from '../Components/data_charts/doughnut';
 import BloodStatLineChart from '../Components/data_charts/line';
 import LargeNameCard from '../Components/large_patient_card';
 import NameCard from '../Pages/PatientsRecord/NameCard';
@@ -17,7 +17,7 @@ import '../styleSheet/font-awsome/css/font-awesome.css';
 
 storiesOf('Charts', module)
   .add('Age Doughnut Chart', () => (
-    <AgeDoughnutChart/>
+    <DoughnutChart/>
   ));
 
 

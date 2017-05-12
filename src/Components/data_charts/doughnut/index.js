@@ -29,15 +29,15 @@ const AgeDoughnutOptions = {
     }
 }
 
-class AgeDoughnutChart extends Component {
+class DoughnutChart extends Component {
     render() {
         return (
             <div className="SquareBackground">
                 <p className="Title">
-                    Age
+                    {this.props.title}
                 </p>
                 <div className="Chart">
-                    <Doughnut data={AgeDoughnutData} options={AgeDoughnutOptions} height="250%"/>
+                    <Doughnut data={this.props.data} options={this.props.options} height="250%"/>
                 </div>
             </div>
         );
@@ -45,4 +45,4 @@ class AgeDoughnutChart extends Component {
 }
 
 
-export default AgeDoughnutChart;
+export default DoughnutChart;
