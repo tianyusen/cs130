@@ -4,6 +4,7 @@ import NameCard from './NameCard';
 import SearchBar from '../../Components/SearchBar';
 import Add from '../../Components/Add';
 import Logo from '../../Components/Logo';
+import PatientSignUp from '../../Components/patient_sign_up';
 import './style.css';
 
 class PatientsRecord extends Component {
@@ -81,8 +82,6 @@ class PatientsRecord extends Component {
                     <div className="PatientsRecord-add PatientsRecord-headcontents">
                         <Add/>
                     </div>
-                    
-                     
                 </div>
                 <div className="PatientsRecord-body">
                     {this.renderRecords()}
