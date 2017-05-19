@@ -107,7 +107,7 @@ class PatientSignUp extends Component {
                             <input className="UploadForm-Item-Input Birthday"  type="text" name="birthday" 
                             value={this.state.birthday}
                             onInput={(e)=>this.setState({birthday: e.target.value})} />
-                            <span className="UploadForm-Item-Unit BirthdayUnit noselect" >YYYYMMDD</span>
+                            <span className="BirthdayUnit noselect" >YYYYMMDD</span>
                         </div>
                     </div>
 

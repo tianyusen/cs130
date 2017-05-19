@@ -42,14 +42,42 @@ class PatientSignUp extends Component {
                  dose:"2 pill per day",
                  length:"2 year"
                  }]},
-            submitClass : " UploadForm-Submit-Name-Default UploadForm-Submit-Name-Base noselect"
-            
+            submitClass : " UploadForm-Submit-Name-Default UploadForm-Submit-Name-Base noselect",
+            DBleftClass: "UploadForm-IP-Base UploadForm-IP-Default noselect",
+            DBrightClass: "UploadForm-IP-Base UploadForm-IP-Default noselect",
+            prescriptionClass: "UploadForm-IP-Base UploadForm-IP-Default noselect",
+            DBleft:true,
+            DBright:false,
+            Prescription:false
+
         }
+
         this.submitClick = this.submitClick.bind(this);
         this.submitHover = this.submitHover.bind(this);
         this.submitDefault = this.submitDefault.bind(this);
         this.submitMousDown=this.submitMousDown.bind(this);
-        this.classNameSex=this.classNameSex.bind(this);
+
+        this.DBleftClick = this.DBleftClick.bind(this);
+        this.DBleftHover = this.DBleftHover.bind(this);
+        this.DBleftDefault = this.DBleftDefault.bind(this);
+        this.DBleftMousDown=this.DBleftMousDown.bind(this);
+
+        this.DBrightClick = this.DBrightClick.bind(this);
+        this.DBrightHover = this.DBrightHover.bind(this);
+        this.DBrightDefault = this.DBrightDefault.bind(this);
+        this.DBrightMousDown=this.DBrightMousDown.bind(this);
+
+        this.prescriptionClick = this.prescriptionClick.bind(this);
+        this.prescriptionHover = this.prescriptionHover.bind(this);
+        this.prescriptionDefault = this.prescriptionDefault.bind(this);
+        this.prescriptionMousDown=this.prescriptionMousDown.bind(this);
+        this.Dataexit = this.Dataexit.bind(this);
+
+        this.DBleftDefault();
+        this.submitDefault();
+        this.DBrightDefault();
+        this.prescriptionDefault();
+        
     }
 
     submitClick(){
@@ -62,7 +90,6 @@ class PatientSignUp extends Component {
     'weight:'+ `${this.state.weight}` +'\n'+
     'sex:'+ this.state.sex +'\n')}
     
-
     submitHover()
     {this.setState({submitClass: "UploadForm-Submit-Name-Base UploadForm-Submit-Name-Mouseover noselect"})}
 
@@ -70,19 +97,77 @@ class PatientSignUp extends Component {
     {this.setState({submitClass: "UploadForm-Submit-Name-Base UploadForm-Submit-Name-Default noselect"})}
 
     submitMousDown()
-    {
-        this.setState({submitClass: "UploadForm-Submit-Name-Base UploadForm-Submit-Name-Click noselect"})
-    }
+    {this.setState({submitClass: "UploadForm-Submit-Name-Base UploadForm-Submit-Name-Click noselect"})}
 
-    classNameSex(sex)
-    {
-        if (this.state.sex != sex)
+
+        DBleftClick()
         {
-            return "UploadForm-Sex-Default"
+            this.DBleftHover();
+            console.log('Open DBLEFT');
         }
-        return "UploadForm-Sex-Default UploadForm-Sex-Selected"
-    }
+        DBleftHover()
+        {this.setState({DBleftClass: "UploadForm-IP-Base UploadForm-IP-Mouseover noselect"})}
+        DBleftDefault()
+        {
+            if(this.state.DBleft)
+            {
+                this.setState({DBleftClass: "UploadForm-IP-Base UploadForm-IP-Saved noselect"});
+                return;
+            }
+            this.setState({DBleftClass: "UploadForm-IP-Base UploadForm-IP-Default noselect"});
+                return;
+        }
+        DBleftMousDown()
+        {this.setState({DBleftClass: "UploadForm-IP-Base UploadForm-IP-Click noselect"})}
 
+        DBrightClick()
+        {
+            this.DBrightHover();
+            console.log('Open DBright');
+        }
+        DBrightHover()
+        {this.setState({DBrightClass: "UploadForm-IP-Base UploadForm-IP-Mouseover noselect"})}
+        DBrightDefault()
+        {
+            if(this.state.DBright)
+            {
+                this.setState({DBrightClass: "UploadForm-IP-Base UploadForm-IP-Saved noselect"});
+                return;
+            }
+            this.setState({DBrightClass: "UploadForm-IP-Base UploadForm-IP-Default noselect"});
+                return;
+        }
+        DBrightMousDown()
+        {this.setState({DBrightClass: "UploadForm-IP-Base UploadForm-IP-Click noselect"})}
+
+        prescriptionClick()
+        {
+            this.prescriptionHover();
+            console.log('Open prescription');
+        }
+        prescriptionHover()
+        {this.setState({prescriptionClass: "UploadForm-IP-Base UploadForm-IP-Mouseover noselect"})}
+        prescriptionDefault()
+        {
+            if(this.state.prescription)
+            {
+                this.setState({prescriptionClass: "UploadForm-IP-Base UploadForm-IP-Saved noselect"});
+                return;
+            }
+            this.setState({prescriptionClass: "UploadForm-IP-Base UploadForm-IP-Default noselect"});
+                return;
+        }
+        prescriptionMousDown()
+        {this.setState({prescriptionClass: "UploadForm-IP-Base UploadForm-IP-Click noselect"})};
+    
+    Dataexit(arg)
+    {
+        if(this.state[arg])
+        {
+            return "Saved";
+        }
+        return "No Data";
+    }
 
 
     render() {
@@ -167,9 +252,24 @@ class PatientSignUp extends Component {
                     <div className="UploadForm-IP">
                         <div className="UploadForm-Item-Name noselect">Images and Prescription:</div>
                         <div className="UploadForm-IP-Lower">
-                            <span className="UploadForm-IP-Default noselect" >DR(left)<br/>No Data</span>
-                            <span className="UploadForm-IP-Default noselect" >DR(right)<br/>No Data</span>
-                            <span className="UploadForm-IP-Default noselect" >Prescription<br/>No Data</span>
+                            <div className={this.state.DBleftClass}
+                             onClick={this.DBleftClick}
+                            onMouseDown={this.DBleftMousDown}
+                            onMouseOver={this.DBleftHover}
+                            onMouseLeave={this.DBleftDefault}
+                             >DR(left)<br/>{this.Dataexit('DBleft')}</div>
+                            <div className={this.state.DBrightClass}
+                            onClick={this.DBrightClick}
+                            onMouseDown={this.DBrightMousDown}
+                            onMouseOver={this.DBrightHover}
+                            onMouseLeave={this.DBrightDefault}
+                             >DR(right)<br/>{this.Dataexit('DBright')}</div>
+                            <div className={this.state.prescriptionClass} 
+                            onClick={this.prescriptionClick}
+                            onMouseDown={this.prescriptionMousDown}
+                            onMouseOver={this.prescriptionHover}
+                            onMouseLeave={this.prescriptionDefault}
+                            >Prescription<br/>{this.Dataexit('prescription')}</div>
                         </div>
                     </div>
 
@@ -190,11 +290,3 @@ class PatientSignUp extends Component {
 }
 
 export default PatientSignUp;
-
-/*
-                    <div className="UploadForm-Stats-Item">
-                        <i className="fa fa-user-circle UploadForm-Stats-Item-Avatar" aria-hidden="true"></i>
-                    </div>
-                    
-                    <div className="UploadForm-Stats-BF"></div>
-*/ 

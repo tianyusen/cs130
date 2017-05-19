@@ -7,6 +7,7 @@ import NameCard from '../Pages/PatientsRecord/NameCard';
 import PatientSignUp from '../Components/patient_sign_up';
 import PatientUpdate from '../Components/patient_update';
 import DoctorUpdate from '../Components/doctor_update';
+import DoctorUpdateDR from '../Components/doctor_update_DR';
 import Login from '../Pages/LoginPage/Login';
 import Add from '../Components/Add';
 import SearchBar from '../Components/SearchBar';
@@ -58,6 +59,11 @@ storiesOf('NameCard', module)
   storiesOf('DoctorUpdate', module)
   .add('DoctorUpdate', () => (
     <DoctorUpdate/>
+  ))
+  
+    storiesOf('DoctorUpdateDR', module)
+  .add('DoctorUpdateDR', () => (
+    <DoctorUpdateDR/>
   ))
   
 

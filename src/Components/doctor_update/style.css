@@ -102,14 +102,6 @@
     font-size: 14px;
 }
 
-.Birthday{
-    padding-right:80px;
-}
-.BirthdayUnit{
-    font-size: 12.7px;
-    margin-left:-80px;
-}
-
 .UploadForm-IP{
     height: 100px;
 }
@@ -124,15 +116,19 @@
     justify-content: space-around;
     align-items: center;
 }
-.UploadForm-IP-Default{
+
+.UploadForm-IP-Base{
     height: 60px;
     width: 75px;
     border-radius: 10px;
-    color: white;
-    background-color: rgb(115, 115, 115);
     font-size: 12px;
     text-align: center;
     line-height: 30px;
+}
+
+.UploadForm-IP-Default{
+    color: white;
+    background-color: rgb(115, 115, 115);
 }
 .UploadForm-IP-Saved{
     color: white;
@@ -181,4 +177,15 @@
         -ms-user-select: none; /* Internet Explorer/Edge */
             user-select: none; /* Non-prefixed version, currently*/
                                  
+}
+
+
+.UploadForm-IP-Mouseover{
+    color: white;
+    background-color: rgb(20,100,150);
+}
+
+.UploadForm-IP-Click{
+    color: white;
+    background-color: rgb(10,50,80);
 }

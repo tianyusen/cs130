@@ -69,6 +69,9 @@
     text-align: left;
 }
 
+
+
+
 .UploadForm-Item-Lower{
     width: 250px;
     height: 30px;
@@ -90,17 +93,6 @@
     font-size: 18px;
     color:grey;
     font-size: 14px;
-}
-
-.Birthday{
-    padding-right:80px;
-}
-.BirthdayUnit{
-    height: 30px;
-    font-size: 18px;
-    color:grey;
-    font-size: 12.7px;
-    margin-left:-80px;
 }
 
 .UploadForm-Submit{
@@ -146,57 +138,52 @@
                                  
 }
 
-.UploadForm-Sex{
+.UploadForm-Image-Base{
+    max-height:250px;
     width: 250px;
-    height: 150px;
+    height:auto;
+    font-size: 18px;
+    color: white;
+    background-color: rgb(115, 115, 115);
+    line-height: 30px;
+    text-align: center;
+}
+
+.UploadForm-Image-i{
+    font-size: 18px;
+    color: white;
+    background-color: rgb(115, 115, 115);
+    line-height: 30px;
+    text-align: center;
+    width:auto;
+	max-width:100%;
+	height:auto;
+}
+
+
+.UploadForm-Note{
+    width: 250px;
+    height: 225px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
 }
 
-.UploadForm-Sex-Name{
+
+.UploadForm-Note-Lower{
     width: 250px;
-    height: 30px;
+    height: 180px;
+}
+
+.UploadForm-Note-Input{
+    padding-right:25px;
+    width: 250px;
+    height: 180px;
+    border-radius: 6px;
+    padding-left: 5px;
     font-size: 18px;
-    color: rgb(115, 115, 115);
-    line-height: 30px;
-    text-align: left;
-}
-.UploadForm-Sex-Lower{
-    height: 100px;
-    width: 250px;
-    border-radius: 10px;
-    color: rgb(115, 115, 115);
-    display: flex;
-    flex-direction: row;
-    justify-content: flex-start;
-    align-items: center;
-}
-.UploadForm-Sex-Default{
-    height: 100px;
-    width: 100px;
-    border-radius: 10px;
-    color: rgb(115, 115, 115);
-        display: flex;
-    justify-content: center;
-    align-items: center;
-
-}
-.UploadForm-Sex-Selected{
-
-    border-style: solid;
+    color:black;
     border-color: rgb(25,157,237);
-}
-
-.UploadForm-Sex-M-i{
-    
-    font-size: 50px !important;
-    line-height: 50px;
-}
-
-.UploadForm-Sex-F-i{
-    
-    font-size: 50px !important;
-    line-height: 50px;
+    border-style: solid;
 }
