@@ -4,7 +4,6 @@ import DoughnutChart from '../Components/data_charts/doughnut';
 import BloodStatLineChart from '../Components/data_charts/line';
 import LargeNameCard from '../Components/large_patient_card';
 import NameCard from '../Pages/PatientsRecord/NameCard';
-import UploadForm from '../Components/UploadForm';
 import PatientSignUp from '../Components/patient_sign_up';
 import PatientUpdate from '../Components/patient_update';
 import DoctorUpdate from '../Components/doctor_update';
@@ -45,10 +44,6 @@ storiesOf('NameCard', module)
     <LargeNameCard/>
   ))
 
-storiesOf('UploadForm', module)
-  .add('UploadFormExample', () => (
-    <UploadForm/>
-  ))
 
   storiesOf('PatientSignUp', module)
   .add('PatientSignUp', () => (
