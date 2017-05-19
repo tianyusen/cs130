@@ -6,14 +6,43 @@ class PatientSignUp extends Component {
         super(props);
         this.state={
             personal_id:"xiangtao1995@gmail.com",
-            pass_word:"123456674",
+            token:"12312fsdf2131321321",
             name:"taoxiang",
-            birthday:"19951124",
+            birthday:"1995-11-24",
+            last_visit:"2015-10-04",
             height:180,
             weight:62,
-            sex:"male",
-            token:"12312fsdf2131321321",
-            submitClass : " UploadForm-Submit-Name-Default UploadForm-Submit-Name-Base noselect",
+
+            DR_time:"2017-03-34-10-12",
+            DR_left_score:4,
+            DR_right_score:3,
+            DR_left_photo:"http://s3.us.1231231313",
+            DR_right_photo:"http://s3.us.1231231313",
+            DR_right_note:"its really bad",
+            DR_left_note:"its good",
+            
+            blood_fat_time:"2017-03-34-10-12",
+            blood_fat:0.12,
+            blood_pressure_time:"2017-03-34-10-12",
+            blood_pressure_high:120,
+            blood_pressure_low:80,
+            blood_sugar_time:"2017-03-34-10-12",
+            blood_sugar:14.32,
+
+            visits:{
+             visit_time:"2017-03-34-10-12",
+             follow_up_time:"2018-03-34-10-12",
+             Note:"you gotta eat an apple a day",
+             drug_use:[{
+                 drug:"xxx1",
+                 dose:"1 pill per day",
+                 length:"1 year"
+                },{
+                 drug:"xxx2",
+                 dose:"2 pill per day",
+                 length:"2 year"
+                 }]},
+            submitClass : " UploadForm-Submit-Name-Default UploadForm-Submit-Name-Base noselect"
             
         }
         this.submitClick = this.submitClick.bind(this);
@@ -65,48 +94,15 @@ class PatientSignUp extends Component {
                     <div className="UploadForm-Title-Cancel">
                         <i className="fa fa-times UploadForm-Title-Cancel-i" aria-hidden="true"></i>    
                     </div>
-                    <div className="UploadForm-Title-Name noselect">New Patient</div>
+                    <div className="UploadForm-Title-Name noselect">New Record</div>
                 </div>
                 <div className="UploadForm-Options">
                     {/*Items starts here*/}
-                    <div className="UploadForm-Item">
-                        <div className="UploadForm-Item-Name noselect">Username:</div>
-                        <div className="UploadForm-Item-Lower">
-                            <input className="UploadForm-Item-Input"  type="text"  name="personal_id" 
-                            value={this.state.personal_id}
-                            onInput={(e)=>this.setState({personal_id: e.target.value})} />
-                            <span className="UploadForm-Item-Unit" ></span>
-                        </div>
-                    </div>
 
-                    <div className="UploadForm-Item">
-                        <div className="UploadForm-Item-Name noselect">Password:</div>
-                        <div className="UploadForm-Item-Lower">
-                            <input className="UploadForm-Item-Input"  type="text" name="pass_word" 
-                            value={this.state.pass_word}
-                            onInput={(e)=>this.setState({pass_word: e.target.value})} />
-                        </div>
-                    </div>
-
-                    <div className="UploadForm-Item">
-                        <div className="UploadForm-Item-Name noselect">Name:</div>
-                        <div className="UploadForm-Item-Lower">
-                            <input className="UploadForm-Item-Input"  type="text" name="name" 
-                            value={this.state.name}
-                            onInput={(e)=>this.setState({name: e.target.value})} />
-                            <span className="UploadForm-Item-Unit" ></span>
-                        </div>
-                    </div>
-
-                    <div className="UploadForm-Item">
-                        <div className="UploadForm-Item-Name noselect">Birth Date:</div>
-                        <div className="UploadForm-Item-Lower">
-                            <input className="UploadForm-Item-Input Birthday"  type="text" name="birthday" 
-                            value={this.state.birthday}
-                            onInput={(e)=>this.setState({birthday: e.target.value})} />
-                            <span className="UploadForm-Item-Unit BirthdayUnit noselect" >YYYYMMDD</span>
-                        </div>
-                    </div>
+                    <div className="UploadForm-FixedItem noselect">ID:{` ${this.state.personal_id}`}</div>
+                    <div className="UploadForm-FixedItem noselect">Name:{` ${this.state.name}`}</div>
+                    <div className="UploadForm-FixedItem noselect">DOB:{` ${this.state.birthday}`}</div>
+                    <div className="UploadForm-FixedItem noselect">Last Visit:{` ${this.state.last_visit}`}</div>
 
                     <div className="UploadForm-Item">
                         <div className="UploadForm-Item-Name noselect">Height:</div>
@@ -128,19 +124,56 @@ class PatientSignUp extends Component {
                         </div>
                     </div>
 
-                    <div className="UploadForm-Item UploadForm-Sex" >
-                        <div className="UploadForm-Item-Name noselect">Sex:</div>
-                        <div className="UploadForm-Sex-Lower">
-                            <div className= {this.classNameSex("male")}
-                                onClick={(e)=>this.setState({sex:"male"})}>
-                                <i className="fa fa-male UploadForm-Sex-M-i" aria-hidden="true"></i>    
-                                </div>
-                            <div className={this.classNameSex("female")}
-                                onClick={(e)=>this.setState({sex:"female"})}>
-                                <i className="fa fa-female UploadForm-Sex-F-i" aria-hidden="true"></i>    
-                                </div>
+                    <div className="UploadForm-Item">
+                        <div className="UploadForm-Item-Name noselect">Blood Sugar:</div>
+                        <div className="UploadForm-Item-Lower">
+                            <input className="UploadForm-Item-Input"  type="text"  name="blood_sugar" 
+                            value={this.state.blood_sugar}
+                            onInput={(e)=>this.setState({blood_sugar: e.target.value})} />
+                            <span className="UploadForm-Item-Unit" >Un</span>
                         </div>
                     </div>
+
+                    <div className="UploadForm-Item">
+                        <div className="UploadForm-Item-Name noselect">Blood Fat:</div>
+                        <div className="UploadForm-Item-Lower">
+                            <input className="UploadForm-Item-Input"  type="text" name="blood_fat" 
+                            value={this.state.blood_fat}
+                            onInput={(e)=>this.setState({blood_fat: e.target.value})} />
+                            <span className="UploadForm-Item-Unit" >Un</span>
+                        </div>
+                    </div>
+
+                    <div className="UploadForm-Item">
+                        <div className="UploadForm-Item-Name noselect">Blood Presure (High):</div>
+                        <div className="UploadForm-Item-Lower">
+                            <input className="UploadForm-Item-Input"  type="text" name="blood_pressure_high" 
+                            value={this.state.blood_pressure_high}
+                            onInput={(e)=>this.setState({blood_pressure_high: e.target.value})} />
+                            <span className="UploadForm-Item-Unit" >Un</span>
+                        </div>
+                    </div>
+
+                    <div className="UploadForm-Item">
+                        <div className="UploadForm-Item-Name noselect">Blood Presure (Low):</div>
+                        <div className="UploadForm-Item-Lower">
+                            <input className="UploadForm-Item-Input Birthday"  type="text" name="blood_pressure_low" 
+                            value={this.state.blood_pressure_low}
+                            onInput={(e)=>this.setState({blood_pressure_low: e.target.value})} />
+                            <span className="UploadForm-Item-Unit noselect" >Un</span>
+                        </div>
+                    </div>
+
+                    <div className="UploadForm-IP">
+                        <div className="UploadForm-Item-Name noselect">Images and Prescription:</div>
+                        <div className="UploadForm-IP-Lower">
+                            <span className="UploadForm-IP-Default noselect" >DR(left)<br/>No Data</span>
+                            <span className="UploadForm-IP-Default noselect" >DR(right)<br/>No Data</span>
+                            <span className="UploadForm-IP-Default noselect" >Prescription<br/>No Data</span>
+                        </div>
+                    </div>
+
+
 
                 </div>
                 <div className="UploadForm-Submit">
@@ -149,7 +182,7 @@ class PatientSignUp extends Component {
                     onMouseDown={this.submitMousDown}
                     onMouseOver={this.submitHover}
                     onMouseLeave={this.submitDefault}
-                    >Register</div>
+                    >Update</div>
                 </div>
             </div>
         );

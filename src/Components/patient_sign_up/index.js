@@ -131,7 +131,7 @@ class PatientSignUp extends Component {
                         </div>
                     </div>
 
-                    <div className="UploadForm-Item UploadForm-Sex" >
+                    <div className="UploadForm-Sex" >
                         <div className="UploadForm-Item-Name noselect">Sex:</div>
                         <div className="UploadForm-Sex-Lower">
                             <div className= {this.classNameSex("male")}

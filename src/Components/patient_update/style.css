@@ -24,7 +24,6 @@
     height: 50px;
     width: 35px;
     border-radius: 10px;
-    color: rgb(115, 115, 115);
     float: right;
     display: flex;
     justify-content: center;
@@ -37,7 +36,9 @@
 {
     font-size: 35px !important;
     line-height: 50px;
+    color: grey;
 }
+
 
 .UploadForm-Options{
     box-shadow: inset 0 20px 20px -20px #888888;
@@ -50,46 +51,16 @@
     align-items: center;
 }
 
-.UploadForm-BP{
+.UploadForm-Item{
     width: 250px;
-    height: 100px;
+    height: 65px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
 }
 
-.UploadForm-BP-Name{
-    width: 250px;
-    height: 30px;
-    font-size: 18px;
-    color:  rgb(115, 115, 115);
-    line-height: 30px;
-    text-align: left;
-}
-
-.UploadForm-BP-Input{
-    width: 250px;
-    height: 30px;
-    border-radius: 5px;
-    padding-left: 5px;
-    font-size: 18px;
-    color:grey;
-    border-color: rgb(25,157,237);
-    border-style: solid;
-}
-
-
-.UploadForm-BS{
-    width: 250px;
-    height: 100px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
-
-.UploadForm-BS-Name{
+.UploadForm-Item-Name{
     width: 250px;
     height: 30px;
     font-size: 18px;
@@ -97,11 +68,22 @@
     line-height: 30px;
     text-align: left;
 }
-.UploadForm-BS-Lower{
+
+
+.UploadForm-FixedItem{
+    width: 250px;
+    height: 20px;
+    font-size: 18px;
+    color: rgb(115, 115, 115);
+    line-height: 30px;
+    text-align: left;
+}
+
+.UploadForm-Item-Lower{
     width: 250px;
     height: 30px;
 }
-.UploadForm-BS-Input{
+.UploadForm-Item-Input{
     padding-right:25px;
     width: 250px;
     height: 30px;
@@ -112,74 +94,51 @@
     border-color: rgb(25,157,237);
     border-style: solid;
 }
-.UploadForm-BS-Unit{
+.UploadForm-Item-Unit{
     height: 30px;
     margin-left:-25px;
     font-size: 18px;
     color:grey;
+    font-size: 14px;
 }
 
-.UploadForm-Sex{
-    width: 250px;
-    height: 150px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+.Birthday{
+    padding-right:80px;
+}
+.BirthdayUnit{
+    font-size: 12.7px;
+    margin-left:-80px;
 }
 
-.UploadForm-Sex-Name{
-    width: 250px;
-    height: 30px;
-    font-size: 18px;
-    color: rgb(115, 115, 115);
-    line-height: 30px;
-    text-align: left;
-}
-.UploadForm-Sex-Lower{
+.UploadForm-IP{
     height: 100px;
+}
+
+.UploadForm-IP-Lower{
+    height: 65px;
     width: 250px;
     border-radius: 10px;
     color: rgb(115, 115, 115);
     display: flex;
     flex-direction: row;
-    justify-content: flex-start;
+    justify-content: space-around;
     align-items: center;
 }
-.UploadForm-Sex-M{
-    height: 100px;
-    width: 100px;
+.UploadForm-IP-Default{
+    height: 60px;
+    width: 75px;
     border-radius: 10px;
-    color: rgb(115, 115, 115);
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    color: white;
+    background-color: rgb(115, 115, 115);
+    font-size: 12px;
+    text-align: center;
+    line-height: 30px;
 }
-.UploadForm-Sex-F{
-    height: 100px;
-    width: 100px;
-    margin-left: 20px;
-    border-radius: 10px;
-    color: rgb(115, 115, 115);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border-style: solid;
-    border-color: rgb(25,157,237);
-}
+.UploadForm-IP-Saved{
+    color: white;
+    background-color: rgb(25,157,237);
 
-.UploadForm-Sex-M-i{
-    
-    font-size: 50px !important;
-    line-height: 50px;
 }
-
-.UploadForm-Sex-F-i{
-    
-    font-size: 50px !important;
-    line-height: 50px;
-}
-
 
 .UploadForm-Submit{
     width: 300px;
@@ -190,13 +149,38 @@
     border-radius: 10px;
 }
 
-.UploadForm-Submit-Name{
+.UploadForm-Submit-Name-Base{
     width: 270px;
     height: 40px;
     font-size: 20px;
-    color: white;
-    background-color: rgb(25,157,237);
     border-radius: 10px;
     text-align: center;
     line-height: 40px;
 }
+
+.UploadForm-Submit-Name-Default{
+    color: White;
+    background-color: rgb(25,157,237);
+}
+
+.UploadForm-Submit-Name-Mouseover{
+    color: white;
+    background-color: rgb(20,100,150);
+}
+
+.UploadForm-Submit-Name-Click{
+    color: white;
+    background-color: rgb(10,50,80);
+}
+
+.noselect {
+  -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+     -khtml-user-select: none; /* Konqueror HTML */
+       -moz-user-select: none; /* Firefox */
+        -ms-user-select: none; /* Internet Explorer/Edge */
+            user-select: none; /* Non-prefixed version, currently*/
+                                 
+}
+
+

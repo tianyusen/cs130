@@ -106,6 +106,7 @@ class PatientUpdate extends Component {
                             <span className="UploadForm-Item-Unit noselect" >Un</span>
                         </div>
                     </div>
+                    
 
         
 
@@ -116,7 +117,7 @@ class PatientUpdate extends Component {
                     onMouseDown={this.submitMousDown}
                     onMouseOver={this.submitHover}
                     onMouseLeave={this.submitDefault}
-                    >Register</div>
+                    >Update</div>
                 </div>
             </div>
         );
