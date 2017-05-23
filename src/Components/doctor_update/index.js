@@ -36,11 +36,11 @@ class PatientSignUp extends Component {
              drug_use:[{
                  drug:"xxx1",
                  dose:"1 pill per day",
-                 length:"1 year"
+                 len:"1 year"
                 },{
                  drug:"xxx2",
                  dose:"2 pill per day",
-                 length:"2 year"
+                 len:"2 year"
                  }]},
             submitClass : " UploadForm-Submit-Name-Default UploadForm-Submit-Name-Base noselect",
             DBleftClass: "UploadForm-IP-Base UploadForm-IP-Default noselect",

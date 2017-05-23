@@ -6,7 +6,7 @@ class PatientSignUp extends Component {
         super(props);
         this.state={
             left : true,
-            submitClass : " UploadForm-Submit-Name-Default UploadForm-Submit-Name-Base noselect",
+            submitClass : " DRForm-Submit-Name-Default DRForm-Submit-Name-Base noselect",
             DR_score:0,
             DR_photo:"https://cdn.psychologytoday.com/sites/default/files/blogs/75174/2014/03/146854-149238.jpg",
             DR_note:"its really bad",
@@ -44,13 +44,13 @@ class PatientSignUp extends Component {
     }
     
     submitHover()
-    {this.setState({submitClass: "UploadForm-Submit-Name-Base UploadForm-Submit-Name-Mouseover noselect"})}
+    {this.setState({submitClass: "DRForm-Submit-Name-Base DRForm-Submit-Name-Mouseover noselect"})}
 
     submitDefault()
-    {this.setState({submitClass: "UploadForm-Submit-Name-Base UploadForm-Submit-Name-Default noselect"})}
+    {this.setState({submitClass: "DRForm-Submit-Name-Base DRForm-Submit-Name-Default noselect"})}
 
     submitMousDown()
-    {this.setState({submitClass: "UploadForm-Submit-Name-Base UploadForm-Submit-Name-Click noselect"})}
+    {this.setState({submitClass: "DRForm-Submit-Name-Base DRForm-Submit-Name-Click noselect"})}
 
     windowName()
     {
@@ -63,44 +63,44 @@ class PatientSignUp extends Component {
 
     render() {
         return (
-            <div className="UploadForm">
-                <div className="UploadForm-Title">
+            <div className="DRForm">
+                <div className="DRForm-Title">
                     
                     
-                    <div className="UploadForm-Title-Cancel">
-                        <i className="fa fa-times UploadForm-Title-Cancel-i noselect" aria-hidden="true"></i>    
+                    <div className="DRForm-Title-Cancel">
+                        <i className="fa fa-times DRForm-Title-Cancel-i noselect" aria-hidden="true"></i>    
                     </div>
-                    <div className="UploadForm-Title-Name noselect">{this.windowName()+" DR Image"}</div>
+                    <div className="DRForm-Title-Name noselect">{this.windowName()+" DR Image"}</div>
                 </div>
-                <div className="UploadForm-Options">
+                <div className="DRForm-Options">
                     {/*Items starts here*/}
 
-                    <div className="UploadForm-Image-Base noselect">
-                        <img className="UploadForm-Image-i noselect" src={this.state.DR_photo} alt = "DR Image" />
+                    <div className="DRForm-Image-Base noselect">
+                        <img className="DRForm-Image-i noselect" src={this.state.DR_photo} alt = "DR Image" />
                     </div>
 
-                    <div className="UploadForm-Item">
-                        <div className="UploadForm-Item-Name noselect">DR Image Link:</div>
-                        <div className="UploadForm-Item-Lower">
-                            <input className="UploadForm-Item-Input "  type="text"name="link" 
+                    <div className="DRForm-Item">
+                        <div className="DRForm-Item-Name noselect">DR Image Link:</div>
+                        <div className="DRForm-Item-Lower">
+                            <input className="DRForm-Item-Input "  type="text"name="link" 
                             value={this.state.DR_photo}
                             onInput={(e)=>this.setState({DR_photo: e.target.value})} />
                         </div>
                     </div>
 
-                    <div className="UploadForm-Item">
-                        <div className="UploadForm-Item-Name noselect">DR Score:</div>
-                        <div className="UploadForm-Item-Lower">
-                            <input className="UploadForm-Item-Input "  type="text"name="score" 
+                    <div className="DRForm-Item">
+                        <div className="DRForm-Item-Name noselect">DR Score:</div>
+                        <div className="DRForm-Item-Lower">
+                            <input className="DRForm-Item-Input "  type="text"name="score" 
                             value={this.state.DR_score}
                             onInput={(e)=>this.setState({DR_score: e.target.value})} />
                         </div>
                     </div>
 
-                    <div className="UploadForm-Note">
-                        <div className="UploadForm-Item-Name noselect">Notes:</div>
-                        <div className="UploadForm-Note-Lower">
-                            <textarea className="UploadForm-Note-Input "  type="text"name="note" 
+                    <div className="DRForm-Note">
+                        <div className="DRForm-Item-Name noselect">Notes:</div>
+                        <div className="DRForm-Note-Lower">
+                            <textarea className="DRForm-Note-Input "  type="text"name="note" 
                             value={this.state.DR_note}
                             onInput={(e)=>this.setState({DR_note: e.target.value})} />
                         </div>
@@ -110,7 +110,7 @@ class PatientSignUp extends Component {
 
 
                 </div>
-                <div className="UploadForm-Submit">
+                <div className="DRForm-Submit">
                     <div className={this.state.submitClass}
                     onClick={this.submitClick}
                     onMouseDown={this.submitMousDown}
