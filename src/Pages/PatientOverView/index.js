@@ -17,7 +17,8 @@ class PatientOverView extends Component {
             patientInfo: {},
             bloodSugerData: {},
             bloodPressureData:{},
-            bloodFatData: {}
+            bloodFatData: {},
+            uniqueID:0
         }
     }
     
@@ -141,6 +142,8 @@ class PatientOverView extends Component {
     {
         var popup = document.getElementById("updateForm");
         popup.classList.toggle("show");
+        this.setState({uniqueID:this.state.uniqueID+1});
+        
     }
 
 
@@ -205,8 +208,8 @@ class PatientOverView extends Component {
                     </div>
                 </div>
                 <div className="PatientOverview-form" id="updateForm">
-                    <div className="PatientOverview-form-pop">
-                        <DoctorUpdateForm
+                    <div className="PatientOverview-form-pop" >
+                        <DoctorUpdateForm key = {this.state.uniqueID}
                             DoctorUpdateForm={this.doctorUpdate.bind(this)}
                         />
                     </div>

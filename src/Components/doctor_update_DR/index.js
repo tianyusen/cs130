@@ -5,19 +5,24 @@ class PatientSignUp extends Component {
     constructor(props){
         super(props);
         this.state={
-            left : true,
+            left :false,
             submitClass : " DRForm-Submit-Name-Default DRForm-Submit-Name-Base noselect",
             DR_score:0,
             DR_photo:"https://cdn.psychologytoday.com/sites/default/files/blogs/75174/2014/03/146854-149238.jpg",
             DR_note:"its really bad",
         }
-
-        this.setState({left: props.left});
+        
+        
         this.submitClick = this.submitClick.bind(this);
         this.submitHover = this.submitHover.bind(this);
         this.submitDefault = this.submitDefault.bind(this);
         this.submitMousDown=this.submitMousDown.bind(this);  
     }
+
+    componentDidMount() {
+        this.setState({left: this.props.left});
+    }
+    
 
     submitClick(){
     this.submitHover()
@@ -28,17 +33,13 @@ class PatientSignUp extends Component {
     'height:'+ `${this.state.height}`+'\n'+
     'weight:'+ `${this.state.weight}` +'\n'+
     'sex:'+ this.state.sex +'\n')
-    if(this.state.left)
-    {
-        this.props.setState({DR_left_score: this.DR_score});
-        this.props.setState({DR_left_photo: this.DR_photo});
-        this.props.setState({DR_left_note: this.DR_note});
-        return
-
-    }
-        this.props.setState({DR_right_score: this.DR_score});
-        this.props.setState({DR_right_photo: this.DR_photo});
-        this.props.setState({DR_right_note: this.DR_note});
+    var info = [];
+    info.prescription = false;
+    info.left = this.state.left;
+    info.note = this.state.DR_note;
+    info.photo = this.state.DR_photo;
+    info.score = this.state.DR_score;
+    this.props.saveInfo(info);
         return
     
     }
@@ -54,7 +55,7 @@ class PatientSignUp extends Component {
 
     windowName()
     {
-        if(this.state.left = true)
+        if(this.state.left == true)
         {
             return "Left";
         }
@@ -68,7 +69,7 @@ class PatientSignUp extends Component {
                     
                     
                     <div className="DRForm-Title-Cancel">
-                        <i className="fa fa-times DRForm-Title-Cancel-i noselect" aria-hidden="true"></i>    
+                        <i className="fa fa-times DRForm-Title-Cancel-i noselect" aria-hidden="true" onClick={()=>{this.props.cancelBack()}}></i>    
                     </div>
                     <div className="DRForm-Title-Name noselect">{this.windowName()+" DR Image"}</div>
                 </div>
@@ -76,7 +77,7 @@ class PatientSignUp extends Component {
                     {/*Items starts here*/}
 
                     <div className="DRForm-Image-Base noselect">
-                        <img className="DRForm-Image-i noselect" src={this.state.DR_photo} alt = "DR Image" />
+                        <img className="DRForm-Image-i noselect" src={this.state.DR_photo} alt="DR Image" />
                     </div>
 
                     <div className="DRForm-Item">

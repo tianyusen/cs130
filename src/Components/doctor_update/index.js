@@ -1,10 +1,13 @@
 import React, { Component } from 'react';
+import DoctorUpdateDR from '../../Components/doctor_update_DR';
+import DoctorUpdateDrugs from '../../Components/doctor_update_drugs';
 import './style.css';
 
 class PatientSignUp extends Component {
     constructor(props){
         super(props);
         this.state={
+            page : 'base',
             personal_id:"xiangtao1995@gmail.com",
             token:"12312fsdf2131321321",
             name:"taoxiang",
@@ -88,6 +91,8 @@ class PatientSignUp extends Component {
     'birthday:'+ this.state.birthday +'\n'+
     'height:'+ `${this.state.height}`+'\n'+
     'weight:'+ `${this.state.weight}` +'\n'+
+    'DR_right_score:'+ `${this.state.DR_right_score}` +'\n'+
+    'DR_left_score:'+ `${this.state.DR_left_score}` +'\n'+
     'sex:'+ this.state.sex +'\n')}
     
     submitHover()
@@ -104,6 +109,7 @@ class PatientSignUp extends Component {
         {
             this.DBleftHover();
             console.log('Open DBLEFT');
+            this.setState({page:"LeftDR"});
         }
         DBleftHover()
         {this.setState({DBleftClass: "UpdateDForm-IP-Base UpdateDForm-IP-Mouseover noselect"})}
@@ -124,6 +130,7 @@ class PatientSignUp extends Component {
         {
             this.DBrightHover();
             console.log('Open DBright');
+            this.setState({page:"RightDR"});
         }
         DBrightHover()
         {this.setState({DBrightClass: "UpdateDForm-IP-Base UpdateDForm-IP-Mouseover noselect"})}
@@ -169,8 +176,8 @@ class PatientSignUp extends Component {
         return "No Data";
     }
 
-
-    render() {
+    renderBase()
+    {
         return (
             <div className="UpdateDForm">
                 <div className="UpdateDForm-Title">
@@ -289,6 +296,54 @@ class PatientSignUp extends Component {
             </div>
         );
     }
+
+    cancelBack()
+    {
+        this.setState({page:"base"})
+    }
+
+    saveInfo(info)
+    {
+        if(info.prescription)
+        {
+
+        }
+        if(!info.prescription)
+        {if(info.left)
+            {
+                this.setState({DBleft:true, DR_left_note:info.note, DR_left_photo:info.photo, DR_left_score:info.score});
+            }
+            if(!info.left)
+            {
+                this.setState({DBright:true, DR_right_note:info.note, DR_right_photo:info.photo, DR_right_score:info.score});
+            }
+            
+        }
+    }
+
+    render() {
+        if(this.state.page == 'base')
+        return(
+            this.renderBase()
+        )
+        if(this.state.page == 'LeftDR')
+            
+            {console.log('LeftPage');
+            return(
+            <DoctorUpdateDR left = {true} cancelBack ={this.cancelBack.bind(this)} saveInfo = {this.saveInfo.bind(this)}/>
+             
+        )}
+        if(this.state.page == 'RightDR')
+        {console.log('RightPage');
+        return(
+            <DoctorUpdateDR left = {false} cancelBack = {this.cancelBack.bind(this)} saveInfo = {this.saveInfo.bind(this)}/>
+        )}
+        if(this.state.page == 'Prescription')
+        return(
+            <DoctorUpdateDrugs cancelBack = {this.cancelBack.bind(this)} saveInfo = {this.saveInfo.bind(this)}/>
+        )
+    }
+        
 }
 
 export default PatientSignUp;

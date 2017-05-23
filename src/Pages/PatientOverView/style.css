@@ -41,6 +41,7 @@
 .PatientOverview-search{
     flex-grow: 1;
     /*align-self: center;*/
+    z-index: 0;
 }
 
 .PatientOverview-add{
@@ -66,11 +67,12 @@
     z-index: 1;
     height: 100%;
     width: 100%;
-    overflow: scroll;
+    overflow: hidden;
 }
 .PatientOverview-form-pop{
     /*overflow: scroll;*/
     overflow: hidden;
+    /*DIFFERENT HERE*/
 }
 .show {
     visibility: visible;
