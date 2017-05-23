@@ -100,12 +100,12 @@ class PatientsRecord extends Component {
                         {this.renderRecords()}
                     </div>
                     <div className="PatientsRecord-form" id="signUpForm">
-                    <div className="PatientsRecord-form-pop">
-                        <PatientSignUp
-                            patientSignUp={this.patientSignUp.bind(this)}
-                        />
+                        <div className="PatientsRecord-form-pop">
+                            <PatientSignUp
+                                patientSignUp={this.patientSignUp.bind(this)}
+                            />
+                        </div>
                     </div>
-                </div>
                 </div>
                 
             </div>
