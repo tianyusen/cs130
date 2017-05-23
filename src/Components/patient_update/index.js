@@ -10,7 +10,7 @@ class PatientUpdate extends Component {
             blood_fat:0.3,
             blood_pressure_high:139,
             blood_pressure_low:80,
-            submitClass : " UploadForm-Submit-Name-Default UploadForm-Submit-Name-Base noselect",
+            submitClass : " UpdatePForm-Submit-Name-Default UpdatePForm-Submit-Name-Base noselect",
             
         }
         this.submitClick = this.submitClick.bind(this);
@@ -33,77 +33,77 @@ class PatientUpdate extends Component {
     
 
     submitHover()
-    {this.setState({submitClass: "UploadForm-Submit-Name-Base UploadForm-Submit-Name-Mouseover noselect"})}
+    {this.setState({submitClass: "UpdatePForm-Submit-Name-Base UpdatePForm-Submit-Name-Mouseover noselect"})}
 
     submitDefault()
-    {this.setState({submitClass: "UploadForm-Submit-Name-Base UploadForm-Submit-Name-Default noselect"})}
+    {this.setState({submitClass: "UpdatePForm-Submit-Name-Base UpdatePForm-Submit-Name-Default noselect"})}
 
     submitMousDown()
     {
-        this.setState({submitClass: "UploadForm-Submit-Name-Base UploadForm-Submit-Name-Click noselect"})
+        this.setState({submitClass: "UpdatePForm-Submit-Name-Base UpdatePForm-Submit-Name-Click noselect"})
     }
 
     classNameSex(sex)
     {
         if (this.state.sex != sex)
         {
-            return "UploadForm-Sex-Default"
+            return "UpdatePForm-Sex-Default"
         }
-        return "UploadForm-Sex-Default UploadForm-Sex-Selected"
+        return "UpdatePForm-Sex-Default UpdatePForm-Sex-Selected"
     }
 
 
 
     render() {
         return (
-            <div className="UploadForm">
-                <div className="UploadForm-Title">
+            <div className="UpdatePForm">
+                <div className="UpdatePForm-Title">
                     
                     
-                    <div className="UploadForm-Title-Cancel">
-                        <i className="fa fa-times UploadForm-Title-Cancel-i" aria-hidden="true"></i>    
+                    <div className="UpdatePForm-Title-Cancel">
+                        <i className="fa fa-times UpdatePForm-Title-Cancel-i" aria-hidden="true"></i>    
                     </div>
-                    <div className="UploadForm-Title-Name noselect">New Record</div>
+                    <div className="UpdatePForm-Title-Name noselect">New Record</div>
                 </div>
-                <div className="UploadForm-Options">
+                <div className="UpdatePForm-Options">
                     {/*Items starts here*/}
-                    <div className="UploadForm-Item">
-                        <div className="UploadForm-Item-Name noselect">Blood Sugar:</div>
-                        <div className="UploadForm-Item-Lower">
-                            <input className="UploadForm-Item-Input"  type="text"  name="blood_sugar" 
+                    <div className="UpdatePForm-Item">
+                        <div className="UpdatePForm-Item-Name noselect">Blood Sugar:</div>
+                        <div className="UpdatePForm-Item-Lower">
+                            <input className="UpdatePForm-Item-Input"  type="text"  name="blood_sugar" 
                             value={this.state.blood_sugar}
                             onInput={(e)=>this.setState({blood_sugar: e.target.value})} />
-                            <span className="UploadForm-Item-Unit" >Un</span>
+                            <span className="UpdatePForm-Item-Unit" >Un</span>
                         </div>
                     </div>
 
-                    <div className="UploadForm-Item">
-                        <div className="UploadForm-Item-Name noselect">Blood Fat:</div>
-                        <div className="UploadForm-Item-Lower">
-                            <input className="UploadForm-Item-Input"  type="text" name="blood_fat" 
+                    <div className="UpdatePForm-Item">
+                        <div className="UpdatePForm-Item-Name noselect">Blood Fat:</div>
+                        <div className="UpdatePForm-Item-Lower">
+                            <input className="UpdatePForm-Item-Input"  type="text" name="blood_fat" 
                             value={this.state.blood_fat}
                             onInput={(e)=>this.setState({blood_fat: e.target.value})} />
-                            <span className="UploadForm-Item-Unit" >Un</span>
+                            <span className="UpdatePForm-Item-Unit" >Un</span>
                         </div>
                     </div>
 
-                    <div className="UploadForm-Item">
-                        <div className="UploadForm-Item-Name noselect">Blood Presure (High):</div>
-                        <div className="UploadForm-Item-Lower">
-                            <input className="UploadForm-Item-Input"  type="text" name="blood_pressure_high" 
+                    <div className="UpdatePForm-Item">
+                        <div className="UpdatePForm-Item-Name noselect">Blood Presure (High):</div>
+                        <div className="UpdatePForm-Item-Lower">
+                            <input className="UpdatePForm-Item-Input"  type="text" name="blood_pressure_high" 
                             value={this.state.blood_pressure_high}
                             onInput={(e)=>this.setState({blood_pressure_high: e.target.value})} />
-                            <span className="UploadForm-Item-Unit" >Un</span>
+                            <span className="UpdatePForm-Item-Unit" >Un</span>
                         </div>
                     </div>
 
-                    <div className="UploadForm-Item">
-                        <div className="UploadForm-Item-Name noselect">Blood Presure (Low):</div>
-                        <div className="UploadForm-Item-Lower">
-                            <input className="UploadForm-Item-Input Birthday"  type="text" name="blood_pressure_low" 
+                    <div className="UpdatePForm-Item">
+                        <div className="UpdatePForm-Item-Name noselect">Blood Presure (Low):</div>
+                        <div className="UpdatePForm-Item-Lower">
+                            <input className="UpdatePForm-Item-Input Birthday"  type="text" name="blood_pressure_low" 
                             value={this.state.blood_pressure_low}
                             onInput={(e)=>this.setState({blood_pressure_low: e.target.value})} />
-                            <span className="UploadForm-Item-Unit noselect" >Un</span>
+                            <span className="UpdatePForm-Item-Unit noselect" >Un</span>
                         </div>
                     </div>
                     
@@ -111,7 +111,7 @@ class PatientUpdate extends Component {
         
 
                 </div>
-                <div className="UploadForm-Submit">
+                <div className="UpdatePForm-Submit">
                     <div className={this.state.submitClass}
                     onClick={this.submitClick}
                     onMouseDown={this.submitMousDown}
@@ -127,9 +127,9 @@ class PatientUpdate extends Component {
 export default PatientUpdate;
 
 /*
-                    <div className="UploadForm-Stats-Item">
-                        <i className="fa fa-user-circle UploadForm-Stats-Item-Avatar" aria-hidden="true"></i>
+                    <div className="UpdatePForm-Stats-Item">
+                        <i className="fa fa-user-circle UpdatePForm-Stats-Item-Avatar" aria-hidden="true"></i>
                     </div>
                     
-                    <div className="UploadForm-Stats-BF"></div>
+                    <div className="UpdatePForm-Stats-BF"></div>
 */ 

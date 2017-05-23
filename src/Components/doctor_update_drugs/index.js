@@ -88,6 +88,10 @@ class PatientSignUp extends Component {
                     {this.renderDrug(this.state.drug_use[0])}
                     {this.renderDrug(this.state.drug_use[1])}
                     {this.renderDrugList()}
+                    {this.state.drug_use
+                        .map((record)=>{
+                        this.renderDrug(record)
+                        })}
                 
 
                 </div>

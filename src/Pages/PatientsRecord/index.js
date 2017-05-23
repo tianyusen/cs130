@@ -5,7 +5,6 @@ import SearchBar from '../../Components/SearchBar';
 import Add from '../../Components/Add';
 import Logo from '../../Components/Logo';
 import PatientSignUp from '../../Components/patient_sign_up';
-import UploadForm from '../../Components/UploadForm';
 import PatientUpdate from '../../Components/patient_update';
 import {Link} from 'react-router';
 import './style.css';
