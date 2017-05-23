@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import axios from 'axios';
 import BloodStatLineChart from '../../Components/data_charts/line';
+import NewRecordCard from '../../Components/new_record_card';
 import LargeNameCard from '../../Components/large_patient_card';
 import SearchBar from '../../Components/SearchBar';
 import Add from '../../Components/Add';
@@ -181,6 +182,16 @@ class PatientOverView extends Component {
                             options={{legend: {
                                 display: false
                             }}}
+                        />
+                    </div>
+
+                    <div className="card">
+                        <NewRecordCard
+                            name={this.state.patientInfo.name}
+                            id={this.state.patientInfo.id}
+                            age={this.state.patientInfo.weight}
+                            birthday={this.state.patientInfo.birthday}
+                            className="card"
                         />
                     </div>
                 </div>
