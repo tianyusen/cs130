@@ -1,16 +1,16 @@
-.UploadForm{
+.UpdateDForm{
     width: 300px;
     height: 700px;
     border-radius: 10px;
+    background-color: white;
 }
 
-.UploadForm-Title{
+.UpdateDForm-Title{
     width: 300px;
     height: 50px;
-    position:relative;
 }
 
-.UploadForm-Title-Name{
+.UpdateDForm-Title-Name{
     height: 50px;
     color: rgb(25,157,237);
     background-color: rgba(0,0,0,0);
@@ -20,7 +20,7 @@
     line-height: 50px;
 }
 
-.UploadForm-Title-Cancel{
+.UpdateDForm-Title-Cancel{
     height: 50px;
     width: 35px;
     border-radius: 10px;
@@ -28,19 +28,19 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    position:absolute;
     right:0;
     
 }
-.UploadForm-Title-Cancel-i
+.UpdateDForm-Title-Cancel-i
 {
     font-size: 35px !important;
     line-height: 50px;
     color: grey;
+    cursor: pointer;
 }
 
 
-.UploadForm-Options{
+.UpdateDForm-Options{
     box-shadow: inset 0 20px 20px -20px #888888;
     width: 300px;
     height: 600px;
@@ -51,7 +51,7 @@
     align-items: center;
 }
 
-.UploadForm-Item{
+.UpdateDForm-Item{
     width: 250px;
     height: 65px;
     display: flex;
@@ -60,7 +60,7 @@
     align-items: center;
 }
 
-.UploadForm-Item-Name{
+.UpdateDForm-Item-Name{
     width: 250px;
     height: 30px;
     font-size: 18px;
@@ -70,7 +70,7 @@
 }
 
 
-.UploadForm-FixedItem{
+.UpdateDForm-FixedItem{
     width: 250px;
     height: 20px;
     font-size: 18px;
@@ -79,11 +79,11 @@
     text-align: left;
 }
 
-.UploadForm-Item-Lower{
+.UpdateDForm-Item-Lower{
     width: 250px;
     height: 30px;
 }
-.UploadForm-Item-Input{
+.UpdateDForm-Item-Input{
     padding-right:25px;
     width: 250px;
     height: 30px;
@@ -94,7 +94,7 @@
     border-color: rgb(25,157,237);
     border-style: solid;
 }
-.UploadForm-Item-Unit{
+.UpdateDForm-Item-Unit{
     height: 30px;
     margin-left:-25px;
     font-size: 18px;
@@ -102,11 +102,11 @@
     font-size: 14px;
 }
 
-.UploadForm-IP{
+.UpdateDForm-IP{
     height: 100px;
 }
 
-.UploadForm-IP-Lower{
+.UpdateDForm-IP-Lower{
     height: 65px;
     width: 250px;
     border-radius: 10px;
@@ -117,7 +117,8 @@
     align-items: center;
 }
 
-.UploadForm-IP-Base{
+.UpdateDForm-IP-Base{
+     cursor: pointer;
     height: 60px;
     width: 75px;
     border-radius: 10px;
@@ -126,17 +127,17 @@
     line-height: 30px;
 }
 
-.UploadForm-IP-Default{
+.UpdateDForm-IP-Default{
     color: white;
     background-color: rgb(115, 115, 115);
 }
-.UploadForm-IP-Saved{
+.UpdateDForm-IP-Saved{
     color: white;
     background-color: rgb(25,157,237);
 
 }
 
-.UploadForm-Submit{
+.UpdateDForm-Submit{
     width: 300px;
     height: 50px;
     display: flex;
@@ -145,7 +146,8 @@
     border-radius: 10px;
 }
 
-.UploadForm-Submit-Name-Base{
+.UpdateDForm-Submit-Name-Base{
+    cursor: pointer;
     width: 270px;
     height: 40px;
     font-size: 20px;
@@ -154,17 +156,17 @@
     line-height: 40px;
 }
 
-.UploadForm-Submit-Name-Default{
+.UpdateDForm-Submit-Name-Default{
     color: White;
     background-color: rgb(25,157,237);
 }
 
-.UploadForm-Submit-Name-Mouseover{
+.UpdateDForm-Submit-Name-Mouseover{
     color: white;
     background-color: rgb(20,100,150);
 }
 
-.UploadForm-Submit-Name-Click{
+.UpdateDForm-Submit-Name-Click{
     color: white;
     background-color: rgb(10,50,80);
 }
@@ -175,17 +177,16 @@
      -khtml-user-select: none; /* Konqueror HTML */
        -moz-user-select: none; /* Firefox */
         -ms-user-select: none; /* Internet Explorer/Edge */
-            user-select: none; /* Non-prefixed version, currently*/
-                                 
+            user-select: none; /* Non-prefixed version, currently*/           
 }
 
 
-.UploadForm-IP-Mouseover{
+.UpdateDForm-IP-Mouseover{
     color: white;
     background-color: rgb(20,100,150);
 }
 
-.UploadForm-IP-Click{
+.UpdateDForm-IP-Click{
     color: white;
     background-color: rgb(10,50,80);
 }

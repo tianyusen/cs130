@@ -4,7 +4,9 @@ import './style.css';
 class NewRecordCard extends Component {
     render() {
         return (
-            <div className="newRecordCard">
+            <div className="newRecordCard" onClick={()=>{
+                        this.props.DoctorUpdateForm()
+                    }}>
                 <div className="icon-newRecord">
                     <font color="Gray"><i className="fa fa-upload"></i></font>
                 </div>

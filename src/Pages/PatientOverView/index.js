@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import axios from 'axios';
 import BloodStatLineChart from '../../Components/data_charts/line';
+import DoctorUpdateForm from '../../Components/doctor_update';
 import NewRecordCard from '../../Components/new_record_card';
 import LargeNameCard from '../../Components/large_patient_card';
 import SearchBar from '../../Components/SearchBar';
@@ -136,17 +137,24 @@ class PatientOverView extends Component {
             .catch(function(error) {});
     }
 
+    doctorUpdate()
+    {
+        var popup = document.getElementById("updateForm");
+        popup.classList.toggle("show");
+    }
+
+
     render() {
         return (
             <div className="PatientOverview">
-                <div className="PatientsRecord-head">
-                    <div className="PatientsRecord-logo PatientsRecord-headcontents">
+                <div className="PatientOverview-head">
+                    <div className="PatientOverview-logo PatientOverview-headcontents">
                         <Logo/>
                     </div>
-                    <div className="PatientsRecord-search PatientsRecord-headcontents">
+                    <div className="PatientOverview-search PatientOverview-headcontents">
                         <SearchBar/>
                     </div>
-                    <div className="PatientsRecord-add PatientsRecord-headcontents">
+                    <div className="PatientOverview-add PatientOverview-headcontents">
                         <Add/>
                     </div>
                 </div>
@@ -192,6 +200,14 @@ class PatientOverView extends Component {
                             age={this.state.patientInfo.weight}
                             birthday={this.state.patientInfo.birthday}
                             className="card"
+                            DoctorUpdateForm={this.doctorUpdate.bind(this)}
+                        />
+                    </div>
+                </div>
+                <div className="PatientOverview-form" id="updateForm">
+                    <div className="PatientOverview-form-pop">
+                        <DoctorUpdateForm
+                            DoctorUpdateForm={this.doctorUpdate.bind(this)}
                         />
                     </div>
                 </div>
