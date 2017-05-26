@@ -1,16 +1,16 @@
-.UploadForm{
+.Prescription{
     width: 300px;
     height: 700px;
     border-radius: 10px;
 }
 
-.UploadForm-Title{
+.Prescription-Title{
     width: 300px;
     height: 50px;
     position:relative;
 }
 
-.UploadForm-Title-Name{
+.Prescription-Title-Name{
     height: 50px;
     color: rgb(25,157,237);
     background-color: rgba(0,0,0,0);
@@ -20,7 +20,7 @@
     line-height: 50px;
 }
 
-.UploadForm-Title-Cancel{
+.Prescription-Title-Cancel{
     height: 50px;
     width: 35px;
     border-radius: 10px;
@@ -32,7 +32,7 @@
     right:0;
     
 }
-.UploadForm-Title-Cancel-i
+.Prescription-Title-Cancel-i
 {
     font-size: 35px !important;
     line-height: 50px;
@@ -40,7 +40,7 @@
 }
 
 
-.UploadForm-Options{
+.Prescription-Options{
     box-shadow: inset 0 20px 20px -20px #888888;
     width: 300px;
     height: 600px;
@@ -51,28 +51,60 @@
     align-items: center;
 }
 
-.UploadForm-Item{
+.Prescription-Item{
     width: 250px;
     height: 65px;
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     justify-content: center;
     align-items: center;
 }
 
-.UploadForm-Item-Name{
+.Prescription-Item-Sub{
     width: 250px;
-    height: 30px;
+    height: 60px;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: flex-start;
+    border-style: solid;
+    border-color: rgb(25,157,237);
+    border-radius: 5px;
+}
+
+.Prescription-Item-Left{
+    width: 185px;
+    height: 55px;
     font-size: 18px;
     color: rgb(115, 115, 115);
-    line-height: 30px;
+    margin-left: 3px;
     text-align: left;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
 }
-.UploadForm-Item-Lower{
-    width: 250px;
-    height: 30px;
+
+.Prescription-Item-Right{
+    width: 60px;
+    height: 55px;
+    text-align: right;
+    margin-right: 5px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
 }
-.UploadForm-Item-Input{
+
+
+.Prescription-Item-Text{
+    width: 100%;
+    height: 30%;
+    font-size: 15px;
+}
+
+.Prescription-Item-Input{
     padding-right:25px;
     width: 250px;
     height: 30px;
@@ -83,7 +115,8 @@
     border-color: rgb(25,157,237);
     border-style: solid;
 }
-.UploadForm-Item-Unit{
+
+.Prescription-Item-Unit{
     height: 30px;
     margin-left:-25px;
     font-size: 18px;
@@ -91,60 +124,7 @@
     font-size: 14px;
 }
 
-.Birthday{
-    padding-right:80px;
-}
-.BirthdayUnit{
-    font-size: 12.7px;
-    margin-left:-80px;
-}
-
-.UploadForm-Sex{
-    height: 150px;
-}
-
-.UploadForm-Sex-Lower{
-    height: 100px;
-    width: 250px;
-    border-radius: 10px;
-    color: rgb(115, 115, 115);
-    display: flex;
-    flex-direction: row;
-    justify-content: flex-start;
-    align-items: center;
-}
-.UploadForm-Sex-Default{
-    height: 100px;
-    width: 100px;
-    border-radius: 10px;
-    color: rgb(115, 115, 115);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    
-    
-}
-
-.UploadForm-Sex-Selected{
-    color: rgb(25,157,237);
-    border:3px solid rgb(25,157,237);
-
-}
-
-.UploadForm-Sex-M-i{
-    
-    font-size: 50px !important;
-    line-height: 50px;
-}
-
-.UploadForm-Sex-F-i{
-    
-    font-size: 50px !important;
-    line-height: 50px;
-}
-
-
-.UploadForm-Submit{
+.Prescription-Submit{
     width: 300px;
     height: 50px;
     display: flex;
@@ -153,7 +133,7 @@
     border-radius: 10px;
 }
 
-.UploadForm-Submit-Name-Base{
+.Prescription-Submit-Name-Base{
     width: 270px;
     height: 40px;
     font-size: 20px;
@@ -162,17 +142,17 @@
     line-height: 40px;
 }
 
-.UploadForm-Submit-Name-Default{
+.Prescription-Submit-Name-Default{
     color: White;
     background-color: rgb(25,157,237);
 }
 
-.UploadForm-Submit-Name-Mouseover{
+.Prescription-Submit-Name-Mouseover{
     color: white;
     background-color: rgb(20,100,150);
 }
 
-.UploadForm-Submit-Name-Click{
+.Prescription-Submit-Name-Click{
     color: white;
     background-color: rgb(10,50,80);
 }
@@ -183,6 +163,5 @@
      -khtml-user-select: none; /* Konqueror HTML */
        -moz-user-select: none; /* Firefox */
         -ms-user-select: none; /* Internet Explorer/Edge */
-            user-select: none; /* Non-prefixed version, currently*/
-                                 
+            user-select: none; /* Non-prefixed version, currently*/                             
 }

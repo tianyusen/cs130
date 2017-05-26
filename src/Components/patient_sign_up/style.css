@@ -1,18 +1,17 @@
-.UploadForm{
+.SignupForm{
     width: 300px;
     height: 700px;
     border-radius: 10px;
-    background: white;
-    box-shadow: inset 0 1px 10px rgba(0, 0, 0, 0.46);
+
+    background-color: white;
 }
 
-.UploadForm-Title{
+.SignupForm-Title{
     width: 300px;
     height: 50px;
-    position:relative;
 }
 
-.UploadForm-Title-Name{
+.SignupForm-Title-Name{
     height: 50px;
     color: rgb(25,157,237);
     background-color: rgba(0,0,0,0);
@@ -20,29 +19,30 @@
     border-radius: 10px;
     text-align: center;
     line-height: 50px;
+
 }
 
-.UploadForm-Title-Cancel{
+.SignupForm-Title-Cancel{
     height: 50px;
     width: 35px;
     border-radius: 10px;
-    color: rgb(115, 115, 115);
     float: right;
     display: flex;
     justify-content: center;
     align-items: center;
-    position:absolute;
     right:0;
     
-    
 }
-.UploadForm-Title-Cancel-i
+.SignupForm-Title-Cancel-i
 {
     font-size: 35px !important;
     line-height: 50px;
+    color: grey;
+    cursor: pointer;
 }
 
-.UploadForm-Options{
+
+.SignupForm-Options{
     box-shadow: inset 0 20px 20px -20px #888888;
     width: 300px;
     height: 600px;
@@ -53,25 +53,30 @@
     align-items: center;
 }
 
-.UploadForm-BP{
+.SignupForm-Item{
     width: 250px;
-    height: 100px;
+    height: 65px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
 }
 
-.UploadForm-BP-Name{
+.SignupForm-Item-Name{
     width: 250px;
     height: 30px;
     font-size: 18px;
-    color:  rgb(115, 115, 115);
+    color: rgb(115, 115, 115);
     line-height: 30px;
     text-align: left;
 }
 
-.UploadForm-BP-Input{
+.SignupForm-Item-Lower{
+    width: 250px;
+    height: 30px;
+}
+.SignupForm-Item-Input{
+    padding-right:25px;
     width: 250px;
     height: 30px;
     border-radius: 5px;
@@ -81,48 +86,70 @@
     border-color: rgb(25,157,237);
     border-style: solid;
 }
-
-
-.UploadForm-BS{
-    width: 250px;
-    height: 100px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
-
-.UploadForm-BS-Name{
-    width: 250px;
-    height: 30px;
-    font-size: 18px;
-    color: rgb(115, 115, 115);
-    line-height: 30px;
-    text-align: left;
-}
-.UploadForm-BS-Lower{
-    width: 250px;
-    height: 30px;
-}
-.UploadForm-BS-Input{
-    padding-right:25px;
-    width: 250px;
-    height: 30px;
-    border-radius: 5px;
-    padding-left: 5px;
-    font-size: 18px;
-    color:grey;
-    border-color: rgb(25,157,237) !important;
-    border-style: solid;
-}
-.UploadForm-BS-Unit{
+.SignupForm-Item-Unit{
     height: 30px;
     margin-left:-25px;
     font-size: 18px;
     color:grey;
+    font-size: 14px;
 }
 
-.UploadForm-Sex{
+.Birthday{
+    padding-right:80px;
+}
+.BirthdayUnit{
+    height: 30px;
+    font-size: 18px;
+    color:grey;
+    font-size: 12.7px;
+    margin-left:-80px;
+}
+
+.SignupForm-Submit{
+    
+    width: 300px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+}
+
+.SignupForm-Submit-Name-Base{
+    cursor: pointer;
+    width: 270px;
+    height: 40px;
+    font-size: 20px;
+    border-radius: 10px;
+    text-align: center;
+    line-height: 40px;
+}
+
+.SignupForm-Submit-Name-Default{
+    color: White;
+    background-color: rgb(25,157,237);
+}
+
+.SignupForm-Submit-Name-Mouseover{
+    color: white;
+    background-color: rgb(20,100,150);
+}
+
+.SignupForm-Submit-Name-Click{
+    color: white;
+    background-color: rgb(10,50,80);
+}
+
+.noselect {
+  -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+     -khtml-user-select: none; /* Konqueror HTML */
+       -moz-user-select: none; /* Firefox */
+        -ms-user-select: none; /* Internet Explorer/Edge */
+            user-select: none; /* Non-prefixed version, currently*/
+}
+
+.SignupForm-Sex{
     width: 250px;
     height: 150px;
     display: flex;
@@ -131,7 +158,7 @@
     align-items: center;
 }
 
-.UploadForm-Sex-Name{
+.SignupForm-Sex-Name{
     width: 250px;
     height: 30px;
     font-size: 18px;
@@ -139,7 +166,7 @@
     line-height: 30px;
     text-align: left;
 }
-.UploadForm-Sex-Lower{
+.SignupForm-Sex-Lower{
     height: 100px;
     width: 250px;
     border-radius: 10px;
@@ -149,57 +176,31 @@
     justify-content: flex-start;
     align-items: center;
 }
-.UploadForm-Sex-M{
+.SignupForm-Sex-Default{
     height: 100px;
     width: 100px;
     border-radius: 10px;
     color: rgb(115, 115, 115);
-    display: flex;
+        display: flex;
     justify-content: center;
     align-items: center;
+    cursor: pointer;
+
 }
-.UploadForm-Sex-F{
-    height: 100px;
-    width: 100px;
-    margin-left: 20px;
-    border-radius: 10px;
-    color: rgb(115, 115, 115);
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.SignupForm-Sex-Selected{
+
     border-style: solid;
     border-color: rgb(25,157,237);
 }
 
-.UploadForm-Sex-M-i{
+.SignupForm-Sex-M-i{
     
     font-size: 50px !important;
     line-height: 50px;
 }
 
-.UploadForm-Sex-F-i{
+.SignupForm-Sex-F-i{
     
     font-size: 50px !important;
     line-height: 50px;
-}
-
-
-.UploadForm-Submit{
-    width: 300px;
-    height: 50px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border-radius: 10px;
-}
-
-.UploadForm-Submit-Name{
-    width: 270px;
-    height: 40px;
-    font-size: 20px;
-    color: white;
-    background-color: rgb(25,157,237);
-    border-radius: 10px;
-    text-align: center;
-    line-height: 40px;
 }

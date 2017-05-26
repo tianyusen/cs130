@@ -29,7 +29,7 @@ class PatientsOverview extends Component {
                 <div className="info-cards-bg">
                     <div className="card">
                         <DoughnutChart
-                            title="Sex"
+                            title="Gender"
                             data={{
                                 labels: [
                                     "male",

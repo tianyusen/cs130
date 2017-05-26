@@ -4,10 +4,11 @@ import DoughnutChart from '../Components/data_charts/doughnut';
 import BloodStatLineChart from '../Components/data_charts/line';
 import LargeNameCard from '../Components/large_patient_card';
 import NameCard from '../Pages/PatientsRecord/NameCard';
-import UploadForm from '../Components/UploadForm';
 import PatientSignUp from '../Components/patient_sign_up';
 import PatientUpdate from '../Components/patient_update';
 import DoctorUpdate from '../Components/doctor_update';
+import DoctorUpdateDR from '../Components/doctor_update_DR';
+import DoctorUpdateDrugs from '../Components/doctor_update_drugs';
 import Login from '../Pages/LoginPage/Login';
 import Add from '../Components/Add';
 import SearchBar from '../Components/SearchBar';
@@ -45,10 +46,6 @@ storiesOf('NameCard', module)
     <LargeNameCard/>
   ))
 
-storiesOf('UploadForm', module)
-  .add('UploadFormExample', () => (
-    <UploadForm/>
-  ))
 
   storiesOf('PatientSignUp', module)
   .add('PatientSignUp', () => (
@@ -63,6 +60,16 @@ storiesOf('UploadForm', module)
   storiesOf('DoctorUpdate', module)
   .add('DoctorUpdate', () => (
     <DoctorUpdate/>
+  ))
+  
+    storiesOf('DoctorUpdateDR', module)
+  .add('DoctorUpdateDR', () => (
+    <DoctorUpdateDR/>
+  ))
+
+  storiesOf('DoctorUpdateDrugs', module)
+  .add('DoctorUpdateDrugs', () => (
+    <DoctorUpdateDrugs/>
   ))
   
 

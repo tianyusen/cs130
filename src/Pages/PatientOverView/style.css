@@ -17,7 +17,7 @@
     padding: 1%;
 }
 
-.PatientsRecord-head{
+.PatientOverview-head{
     flex: 1;
     margin-left: 2%;
     margin-right: 2%;
@@ -27,24 +27,65 @@
     align-items:  center;
     /*height: 60px;*/
 }
-.PatientsRecord-headcontents{
+.PatientOverview-headcontents{
     /*height: 100%;*/
    padding-top: 2%;
    padding-bottom: 2%;
 }
-.PatientsRecord-logo{
+.PatientOverview-logo{
     flex-grow: 1;
     padding-right: 2%;
     /*align-self: flex-start;*/
 }
 
-.PatientsRecord-search{
+.PatientOverview-search{
     flex-grow: 1;
     /*align-self: center;*/
+    z-index: 0;
 }
 
-.PatientsRecord-add{
+.PatientOverview-add{
     flex-grow: 1;
     padding-left: 1%
     /*align-self: flex-end;*/
+}
+
+.PatientOverview-form{
+    position: fixed;
+    top: 0px;
+    padding-top: 5%;
+    padding-left: 35%;
+    padding-bottom: 10%;
+    background-color: rgba(0,0,0,0.7) !important;
+
+    visibility: hidden;
+    /*display: flex;
+    flex-direction: row;
+    justify-content: center !important;
+    align-content: center !important;
+    */
+    z-index: 1;
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+}
+.PatientOverview-form-pop{
+    /*overflow: scroll;*/
+    overflow: hidden;
+    /*DIFFERENT HERE*/
+}
+.show {
+    visibility: visible;
+    -webkit-animation: fadeIn 1s;
+    animation: fadeIn 1s;
+}
+
+@-webkit-keyframes fadeIn {
+    from {opacity: 0;} 
+    to {opacity: 1;}
+}
+
+@keyframes fadeIn {
+    from {opacity: 0;}
+    to {opacity:1 ;}
 }

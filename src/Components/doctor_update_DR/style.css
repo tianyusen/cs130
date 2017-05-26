@@ -1,18 +1,18 @@
-.UpdatePForm{
+.DRForm{
     width: 300px;
     height: 700px;
     border-radius: 10px;
     background-color: white;
+    overflow-x: hidden;
 }
 
-.UpdatePForm-Title{
+.DRForm-Title{
     width: 300px;
     height: 50px;
     position:relative;
-    
 }
 
-.UpdatePForm-Title-Name{
+.DRForm-Title-Name{
     height: 50px;
     color: rgb(25,157,237);
     background-color: rgba(0,0,0,0);
@@ -22,7 +22,7 @@
     line-height: 50px;
 }
 
-.UpdatePForm-Title-Cancel{
+.DRForm-Title-Cancel{
     height: 50px;
     width: 35px;
     border-radius: 10px;
@@ -34,16 +34,15 @@
     right:0;
     
 }
-.UpdatePForm-Title-Cancel-i
+.DRForm-Title-Cancel-i
 {
     font-size: 35px !important;
     line-height: 50px;
     color: grey;
-    cursor: pointer;
 }
 
 
-.UpdatePForm-Options{
+.DRForm-Options{
     box-shadow: inset 0 20px 20px -20px #888888;
     width: 300px;
     height: 600px;
@@ -54,7 +53,7 @@
     align-items: center;
 }
 
-.UpdatePForm-Item{
+.DRForm-Item{
     width: 250px;
     height: 65px;
     display: flex;
@@ -63,7 +62,7 @@
     align-items: center;
 }
 
-.UpdatePForm-Item-Name{
+.DRForm-Item-Name{
     width: 250px;
     height: 30px;
     font-size: 18px;
@@ -73,20 +72,13 @@
 }
 
 
-.UpdatePForm-FixedItem{
-    width: 250px;
-    height: 20px;
-    font-size: 18px;
-    color: rgb(115, 115, 115);
-    line-height: 30px;
-    text-align: left;
-}
 
-.UpdatePForm-Item-Lower{
+
+.DRForm-Item-Lower{
     width: 250px;
     height: 30px;
 }
-.UpdatePForm-Item-Input{
+.DRForm-Item-Input{
     padding-right:25px;
     width: 250px;
     height: 30px;
@@ -97,7 +89,7 @@
     border-color: rgb(25,157,237);
     border-style: solid;
 }
-.UpdatePForm-Item-Unit{
+.DRForm-Item-Unit{
     height: 30px;
     margin-left:-25px;
     font-size: 18px;
@@ -105,45 +97,7 @@
     font-size: 14px;
 }
 
-.Birthday{
-    padding-right:80px;
-}
-.BirthdayUnit{
-    font-size: 12.7px;
-    margin-left:-80px;
-}
-
-.UpdatePForm-IP{
-    height: 100px;
-}
-
-.UpdatePForm-IP-Lower{
-    height: 65px;
-    width: 250px;
-    border-radius: 10px;
-    color: rgb(115, 115, 115);
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    align-items: center;
-}
-.UpdatePForm-IP-Default{
-    height: 60px;
-    width: 75px;
-    border-radius: 10px;
-    color: white;
-    background-color: rgb(115, 115, 115);
-    font-size: 12px;
-    text-align: center;
-    line-height: 30px;
-}
-.UpdatePForm-IP-Saved{
-    color: white;
-    background-color: rgb(25,157,237);
-
-}
-
-.UpdatePForm-Submit{
+.DRForm-Submit{
     width: 300px;
     height: 50px;
     display: flex;
@@ -152,8 +106,7 @@
     border-radius: 10px;
 }
 
-.UpdatePForm-Submit-Name-Base{
-    cursor: pointer;
+.DRForm-Submit-Name-Base{
     width: 270px;
     height: 40px;
     font-size: 20px;
@@ -162,17 +115,17 @@
     line-height: 40px;
 }
 
-.UpdatePForm-Submit-Name-Default{
+.DRForm-Submit-Name-Default{
     color: White;
     background-color: rgb(25,157,237);
 }
 
-.UpdatePForm-Submit-Name-Mouseover{
+.DRForm-Submit-Name-Mouseover{
     color: white;
     background-color: rgb(20,100,150);
 }
 
-.UpdatePForm-Submit-Name-Click{
+.DRForm-Submit-Name-Click{
     color: white;
     background-color: rgb(10,50,80);
 }
@@ -187,4 +140,52 @@
                                  
 }
 
+.DRForm-Image-Base{
+    max-height:250px;
+    width: 250px;
+    height:auto;
+    font-size: 18px;
+    color: white;
+    background-color: rgb(115, 115, 115);
+    line-height: 30px;
+    text-align: center;
+}
 
+.DRForm-Image-i{
+    font-size: 18px;
+    color: white;
+    background-color: rgb(115, 115, 115);
+    line-height: 30px;
+    text-align: center;
+    width:auto;
+	max-width:100%;
+	height:auto;
+}
+
+
+.DRForm-Note{
+    width: 250px;
+    height: 225px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.DRForm-Note-Lower{
+    width: 250px;
+    height: 180px;
+}
+
+.DRForm-Note-Input{
+    padding-right:25px;
+    width: 250px;
+    height: 180px;
+    border-radius: 6px;
+    padding-left: 5px;
+    font-size: 18px;
+    color:black;
+    border-color: rgb(25,157,237);
+    border-style: solid;
+}
