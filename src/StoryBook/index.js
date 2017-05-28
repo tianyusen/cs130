@@ -9,6 +9,7 @@ import PatientUpdate from '../Components/patient_update';
 import DoctorUpdate from '../Components/doctor_update';
 import DoctorUpdateDR from '../Components/doctor_update_DR';
 import DoctorUpdateDrugs from '../Components/doctor_update_drugs';
+import DrugEdit from '../Components/drug_edit';
 import Login from '../Pages/LoginPage/Login';
 import Add from '../Components/Add';
 import SearchBar from '../Components/SearchBar';
@@ -71,7 +72,13 @@ storiesOf('NameCard', module)
   .add('DoctorUpdateDrugs', () => (
     <DoctorUpdateDrugs/>
   ))
-  
+
+
+  storiesOf('DrugEdit', module)
+  .add('DrugEdit', () => (
+    <DrugEdit/>
+  ))
+
 
 storiesOf('Login', module)
   .add('Login', () => (

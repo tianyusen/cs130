@@ -1,17 +1,17 @@
-.Prescription{
+.DrugEdit{
     width: 300px;
     height: 700px;
     border-radius: 10px;
     background-color: white;
 }
 
-.Prescription-Title{
+.DrugEdit-Title{
     width: 300px;
     height: 50px;
     position:relative;
 }
 
-.Prescription-Title-Name{
+.DrugEdit-Title-Name{
     height: 50px;
     color: rgb(25,157,237);
     background-color: rgba(0,0,0,0);
@@ -21,7 +21,7 @@
     line-height: 50px;
 }
 
-.Prescription-Title-Cancel{
+.DrugEdit-Title-Cancel{
     height: 50px;
     width: 35px;
     border-radius: 10px;
@@ -33,98 +33,49 @@
     right:0;
     
 }
-.Prescription-Title-Cancel-i
+.DrugEdit-Title-Cancel-i
 {
     font-size: 35px !important;
     line-height: 50px;
     color: grey;
 }
 
-.Prescription-Option-over{
+.DrugEdit-Options{
     box-shadow: inset 0 20px 20px -20px #888888;
     width: 300px;
     height: 600px;
     padding-top: 20px;
     display: flex;
-    overflow-y: auto;
-}
-
-.Prescription-Options{
-    width: 300px;
-    display: flex;
     flex-direction: column;
     justify-content: flex-start;
     align-items: center;
-    min-height: min-content;
 }
-.Prescription-AddDrug{
-    border-style: dotted;
-    border-color: rgb(25,157,237);
-    border-radius: 5px;
-    width: 250px;
-    height: 60px;
-    display: flex;
-    font-size: 24px;
-    color: rgb(25,157,237);
-    line-height: 50px;
-    align-content: center;
-    justify-content: center;
-
-}
-
-.Prescription-Item{
+.DrugEdit-Item{
     width: 250px;
     height: 65px;
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
 }
 
-.Prescription-Item-Sub{
+.DrugEdit-Item-Name{
     width: 250px;
-    height: 60px;
-    display: flex;
-    flex-direction: row;
-    justify-content: flex-start;
-    border-style: solid;
-    border-color: rgb(25,157,237);
-    border-radius: 5px;
-}
-
-.Prescription-Item-Left{
-    width: 185px;
-    height: 55px;
+    height: 30px;
     font-size: 18px;
     color: rgb(115, 115, 115);
-    margin-left: 3px;
+    line-height: 30px;
     text-align: left;
-
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: center;
-}
-
-.Prescription-Item-Right{
-    width: 60px;
-    height: 55px;
-    text-align: right;
-    margin-right: 5px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    align-items: flex-start;
 }
 
 
-.Prescription-Item-Text{
-    width: 100%;
-    height: 30%;
-    font-size: 15px;
-}
 
-.Prescription-Item-Input{
+
+.DrugEdit-Item-Lower{
+    width: 250px;
+    height: 30px;
+}
+.DrugEdit-Item-Input{
     padding-right:25px;
     width: 250px;
     height: 30px;
@@ -135,8 +86,7 @@
     border-color: rgb(25,157,237);
     border-style: solid;
 }
-
-.Prescription-Item-Unit{
+.DrugEdit-Item-Unit{
     height: 30px;
     margin-left:-25px;
     font-size: 18px;
@@ -144,7 +94,7 @@
     font-size: 14px;
 }
 
-.Prescription-Submit{
+.DrugEdit-Submit{
     width: 300px;
     height: 50px;
     display: flex;
@@ -153,7 +103,7 @@
     border-radius: 10px;
 }
 
-.Prescription-Submit-Name-Base{
+.DrugEdit-Submit-Name-Base{
     width: 270px;
     height: 40px;
     font-size: 20px;
@@ -162,17 +112,17 @@
     line-height: 40px;
 }
 
-.Prescription-Submit-Name-Default{
+.DrugEdit-Submit-Name-Default{
     color: White;
     background-color: rgb(25,157,237);
 }
 
-.Prescription-Submit-Name-Mouseover{
+.DrugEdit-Submit-Name-Mouseover{
     color: white;
     background-color: rgb(20,100,150);
 }
 
-.Prescription-Submit-Name-Click{
+.DrugEdit-Submit-Name-Click{
     color: white;
     background-color: rgb(10,50,80);
 }
@@ -183,48 +133,34 @@
      -khtml-user-select: none; /* Konqueror HTML */
        -moz-user-select: none; /* Firefox */
         -ms-user-select: none; /* Internet Explorer/Edge */
-            user-select: none; /* Non-prefixed version, currently*/                             
+            user-select: none; /* Non-prefixed version, currently*/
+                                 
 }
 
-
-.Prescription-Item-Name{
+.DrugEdit-Image-Base{
+    max-height:250px;
     width: 250px;
-    height: 30px;
+    height:auto;
     font-size: 18px;
-    color: rgb(115, 115, 115);
+    color: white;
+    background-color: rgb(115, 115, 115);
     line-height: 30px;
-    text-align: left;
+    text-align: center;
 }
 
-.Prescription-Item-Lower{
-    width: 250px;
-    height: 30px;
-}
-
-.Prescription-Item-Time{
-    width: 250px;
-    height: 65px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    
-}
-
-.Prescription-Item-Input{
-    padding-right:25px;
-    width: 250px;
-    height: 30px;
-    border-radius: 5px;
-    padding-left: 5px;
+.DrugEdit-Image-i{
     font-size: 18px;
-    color:grey;
-    border-color: rgb(25,157,237);
-    border-style: solid;
+    color: white;
+    background-color: rgb(115, 115, 115);
+    line-height: 30px;
+    text-align: center;
+    width:auto;
+	max-width:100%;
+	height:auto;
 }
 
 
-.Prescription-Note{
+.DrugEdit-Note{
     width: 250px;
     height: 175px;
     display: flex;
@@ -234,12 +170,12 @@
 }
 
 
-.Prescription-Note-Lower{
+.DrugEdit-Note-Lower{
     width: 250px;
     height: 180px;
 }
 
-.Prescription-Note-Input{
+.DrugEdit-Note-Input{
     padding-right:25px;
     width: 250px;
     height: 130px;
@@ -251,7 +187,4 @@
     border-style: solid;
 }
 
-.pointer_hover
-{
-    cursor: pointer;
-}
+
