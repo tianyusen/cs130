@@ -7,6 +7,7 @@ class PatientSignUp extends Component {
     constructor(props){
         super(props);
         this.state={
+            uniqueID  :0,
             page : 'base',
             personal_id:"xiangtao1995@gmail.com",
             token:"12312fsdf2131321321",
@@ -151,6 +152,7 @@ class PatientSignUp extends Component {
         {
             this.prescriptionHover();
             console.log('Open prescription');
+            this.setState({page:"Prescription"});
         }
         prescriptionHover()
         {this.setState({prescriptionClass: "UpdateDForm-IP-Base UpdateDForm-IP-Mouseover noselect"})}
@@ -300,13 +302,15 @@ class PatientSignUp extends Component {
     cancelBack()
     {
         this.setState({page:"base"})
+        this.resetButtons();
+        this.setState({uniqueID:this.state.uniqueID+1});
     }
 
     saveInfo(info)
     {
         if(info.prescription)
         {
-
+             this.setState({Prescription:true, visits:info.visits});
         }
         if(!info.prescription)
         {if(info.left)
@@ -319,6 +323,14 @@ class PatientSignUp extends Component {
             }
             
         }
+        this.resetButtons();
+    }
+
+    resetButtons()
+    {
+        this.DBleftDefault();
+        this.DBrightDefault();
+        this.prescriptionDefault();
     }
 
     render() {
@@ -330,17 +342,17 @@ class PatientSignUp extends Component {
             
             {console.log('LeftPage');
             return(
-            <DoctorUpdateDR left = {true} cancelBack ={this.cancelBack.bind(this)} saveInfo = {this.saveInfo.bind(this)}/>
+            <DoctorUpdateDR key = {this.state.uniqueID} left = {true} cancelBack ={this.cancelBack.bind(this)} saveInfo = {this.saveInfo.bind(this)}/>
              
         )}
         if(this.state.page == 'RightDR')
         {console.log('RightPage');
         return(
-            <DoctorUpdateDR left = {false} cancelBack = {this.cancelBack.bind(this)} saveInfo = {this.saveInfo.bind(this)}/>
+            <DoctorUpdateDR key = {this.state.uniqueID} left = {false} cancelBack = {this.cancelBack.bind(this)} saveInfo = {this.saveInfo.bind(this)}/>
         )}
         if(this.state.page == 'Prescription')
         return(
-            <DoctorUpdateDrugs cancelBack = {this.cancelBack.bind(this)} saveInfo = {this.saveInfo.bind(this)}/>
+            <DoctorUpdateDrugs key = {this.state.uniqueID} cancelBack = {this.cancelBack.bind(this)} saveInfo = {this.saveInfo.bind(this)}/>
         )
     }
         
