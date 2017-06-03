@@ -22,8 +22,14 @@ class Login extends Component {
                             <input className="form-control" type="password" name="password"/>
                         </div>
                         <div className = "login-group">
-                            <input className="btn btn-primary btn-block" type="submit" value="Login" name="login"/>
+                            <input
+                                onClick={this.props.SignOut} 
+                                className="btn btn-primary btn-block" type="submit" value="Login" name="login"/>
                         </div>
+                        <div className = "login-group">
+                            <input className="btn btn-primary btn-block" type="submit" value="Sign Up" name="signup"/>
+                        </div>
+
                         </div>
                     </div>
                     <div className="col-sm-4"></div>

@@ -1,0 +1,223 @@
+.UpdateDForm{
+    width: 300px;
+    height: 700px;
+    border-radius: 10px;
+    background-color: white;
+}
+
+.UpdateDForm-Title{
+    width: 300px;
+    height: 50px;
+}
+
+.UpdateDForm-Title-Name{
+    height: 50px;
+    color: rgb(25,157,237);
+    background-color: rgba(0,0,0,0);
+    font-size: 20px;
+    border-radius: 10px;
+    text-align: center;
+    line-height: 50px;
+}
+
+.UpdateDForm-Title-Cancel{
+    height: 50px;
+    width: 35px;
+    border-radius: 10px;
+    float: right;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    right:0;
+    
+}
+.UpdateDForm-Title-Cancel-i
+{
+    font-size: 35px !important;
+    line-height: 50px;
+    color: grey;
+    cursor: pointer;
+}
+
+
+.UpdateDForm-Options{
+    box-shadow: inset 0 20px 20px -20px #888888;
+    width: 300px;
+    height: 600px;
+    padding-top: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.UpdateDForm-Item{
+    width: 250px;
+    height: 65px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.UpdateDForm-Item-Name{
+    width: 250px;
+    height: 30px;
+    font-size: 18px;
+    color: rgb(115, 115, 115);
+    line-height: 30px;
+    text-align: left;
+}
+
+
+.UpdateDForm-FixedItem{
+    width: 250px;
+    height: 20px;
+    font-size: 18px;
+    color: rgb(115, 115, 115);
+    line-height: 30px;
+    text-align: left;
+}
+
+.UpdateDForm-Item-Lower{
+    width: 250px;
+    height: 30px;
+}
+
+
+.UpdateDForm-Item-Input{
+    padding-right:25px;
+    width: 250px;
+    height: 30px;
+    border-radius: 5px;
+    padding-left: 5px;
+    font-size: 18px;
+    color:grey;
+    border-color: rgb(25,157,237);
+    border-style: solid;
+}
+.UpdateDForm-Item-Unit{
+    height: 30px;
+    margin-left:-25px;
+    font-size: 18px;
+    color:grey;
+    font-size: 14px;
+}
+
+.UpdateDForm-IP{
+    height: 100px;
+}
+
+.UpdateDForm-IP-Lower{
+    height: 65px;
+    width: 250px;
+    border-radius: 10px;
+    color: rgb(115, 115, 115);
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.UpdateDForm-IP-Base{
+     cursor: pointer;
+    height: 60px;
+    width: 75px;
+    border-radius: 10px;
+    font-size: 12px;
+    text-align: center;
+    line-height: 30px;
+}
+
+.UpdateDForm-IP-Default{
+    color: white;
+    background-color: rgb(115, 115, 115);
+}
+.UpdateDForm-IP-Saved{
+    color: white;
+    background-color: rgb(25,157,237);
+
+}
+
+.UpdateDForm-Submit{
+    width: 300px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+}
+
+.UpdateDForm-Submit-Name-Base{
+    cursor: pointer;
+    width: 270px;
+    height: 40px;
+    font-size: 20px;
+    border-radius: 10px;
+    text-align: center;
+    line-height: 40px;
+}
+
+.UpdateDForm-Submit-Name-Default{
+    color: White;
+    background-color: rgb(25,157,237);
+}
+
+.UpdateDForm-Submit-Name-Mouseover{
+    color: white;
+    background-color: rgb(20,100,150);
+}
+
+.UpdateDForm-Submit-Name-Click{
+    color: white;
+    background-color: rgb(10,50,80);
+}
+
+.noselect {
+  -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+     -khtml-user-select: none; /* Konqueror HTML */
+       -moz-user-select: none; /* Firefox */
+        -ms-user-select: none; /* Internet Explorer/Edge */
+            user-select: none; /* Non-prefixed version, currently*/           
+}
+
+
+.UpdateDForm-IP-Mouseover{
+    color: white;
+    background-color: rgb(20,100,150);
+}
+
+.UpdateDForm-IP-Click{
+    color: white;
+    background-color: rgb(10,50,80);
+}
+
+.UpdateDForm-Messsage{
+    width: 250px;
+    height: 225px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.UpdateDForm-Message-Lower{
+    width: 250px;
+    height: 180px;
+}
+
+.UpdateDForm-Message-Input{
+    padding-right:25px;
+    width: 250px;
+    height: 180px;
+    border-radius: 6px;
+    padding-left: 5px;
+    font-size: 18px;
+    color:black;
+    border-color: rgb(25,157,237);
+    border-style: solid;
+    vertical-align: top;
+    text-align: left;
+}
