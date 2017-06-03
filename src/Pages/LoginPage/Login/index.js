@@ -7,8 +7,8 @@ class Login extends Component {
             <div className="container">
                 <div className="login-component">
                 <div className="row">
-                    <div className="col-sm-3"></div>
-                    <div className="col-sm-6">
+                    <div className="col-sm-4"></div>
+                    <div className="col-sm-4">
                         <div className="panel panel-default">
                         <div className = "text-center" >
                             <h4>Log in to your account</h4>
@@ -26,7 +26,7 @@ class Login extends Component {
                         </div>
                         </div>
                     </div>
-                    <div className="col-sm-3"></div>
+                    <div className="col-sm-4"></div>
                 </div>
                 </div>
             </div>
