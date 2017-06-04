@@ -117,7 +117,7 @@ class PatientSignUp extends Component {
     }
     postUpdate()
     {
-        axios.post('http://localhost:9000/doctor_update/id', {
+      axios.post('http://localhost:9000/doctor_update/id', {
       personal_id:this.state.personal_id,
       token:this.state.token,
       name:this.state.name,
