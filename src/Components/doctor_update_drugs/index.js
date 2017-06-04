@@ -6,17 +6,9 @@ class DoctorUpdateDrugs extends Component {
     constructor(props){
         super(props);
         this.state={
-            follow_up:"",
-            notes:"",
-            drug_use:[{
-                 drug:"xxx1",
-                 dose:"1 pill per day",
-                 len:"1 year"
-                },{
-                 drug:"xxx2",
-                 dose:"2 pill per day",
-                 len:"2 year"
-                }],
+            follow_up:props.visits.follow_up_time,
+            notes:props.visits.Note,
+            drug_use:props.visits.drug_use,
             page:"base",
             submitClass : "Prescription-Submit-Name-Default Prescription-Submit-Name-Base noselect",
             uniqueKey:0,
@@ -38,6 +30,14 @@ class DoctorUpdateDrugs extends Component {
     'height:'+ `${this.state.height}`+'\n'+
     'weight:'+ `${this.state.weight}` +'\n'+
     'sex:'+ this.state.sex +'\n')
+    var info ={ 
+        prescription:true,
+        visits:{
+             visit_time:"",
+             follow_up_time: this.state.follow_up,
+             Note:this.state.notes,
+             drug_use:this.state.drug_use}};
+    this.props.saveInfo(info);
     }
     
     submitHover()

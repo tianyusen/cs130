@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import './style.css';
-
+import axios from 'axios';
 class PatientUpdate extends Component {
     constructor(props){
         super(props);
@@ -29,7 +29,32 @@ class PatientUpdate extends Component {
     'blood_pressure_high:'+ this.state.blood_pressure_high +'\n'+
     'blood_pressure_low:'+ `${this.state.blood_pressure_low}`+'\n'+
     'Date: '+d.getDate() + '-'+ d.getMonth()+ '-'+ d.getFullYear() + '-'+d.getHours() + ':'+d.getMinutes() + ':'+d.getSeconds()
-    )}
+    )
+    this.postNewData();
+    }
+    
+    postNewData()
+    {
+        axios.post('http://localhost:9000/patient_update', {
+            blood_sugar:this.state.blood_sugar,
+            blood_fat:this.state.blood_fat,
+            blood_pressure:{
+                high:this.state.blood_pressure_high,
+                low:this.state.blood_pressure_low
+            }
+        })
+        .then((response)=>{
+            if (response.token == null)
+            {
+                console.log("Token not returned / wrong username+password");
+                return;
+            }
+            console.log(response.token);
+        })
+        .catch(function (error) {
+            console.log(error);
+        })
+    }
     
 
     submitHover()

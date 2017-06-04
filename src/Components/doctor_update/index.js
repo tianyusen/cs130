@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import DoctorUpdateDR from '../../Components/doctor_update_DR';
 import DoctorUpdateDrugs from '../../Components/doctor_update_drugs';
 import './style.css';
+import axios from 'axios';
+import Time from 'react-time';
 
 class PatientSignUp extends Component {
     constructor(props){
@@ -50,9 +52,9 @@ class PatientSignUp extends Component {
             DBleftClass: "UpdateDForm-IP-Base UpdateDForm-IP-Default noselect",
             DBrightClass: "UpdateDForm-IP-Base UpdateDForm-IP-Default noselect",
             prescriptionClass: "UpdateDForm-IP-Base UpdateDForm-IP-Default noselect",
-            DBleft:true,
+            DBleft:false,
             DBright:false,
-            Prescription:false
+            prescription:false
 
         }
 
@@ -94,7 +96,71 @@ class PatientSignUp extends Component {
     'weight:'+ `${this.state.weight}` +'\n'+
     'DR_right_score:'+ `${this.state.DR_right_score}` +'\n'+
     'DR_left_score:'+ `${this.state.DR_left_score}` +'\n'+
-    'sex:'+ this.state.sex +'\n')}
+    'sex:'+ this.state.sex +'\n')
+    this.setCurrentTime();
+    this.postUpdate();
+}
+
+    setCurrentTime()
+    {
+        var time = new Date().now();
+        var timestring = <Time value={time} format="YYYY-MM-DD-HH-mm" />;
+        var newvisits = this.state.visits;
+        newvisits.visit_time = timestring;
+        this.setState({
+            DR_time:timestring,
+            blood_pressure_time:timestring,
+            blood_fat_time:timestring,
+            blood_sugar_time:timestring,
+            visits:newvisits
+        });
+    }
+    postUpdate()
+    {
+        axios.post('http://localhost:9000/doctor_update/id', {
+      personal_id:this.state.personal_id,
+      token:this.state.token,
+      name:this.state.name,
+      weight:this.state.weight,
+      height:this.state.height,
+      birthday:this.state.birthday,
+      last_visit:this.state.last_visit,
+      DR:{
+            Time:this.state.DR_time,
+            left_score:this.state.DR_left_score,
+            right_score:this.state.DR_right_score,
+            left_photo:this.state.DR_left_photo,
+            right_photo:this.state.DR_right_photo,
+            right_note:this.state.DR_right_note,
+            left_note:this.state.DR_left_note
+      },
+      blood_fat:{
+            time:this.state.blood_fat_time,
+            value:this.state.blood_fat
+      },
+      blood_pressure:{
+            time:this.state.blood_pressure_time,
+            high:this.state.blood_pressure_high,
+            low:this.state.blood_pressure_low
+      },
+      blood_sugar:{
+            time:this.state.blood_sugar_time,
+            value:this.state.blood_sugar
+      },
+      visits:this.state.visits
+      })
+        .then((response)=>{
+            if (response.token == null)
+            {
+                console.log("Token not returned / wrong username+password");
+                return;
+            }
+            console.log(response.token);
+        })
+        .catch(function (error) {
+            console.log(error);
+        })
+    }
     
     submitHover()
     {this.setState({submitClass: "UpdateDForm-Submit-Name-Base UpdateDForm-Submit-Name-Mouseover noselect"})}
@@ -152,7 +218,7 @@ class PatientSignUp extends Component {
         {
             this.prescriptionHover();
             console.log('Open prescription');
-            this.setState({page:"Prescription"});
+            this.setState({page:"prescription"});
         }
         prescriptionHover()
         {this.setState({prescriptionClass: "UpdateDForm-IP-Base UpdateDForm-IP-Mouseover noselect"})}
@@ -310,7 +376,7 @@ class PatientSignUp extends Component {
     {
         if(info.prescription)
         {
-             this.setState({Prescription:true, visits:info.visits});
+             this.setState({prescription:true, visits:info.visits});
         }
         if(!info.prescription)
         {if(info.left)
@@ -342,17 +408,23 @@ class PatientSignUp extends Component {
             
             {console.log('LeftPage');
             return(
-            <DoctorUpdateDR key = {this.state.uniqueID} left = {true} cancelBack ={this.cancelBack.bind(this)} saveInfo = {this.saveInfo.bind(this)}/>
+            <DoctorUpdateDR key = {this.state.uniqueID} left = {true} cancelBack ={this.cancelBack.bind(this)} saveInfo = {this.saveInfo.bind(this)}
+            score = {this.state.DR_left_score}
+            note = {this.state.DR_left_note}
+            photo = {this.state.DR_left_photo}/>
              
         )}
         if(this.state.page == 'RightDR')
         {console.log('RightPage');
         return(
-            <DoctorUpdateDR key = {this.state.uniqueID} left = {false} cancelBack = {this.cancelBack.bind(this)} saveInfo = {this.saveInfo.bind(this)}/>
+            <DoctorUpdateDR key = {this.state.uniqueID} left = {false} cancelBack = {this.cancelBack.bind(this)} saveInfo = {this.saveInfo.bind(this)}            
+            score = {this.state.DR_right_score}
+            note = {this.state.DR_right_note}
+            photo = {this.state.DR_right_photo}/>
         )}
-        if(this.state.page == 'Prescription')
+        if(this.state.page == 'prescription')
         return(
-            <DoctorUpdateDrugs key = {this.state.uniqueID} cancelBack = {this.cancelBack.bind(this)} saveInfo = {this.saveInfo.bind(this)}/>
+            <DoctorUpdateDrugs key = {this.state.uniqueID} cancelBack = {this.cancelBack.bind(this)} saveInfo = {this.saveInfo.bind(this)} visits = {this.state.visits}/>
         )
     }
         

@@ -7,9 +7,9 @@ class PatientSignUp extends Component {
         this.state={
             left :false,
             submitClass : " DRForm-Submit-Name-Default DRForm-Submit-Name-Base noselect",
-            DR_score:0,
-            DR_photo:"https://cdn.psychologytoday.com/sites/default/files/blogs/75174/2014/03/146854-149238.jpg",
-            DR_note:"its really bad",
+            DR_score:props.score,
+            DR_photo:props.photo,
+            DR_note:props.note,
         }
         
         
