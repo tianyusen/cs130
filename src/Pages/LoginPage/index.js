@@ -19,6 +19,7 @@ class LoginPage extends Component {
         })
         .then(function (response) {
             sessionStorage.setItem('token', response['data']['data']['json']['auth_token']);
+            sessionStorage.setItem('identity', 'doctor');
             browserHistory.push('/');
 
         })
@@ -34,6 +35,7 @@ class LoginPage extends Component {
         })
         .then(function (response) {
             sessionStorage.setItem('token', response['data']['data']['json']['auth_token']);
+            sessionStorage.setItem('identity', 'doctor');
             browserHistory.push('/');
         })
         .catch(function (error) {
@@ -48,6 +50,7 @@ class LoginPage extends Component {
         })
         .then(function (response) {
             sessionStorage.setItem('token', response['data']['data']['json']['auth_token']);
+            sessionStorage.setItem('identity', 'patient');
             browserHistory.push('/');
         })
         .catch(function (error) {
@@ -64,6 +67,7 @@ class LoginPage extends Component {
     
     render() {
         return (
+
             <div className="login-container">
                 <Login
                     SignUp={this.SignUp.bind(this)}
