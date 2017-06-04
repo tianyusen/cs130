@@ -22,8 +22,8 @@ class PatientSignUp extends Component {
             DR_time:"2017-03-34-10-12",
             DR_left_score:4,
             DR_right_score:3,
-            DR_left_photo:"http://s3.us.1231231313",
-            DR_right_photo:"http://s3.us.1231231313",
+            DR_left_photo:"",
+            DR_right_photo:"",
             DR_right_note:"its really bad",
             DR_left_note:"its good",
             

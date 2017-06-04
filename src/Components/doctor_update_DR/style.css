@@ -142,7 +142,7 @@
 
 .DRForm-Image-Base{
     max-height:250px;
-    width: 250px;
+    width: 245px;
     height:auto;
     font-size: 18px;
     color: white;
@@ -152,6 +152,8 @@
 }
 
 .DRForm-Image-i{
+    min-height: 40px;
+    max-height: 160px;
     font-size: 18px;
     color: white;
     background-color: rgb(115, 115, 115);
@@ -181,7 +183,8 @@
 .DRForm-Note-Input{
     padding-right:25px;
     width: 250px;
-    height: 180px;
+    min-height: 80px;
+    height: 100%;
     border-radius: 6px;
     padding-left: 5px;
     font-size: 18px;
