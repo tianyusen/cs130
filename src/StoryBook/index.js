@@ -14,6 +14,7 @@ import Login from '../Pages/LoginPage/Login';
 import Add from '../Components/Add';
 import SearchBar from '../Components/SearchBar';
 import {Card_create_group} from '../Components/patient_group_card';
+import EmailForm from '../Components/EmailForm';
 import '../styleSheet/bootstrap/css/bootstrap.css';
 import '../styleSheet/font-awsome/css/font-awesome.css';
 
@@ -96,4 +97,9 @@ storiesOf('SearchBar', module)
 storiesOf('Add Button', module)
   .add('Example', ()=>(
     <Add/>
+))
+
+storiesOf('Email Form', module)
+  .add('Example', ()=>(
+    <EmailForm/>
 ))

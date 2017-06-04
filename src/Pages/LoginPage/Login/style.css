@@ -1,4 +1,21 @@
 @import url("//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css");
+.login-container .container{
+    margin: 0px;
+    padding: 0px;
+    width: 100%;
+}
+
+.login-component{
+    background: linear-gradient(to bottom right, #78BCFF, #3333ff);
+    height: 100vh;
+
+    right: 0px !important;
+    
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-content: space-around;
+}
 
 .login-component .input-group {
     margin-top: 30px;
@@ -10,5 +27,7 @@
 
 .login-component .panel-default {
     padding: 20px 30px 30px 30px;
-    background:#AAA;
+    background:white;
+    border-radius: 5px;
+    box-shadow: 0 1px 10px rgba(0, 0, 0, 0.46);
 }

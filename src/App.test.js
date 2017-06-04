@@ -5,7 +5,6 @@ import { shallow } from 'enzyme';
 import SearchBar from './Components/SearchBar';
 import Add from './Components/Add';
 import Logo from './Components/Logo';
-import UploadForm from './Components/UploadForm';
 import DoctorUpdate from './Components/doctor_update';
 import LargePatientCard from './Components/large_patient_card';
 import PatientSignUp from './Components/patient_sign_up';
@@ -38,9 +37,7 @@ it('render Logo', () => {
   shallow(<Logo />);
 });
 
-it('render UploadForm', () => {
-  shallow(<UploadForm />);
-});
+
 
 it('render DoctorUpdate', () => {
   shallow(<DoctorUpdate />);

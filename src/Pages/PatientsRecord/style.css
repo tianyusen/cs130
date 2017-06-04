@@ -85,8 +85,10 @@
     overflow: scroll;
 }
 .PatientsRecord-form-pop{
+
     /*overflow: scroll;*/
     overflow: hidden;
+
 }
 .show {
     visibility: visible;
