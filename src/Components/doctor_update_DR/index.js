@@ -1,15 +1,15 @@
 import React, { Component } from 'react';
 import './style.css';
-
+import PicDropzone from '../../Components/pic_dropzone';
 class PatientSignUp extends Component {
     constructor(props){
         super(props);
         this.state={
             left :false,
             submitClass : " DRForm-Submit-Name-Default DRForm-Submit-Name-Base noselect",
-            DR_score:0,
-            DR_photo:"https://cdn.psychologytoday.com/sites/default/files/blogs/75174/2014/03/146854-149238.jpg",
-            DR_note:"its really bad",
+            DR_score:props.score,
+            DR_photo:props.photo,
+            DR_note:props.note,
         }
         
         
@@ -21,8 +21,12 @@ class PatientSignUp extends Component {
 
     componentDidMount() {
         this.setState({left: this.props.left});
+        this.interval = setInterval(() => this.setState({ time: Date.now() }), 1000);
     }
     
+    componentWillUnmount() {
+        clearInterval(this.interval);
+    }
 
     submitClick(){
     this.submitHover()
@@ -53,6 +57,12 @@ class PatientSignUp extends Component {
     submitMousDown()
     {this.setState({submitClass: "DRForm-Submit-Name-Base DRForm-Submit-Name-Click noselect"})}
 
+    uploadreturn(url)
+    {
+        console.log(url);
+        this.setState({DR_photo:url});
+    }
+
     windowName()
     {
         if(this.state.left == true)
@@ -75,9 +85,9 @@ class PatientSignUp extends Component {
                 </div>
                 <div className="DRForm-Options">
                     {/*Items starts here*/}
-
+                    <PicDropzone Raddress = {this.uploadreturn.bind(this)}/>
                     <div className="DRForm-Image-Base noselect">
-                        <img className="DRForm-Image-i noselect" src={this.state.DR_photo} alt="DR Image" />
+                        <img className="DRForm-Image-i noselect" src={this.state.DR_photo+"?"+this.state.time}  alt="DR Image" hidden = {this.state.DR_photo==""}/>
                     </div>
 
                     <div className="DRForm-Item">
@@ -85,7 +95,7 @@ class PatientSignUp extends Component {
                         <div className="DRForm-Item-Lower">
                             <input className="DRForm-Item-Input "  type="text"name="link" 
                             value={this.state.DR_photo}
-                            onInput={(e)=>this.setState({DR_photo: e.target.value})} />
+                            onInput={(e)=>this.setState({DR_photo: e.target.value})}  disabled/>
                         </div>
                     </div>
 
