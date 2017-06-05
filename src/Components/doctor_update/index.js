@@ -244,6 +244,36 @@ class PatientSignUp extends Component {
         return "No Data";
     }
 
+    renderImageAndPrescription(){
+        return (
+            <div className="UpdateDForm-IP">
+                        <div className="UpdateDForm-Item-Name noselect">Images and Prescription:</div>
+                        <div className="UpdateDForm-IP-Lower">
+                            <div className={this.state.DBleftClass}
+                             onClick={this.DBleftClick}
+                            onMouseDown={this.DBleftMousDown}
+                            onMouseOver={this.DBleftHover}
+                            onMouseLeave={this.DBleftDefault}
+                             >DR(left)<br/>{this.Dataexit('DBleft')}</div>
+                            <div className={this.state.DBrightClass}
+                            onClick={this.DBrightClick}
+                            onMouseDown={this.DBrightMousDown}
+                            onMouseOver={this.DBrightHover}
+                            onMouseLeave={this.DBrightDefault}
+                             >DR(right)<br/>{this.Dataexit('DBright')}</div>
+                            <div className={this.state.prescriptionClass} 
+                            onClick={this.prescriptionClick}
+                            onMouseDown={this.prescriptionMousDown}
+                            onMouseOver={this.prescriptionHover}
+                            onMouseLeave={this.prescriptionDefault}
+                            >Prescription<br/>{this.Dataexit('prescription')}</div>
+                        </div>
+                    </div>
+        )
+    }
+
+    
+
     renderBase()
     {
         return (
@@ -326,7 +356,14 @@ class PatientSignUp extends Component {
                         </div>
                     </div>
 
-                    <div className="UpdateDForm-IP">
+                    
+                    {(()=>{
+                        if (sessionStorage.getItem('identity') === 'doctor')
+                            return this.renderImageAndPrescription();
+                    })()}
+                
+
+                    {/*<div className="UpdateDForm-IP">
                         <div className="UpdateDForm-Item-Name noselect">Images and Prescription:</div>
                         <div className="UpdateDForm-IP-Lower">
                             <div className={this.state.DBleftClass}
@@ -349,7 +386,7 @@ class PatientSignUp extends Component {
                             >Prescription<br/>{this.Dataexit('prescription')}</div>
                         </div>
                     </div>
-
+*/}
 
 
                 </div>
