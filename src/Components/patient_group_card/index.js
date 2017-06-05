@@ -25,6 +25,8 @@ export class Card_create_group extends Component {
             Policy:'No Policy',
             dr_max:"4",
             dr_min:"0",
+            startDate:null,
+            endDate: null
         };
     };
 
@@ -46,6 +48,13 @@ export class Card_create_group extends Component {
     handleInput(e){
         this.setState({
             [e.target.name]:e.target.value
+        })
+    }
+
+    handleDataInput(start, end){
+        this.setState({
+            startDate: start,
+            endDate: end
         })
     }
 
