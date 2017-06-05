@@ -15,6 +15,7 @@ import Add from '../Components/Add';
 import SearchBar from '../Components/SearchBar';
 import {Card_create_group} from '../Components/patient_group_card';
 import EmailForm from '../Components/EmailForm';
+import AdjustableBloodStatLineChart from '../Components/data_charts/adjustable_multi_line';
 import '../styleSheet/bootstrap/css/bootstrap.css';
 import '../styleSheet/font-awsome/css/font-awesome.css';
 
@@ -28,6 +29,9 @@ storiesOf('Charts', module)
 storiesOf('Charts', module)
   .add('Blood Line Chart', () => (
     <BloodStatLineChart/>
+  ))
+  .add('Adjustable Blood Line Chart', () => (
+    <AdjustableBloodStatLineChart/>
   ));
 
 storiesOf('NameCard', module)
