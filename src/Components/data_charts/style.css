@@ -18,6 +18,17 @@
     position: relative;
 }
 
+.AdjustableRectangleBackground{
+    display: flex;
+    flex-direction: column;
+    height: 480px;
+    width: 1200px;
+    border-radius: 10px;
+    background-color: white;
+    position: relative;
+    box-shadow: 2px 2px 2px 2px #888888;
+}
+
 .Title{
     padding-top: 1%;
     padding-left: 6%;
@@ -29,4 +40,11 @@
     padding-left: 5%;
     height: 85%;
     width: 95%;
+}
+
+.AdjustableChart{
+    padding-left: 5%;
+    height: 60%;
+    width: 100%;
+    /*background-color: rgba(50,0,0,50);*/
 }

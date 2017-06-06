@@ -31,3 +31,30 @@
     border-radius: 5px;
     box-shadow: 0 1px 10px rgba(0, 0, 0, 0.46);
 }
+
+
+.panel-default .panel-heading {
+	background-color: white !important;
+	border-color: white;
+	text-align:center;
+}
+.panel-default .panel-heading a{
+	/*text-decoration: none;*/
+	color: #666;
+	font-size: 15px;
+	/*-webkit-transition: all 0.1s linear;
+	-moz-transition: all 0.1s linear;*/
+	transition: all 0.1s linear;
+}
+.panel-default .panel-heading a.select{
+	color: #4881ea;
+	font-size: 15px;
+    font-weight: bold;
+}
+.panel-default .panel-heading hr{
+	margin-top: 5px;
+	margin-bottom: 0px;
+	border: 0;
+	height: 1px;
+	/*background-image: linear-gradient(left,rgba(0,0,0,0),rgba(0,0,0,0.15),rgba(0,0,0,0));*/
+}

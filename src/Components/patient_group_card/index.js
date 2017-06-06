@@ -22,9 +22,11 @@ export class Card_create_group extends Component {
             age_min:"0",
             gender:'Both',
             medication:'No Medication',
-            Policy:'No Policy',
+            policy:'No Policy',
             dr_max:"4",
             dr_min:"0",
+            startDate:null,
+            endDate: null
         };
     };
 
@@ -46,6 +48,13 @@ export class Card_create_group extends Component {
     handleInput(e){
         this.setState({
             [e.target.name]:e.target.value
+        })
+    }
+
+    handleDataInput(start, end){
+        this.setState({
+            startDate: start,
+            endDate: end
         })
     }
 
@@ -181,8 +190,8 @@ export class Card_create_group extends Component {
                     </div>
                     <div className="right-block">
                         <DropdownButton
-                            onSelect={this.handleDropDownSelect('Policy')}  
-                            title={this.state.Policy} bsSize="small">
+                            onSelect={this.handleDropDownSelect('policy')}  
+                            title={this.state.policy} bsSize="small">
                             <MenuItem eventKey="1">No Policy</MenuItem>
                             <MenuItem eventKey="2">Policy 1</MenuItem>
                             <MenuItem eventKey="3">Policy 2</MenuItem>
@@ -196,7 +205,7 @@ export class Card_create_group extends Component {
                             bsStyle="primary"
                             disabled={this.state.isAdding}
                             onClick={!this.state.isAdding ? this.handleClick.bind(this) : null}
-                            bsClass="add_group_button">
+                            bsClass="group_button">
                             <div>{this.state.isAdding ? 'Adding...' : 'Add Group'}</div>
                         </Button>
                     </div>
@@ -209,17 +218,113 @@ export class Card_create_group extends Component {
 
 
 export class Card_group extends Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            value: "",
+            isAdding: false,
+            name:'Group1',
+            age_max:"100",
+            age_min:"0",
+            gender:'Both',
+            medication:'No Medication',
+            policy:'No Policy',
+            dr_max:"4",
+            dr_min:"0",
+            startDate:null,
+            endDate: null
+        };
+    };
+
+    handleClick() {
+        this.setState({isAdding: true});
+
+        // This probably where you would have an `ajax` call
+        setTimeout(() => {
+        // Completed of async action, set loading state back
+        this.setState({isAdding: false});
+        }, 2000);
+    };
+
     render() {
         return (
             <div className="Card-group">
+
                 <div className="row_pair">
                     <div className="left-block">
-
+                        Name
                     </div>
                     <div className="right-block">
-
+                        {this.state.name}
                     </div>
                 </div>
+
+                <div className="row_pair">
+                    <div className="left-block">
+                        Age Range
+                    </div>
+                    <div className="right-block">
+                        {this.state.age_min + " TO " + this.state.age_max}
+                    </div>
+                </div>
+
+                <div className="row_pair">
+                    <div className="left-block">
+                        Gender
+                    </div>
+                    <div className="right-block">
+                        {this.state.gender}
+                    </div>
+                </div>
+
+                <div className="row_pair">
+                    <div className="left-block">
+                        Time Range
+                    </div>
+                    <div className="right-block">
+                        {"time_start to time_end"}
+                    </div>
+                </div>
+
+                <div className="row_pair">
+                    <div className="left-block">
+                        DR Score
+                    </div>
+                    <div className="right-block">
+                        {this.state.dr_min + " TO " + this.state.dr_max}
+                    </div>
+                </div>
+
+                <div className="row_pair">
+                    <div className="left-block">
+                        Medication
+                    </div>
+                    <div className="right-block">
+                        {this.state.medication}
+                    </div>
+                </div>
+
+                <div className="row_pair">
+                    <div className="left-block">
+                        Policy
+                    </div>
+                    <div className="right-block">
+                        {this.state.policy}
+                    </div>
+                </div>
+
+                <div className="row_pair">
+                    <div className="center">
+                        <Button
+                            bsStyle="primary"
+                            disabled={this.state.isAdding}
+                            onClick={!this.state.isAdding ? this.handleClick.bind(this) : null}
+                            bsClass="group_button">
+                            <div>{this.state.isAdding ? 'Removing...' : 'Remove Group'}</div>
+                        </Button>
+                    </div>
+                </div>
+
             </div>
         );
     }
