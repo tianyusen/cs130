@@ -6,6 +6,8 @@ import Add from '../../Components/Add';
 import Logo from '../../Components/Logo';
 import PatientSignUp from '../../Components/patient_sign_up';
 import PatientUpdate from '../../Components/patient_update';
+import Logout from '../../Components/logout';
+import {browserHistory} from 'react-router';
 import {Link} from 'react-router';
 import './style.css';
 
@@ -20,7 +22,11 @@ class PatientsRecord extends Component {
             // addPatient: false
         }
     }
-
+    GeneralLogout(){
+        sessionStorage.setItem('token', null);
+        sessionStorage.setItem('identity', 'doctor');
+        browserHistory.push('/login');
+    }
     componentDidMount() {
         axios.get('http://localhost:9000/patients', {
             //headers: {'Authorization': 'Bearer ' + localStorage.getItem('token')},
@@ -96,6 +102,8 @@ class PatientsRecord extends Component {
                             />
                         </div>
                     </div>
+                    
+
                     <div className="PatientsRecord-body" >
                         {this.renderRecords()}
                     </div>
@@ -107,7 +115,11 @@ class PatientsRecord extends Component {
                         </div>
                     </div>
                 </div>
-                
+                <div className="PatientsRecord-logout">
+                    <Logout
+                        GeneralLogout = {this.GeneralLogout.bind(this)}
+                    />
+                </div>
             </div>
                 
         );

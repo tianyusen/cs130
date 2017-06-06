@@ -70,6 +70,12 @@ class LoginPage extends Component {
         browserHistory.push('/patientsrecord');
     }
 
+    GeneralLogout(){
+        sessionStorage.setItem('token', null);
+        sessionStorage.setItem('identity', 'doctor');
+        browserHistory.push('/login');
+    }
+
     
     
     render() {

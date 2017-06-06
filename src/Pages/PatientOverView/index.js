@@ -7,6 +7,8 @@ import LargeNameCard from '../../Components/large_patient_card';
 import SearchBar from '../../Components/SearchBar';
 import Add from '../../Components/Add';
 import Logo from '../../Components/Logo';
+import Logout from '../../Components/logout';
+import {browserHistory} from 'react-router';
 import './style.css';
 
 
@@ -20,6 +22,12 @@ class PatientOverView extends Component {
             bloodFatData: {},
             uniqueID:0
         }
+    }
+
+    GeneralLogout(){
+        sessionStorage.setItem('token', null);
+        sessionStorage.setItem('identity', 'doctor');
+        browserHistory.push('/login');
     }
     
     componentDidMount() {
@@ -206,6 +214,11 @@ class PatientOverView extends Component {
                             DoctorUpdateForm={this.doctorUpdate.bind(this)}
                         />
                     </div>
+                </div>
+                <div className="PatientOverview-logout">
+                    <Logout
+                        GeneralLogout = {this.GeneralLogout.bind(this)}
+                    />
                 </div>
                 <div className="PatientOverview-form" id="updateForm">
                     <div className="PatientOverview-form-pop" >
