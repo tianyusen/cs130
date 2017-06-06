@@ -78,13 +78,16 @@ class PatientSignUp extends Component {
         this.prescriptionDefault = this.prescriptionDefault.bind(this);
         this.prescriptionMousDown=this.prescriptionMousDown.bind(this);
         this.Dataexit = this.Dataexit.bind(this);
+        
+    }
 
+    componentDidMount() {
         this.DBleftDefault();
         this.submitDefault();
         this.DBrightDefault();
         this.prescriptionDefault();
-        
     }
+    
 
     submitClick(){
     this.submitHover()
@@ -103,7 +106,7 @@ class PatientSignUp extends Component {
 
     setCurrentTime()
     {
-        var time = new Date().now();
+        var time = Date.now();
         var timestring = <Time value={time} format="YYYY-MM-DD-HH-mm" />;
         var newvisits = this.state.visits;
         newvisits.visit_time = timestring;
