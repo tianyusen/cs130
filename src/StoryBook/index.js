@@ -13,8 +13,9 @@ import DrugEdit from '../Components/drug_edit';
 import Login from '../Pages/LoginPage/Login';
 import Add from '../Components/Add';
 import SearchBar from '../Components/SearchBar';
-import {Card_create_group} from '../Components/patient_group_card';
+import {Card_create_group, Card_group} from '../Components/patient_group_card';
 import EmailForm from '../Components/EmailForm';
+import AdjustableBloodStatLineChart from '../Components/data_charts/adjustable_multi_line';
 import '../styleSheet/bootstrap/css/bootstrap.css';
 import '../styleSheet/font-awsome/css/font-awesome.css';
 
@@ -28,6 +29,9 @@ storiesOf('Charts', module)
 storiesOf('Charts', module)
   .add('Blood Line Chart', () => (
     <BloodStatLineChart/>
+  ))
+  .add('Adjustable Blood Line Chart', () => (
+    <AdjustableBloodStatLineChart/>
   ));
 
 storiesOf('NameCard', module)
@@ -50,6 +54,9 @@ storiesOf('NameCard', module)
   ))
   .add('Create Patient Group', () =>(
     <Card_create_group/>
+  ))
+  .add('Created Patient Group', () =>(
+    <Card_group/>
   ))
 
   storiesOf('PatientSignUp', module)
