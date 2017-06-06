@@ -22,7 +22,7 @@ class Login extends Component {
                 </div>
                 <div className = "login-group">
                     <input
-                        onClick={this.props.SignOut} 
+                        onClick={this.props.DoctorSignOut} 
                         className="btn btn-primary btn-block" type="submit" value="Register" name="register"/>
                 </div>
             </div>
