@@ -15,6 +15,7 @@ import Login from './Pages/LoginPage/Login';
 import Logout from './Components/logout';
 import NameCard from './Pages/PatientsRecord/NameCard';
 
+import PatientUpdate from './Components/patient_update';
 import Demography from './Pages/Demography';
 import LoginPage from './Pages/LoginPage';
 // import PatientOverView from './Pages/PatientOverView';
@@ -28,7 +29,7 @@ it('renders without crashing', () => {
 });
 
 /*
-  Smoke test
+Smoke test
 */
 
 it('render Search Bar', () => {
@@ -43,10 +44,6 @@ it('render Logo', () => {
   shallow(<Logo />);
 });
 
-
-// it('render DoctorUpdate', () => {
-//   shallow(<DoctorUpdate />);
-// });
 
 it('render LargePatientCard', () => {
   shallow(<LargePatientCard />);
@@ -76,76 +73,118 @@ it('Page PatientsRecord', () => {
   Logic testing
 */
 
-
-test('Fetch patient data from back-end', () => {
-
-  axios.get('http://localhost:9000/patients', {
-            //headers: {'Authorization': 'Bearer ' + localStorage.getItem('token')},
-            })
-            .then((response)=>{
-                //do soemthign with respnse
-                 expect(response.data).toEqual(expect.any(Array));
-            })
-            .catch(function(error) {
-        
-        });
-});
-
+  
+  it('render LargePatientCard', () => {
+    shallow(<LargePatientCard />);
+  });
+  
+  it('render LargePatientCard', () => {
+    shallow(<PatientSignUp />);
+  });
+  
+  /*
+  Integration test 
+  */
+  it('Page Demography', () => {
+    shallow(<Demography />);
+  });
+  
+  it('Page LoginPage', () => {
+    shallow(<LoginPage />);
+  });
+  
+  it.skip('Page PatientOverView', () => {
+    shallow(<PatientOverView />);
+  });
+  
+  it('Page PatientsRecord', () => {
+    shallow(<PatientsRecord />);
+  });
+  
+  
+  /*
+  Logic testing
+  */
+  test('Fetch patient records from back-end', () => {
+    
+    axios.get('http://localhost:9000/patients', {
+      //headers: {'Authorization': 'Bearer ' + localStorage.getItem('token')},
+    })
+    .then((response)=>{
+      //do soemthign with respnse
+      expect(response.data).toEqual(expect.any(Array));
+    })
+    .catch(function(error) {
+      
+    });
+  });
+  
+  test('Fetch patient data from back-end', () => {
+    
+    axios.get('http://localhost:9000/patients', {
+      //headers: {'Authorization': 'Bearer ' + localStorage.getItem('token')},
+    })
+    .then((response)=>{
+      //do soemthign with respnse
+      expect(response.data).toEqual(expect.any(Array));
+    })
+    .catch(function(error) {
+      
+    });
+  });
+  
+ 
 
 // Component: login
 describe('<LoginPage/>', () => {
-  it('LoginPage renders one <Login /> components', () => {
-    const wrapper = shallow(<LoginPage />);
-    expect(wrapper.find(Login)).to.have.length(1);
-  });
+    it('LoginPage renders one <Login /> components', () => {
+      const wrapper = shallow(<LoginPage />);
+      expect(wrapper.find(Login)).to.have.length(1);
+    });
 
-  it('Login render login and register buttons and clicking button renders the correct form', () => {
-    const wrapper = mount(<Login />);
-    expect(wrapper.find('#login-form-link')).to.have.length(1);
-    expect(wrapper.find('#register-form-link')).to.have.length(1);
-    sinon.spy(wrapper.instance(), 'handleAuthActionSwitch');
-    wrapper.find('#login-form-link').simulate('click');
-    wrapper.find('#register-form-link').simulate('click');
-    expect(wrapper.instance().handleAuthActionSwitch).to.have.property('callCount', 2);
-  });
+    it('Login render login and register buttons and clicking button renders the correct form', () => {
+        const wrapper = mount(<Login />);
+        expect(wrapper.find('#login-form-link')).to.have.length(1);
+        expect(wrapper.find('#register-form-link')).to.have.length(1);
+        sinon.spy(wrapper.instance(), 'handleAuthActionSwitch');
+        wrapper.find('#login-form-link').simulate('click');
+        wrapper.find('#register-form-link').simulate('click');
+        expect(wrapper.instance().handleAuthActionSwitch).to.have.property('callCount', 2);
+      });
+    
+    it('simulates click login as patient events: directs to patient page', () => {
+        const onButtonClick = sinon.spy();
+        const wrapper = mount(
+          <Login PatientSignOut={onButtonClick}/>
+        );
+        wrapper.setState({auth_action: 'login'});
+        expect(wrapper.find('#signin-form')).to.have.length(1);
+        wrapper.find('#login-patient').simulate('click');
+        expect(onButtonClick).to.have.property('callCount', 1);
+      });
 
+    it('simulates click login as doctor events: directs to doctor page', () => {
+      const onButtonClick = sinon.spy();
+      const wrapper = mount(
+        <Login DoctorSignOut={onButtonClick}/>
+      );
+      wrapper.setState({auth_action: 'login'});
+      expect(wrapper.find('#signin-form')).to.have.length(1);
+      wrapper.find('#login-doctor').simulate('click');
+      expect(onButtonClick).to.have.property('callCount', 1);
+    });
+    it('simulates click register as doctor events: directs to doctor page', () => {
+      const onButtonClick = sinon.spy();
+      const wrapper = mount(
+        <Login RegisterSignOut={onButtonClick}/>
+      );
+      wrapper.setState({auth_action: 'register'});
+      expect(wrapper.find('#register-form')).to.have.length(1);
+      wrapper.find('#register').simulate('click');
+      expect(onButtonClick).to.have.property('callCount', 1);
+    });
 
-  it('simulates click login as patient events: directs to patient page', () => {
-    const onButtonClick = sinon.spy();
-    const wrapper = mount(
-      <Login PatientSignOut={onButtonClick}/>
-    );
-    wrapper.setState({auth_action: 'login'});
-    expect(wrapper.find('#signin-form')).to.have.length(1);
-    wrapper.find('#login-patient').simulate('click');
-    expect(onButtonClick).to.have.property('callCount', 1);
-  });
-
-  it('simulates click login as doctor events: directs to doctor page', () => {
-    const onButtonClick = sinon.spy();
-    const wrapper = mount(
-      <Login DoctorSignOut={onButtonClick}/>
-    );
-    wrapper.setState({auth_action: 'login'});
-    expect(wrapper.find('#signin-form')).to.have.length(1);
-    wrapper.find('#login-doctor').simulate('click');
-    expect(onButtonClick).to.have.property('callCount', 1);
-  });
-
-
-  it('simulates click register as doctor events: directs to doctor page', () => {
-    const onButtonClick = sinon.spy();
-    const wrapper = mount(
-      <Login RegisterSignOut={onButtonClick}/>
-    );
-    wrapper.setState({auth_action: 'register'});
-    expect(wrapper.find('#register-form')).to.have.length(1);
-    wrapper.find('#register').simulate('click');
-    expect(onButtonClick).to.have.property('callCount', 1);
-  });
-
-});
-
+ });
 // Patient Record Test
 describe('<PatientsRecord />', () => {
   it('PatientsRecord renders one <Logo /> components', () => {
@@ -214,9 +253,27 @@ describe('<PatientsRecord />', () => {
           });
   });
 
-
-
-
 });
 
-// Patient Overview Test
+describe('PatientUpdate Popup', () => {
+  it('PatientUpdate has 4 input fields', () => {
+    const wrapper = shallow(<PatientUpdate />);
+    expect(wrapper.find('input')).to.have.length(4);
+    expect(wrapper.find('[name="blood_sugar"]')).to.have.length(1);
+    expect(wrapper.find('[name="blood_fat"]')).to.have.length(1);
+    expect(wrapper.find('[name="blood_pressure_low"]')).to.have.length(1);
+    expect(wrapper.find('[name="blood_pressure_high"]')).to.have.length(1);
+  });
+
+  it('Login has Cancel button', () => {
+    const wrapper = mount(<PatientUpdate />);
+    expect(wrapper.find('i.UpdatePForm-Title-Cancel-i')).to.have.length(1);
+
+  });
+
+  it('Login has Update button', () => {
+    const wrapper = mount(<PatientUpdate />);
+    expect(wrapper.find('div.UpdatePForm-Submit')).to.have.length(1);
+  });
+});
+
