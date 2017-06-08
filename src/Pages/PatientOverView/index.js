@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import axios from 'axios';
 import BloodStatLineChart from '../../Components/data_charts/line';
 import DoctorUpdateForm from '../../Components/doctor_update';
+import PatientUpdateForm from '../../Components/patient_update';
 import NewRecordCard from '../../Components/new_record_card';
 import LargeNameCard from '../../Components/large_patient_card';
 import SearchBar from '../../Components/SearchBar';
@@ -154,6 +155,22 @@ class PatientOverView extends Component {
         
     }
 
+    renderForm()
+    {
+        if(sessionStorage.getItem('identity') == "doctor")
+        return(
+                                <DoctorUpdateForm key = {this.state.uniqueID}
+                            DoctorUpdateForm={this.doctorUpdate.bind(this)}
+                         
+                        />)
+        if(sessionStorage.getItem('identity') == "patient")
+        return (
+                        <PatientUpdateForm
+                             key = {this.state.uniqueID}
+                            DoctorUpdateForm={this.doctorUpdate.bind(this)}
+                            
+                       />)
+    }
 
     render() {
         return (
@@ -222,9 +239,7 @@ class PatientOverView extends Component {
                 </div>
                 <div className="PatientOverview-form" id="updateForm">
                     <div className="PatientOverview-form-pop" >
-                        <DoctorUpdateForm key = {this.state.uniqueID}
-                            DoctorUpdateForm={this.doctorUpdate.bind(this)}
-                        />
+                        {this.renderForm()}
                     </div>
                 </div>
             </div>

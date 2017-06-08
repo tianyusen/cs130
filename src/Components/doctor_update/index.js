@@ -20,34 +20,26 @@ class PatientSignUp extends Component {
             weight:62,
 
             DR_time:"2017-03-34-10-12",
-            DR_left_score:4,
-            DR_right_score:3,
+            DR_left_score:0,
+            DR_right_score:0,
             DR_left_photo:"",
             DR_right_photo:"",
-            DR_right_note:"its really bad",
-            DR_left_note:"its good",
+            DR_right_note:"",
+            DR_left_note:"",
             
             blood_fat_time:"2017-03-34-10-12",
-            blood_fat:0.12,
+            blood_fat:0,
             blood_pressure_time:"2017-03-34-10-12",
-            blood_pressure_high:120,
-            blood_pressure_low:80,
+            blood_pressure_high:0,
+            blood_pressure_low:0,
             blood_sugar_time:"2017-03-34-10-12",
-            blood_sugar:14.32,
+            blood_sugar:0,
 
             visits:{
              visit_time:"2017-03-34-10-12",
-             follow_up_time:"2018-03-34-10-12",
-             Note:"you gotta eat an apple a day",
-             drug_use:[{
-                 drug:"xxx1",
-                 dose:"1 pill per day",
-                 len:"1 year"
-                },{
-                 drug:"xxx2",
-                 dose:"2 pill per day",
-                 len:"2 year"
-                 }]},
+             follow_up_time:"",
+             Note:"",
+             drug_use:[]},
             submitClass : " UpdateDForm-Submit-Name-Default UpdateDForm-Submit-Name-Base noselect",
             DBleftClass: "UpdateDForm-IP-Base UpdateDForm-IP-Default noselect",
             DBrightClass: "UpdateDForm-IP-Base UpdateDForm-IP-Default noselect",
@@ -250,7 +242,7 @@ class PatientSignUp extends Component {
     renderImageAndPrescription(){
         return (
             <div className="UpdateDForm-IP">
-                        <div className="UpdateDForm-Item-Name noselect">Images and Prescription:</div>
+                        <div className="UpdateDForm-Item-Name noselect">Images and Prescriptions:</div>
                         <div className="UpdateDForm-IP-Lower">
                             <div className={this.state.DBleftClass}
                              onClick={this.DBleftClick}

@@ -5,12 +5,12 @@ class PatientSignUp extends Component {
     constructor(props){
         super(props);
         this.state={
-            personal_id:"xiangtao1995@gmail.com",
-            pass_word:"123456674",
-            name:"taoxiang",
-            birthday:"19951124",
-            height:180,
-            weight:62,
+            personal_id:"",
+            pass_word:"",
+            name:"",
+            birthday:"",
+            height:0,
+            weight:0,
             sex:"male",
             token:"12312fsdf2131321321",
             submitClass : " SignupForm-Submit-Name-Default SignupForm-Submit-Name-Base noselect",
