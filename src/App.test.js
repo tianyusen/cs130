@@ -422,7 +422,7 @@ describe('PatientSignUp Popup', () => {
  describe('DoctorUpdateDrugs ', () => {
   it('has 1 input fields + 1 textarea', () => {
     var v = [];
-    v[drug_use] = [];
+    v["drug_use"] = [];
     const wrapper = shallow(<DoctorUpdateDrugs visits={v}/>);
     expect(wrapper.find('input')).to.have.length(1);
     expect(wrapper.find('textarea')).to.have.length(1);
@@ -430,7 +430,7 @@ describe('PatientSignUp Popup', () => {
 
   it('has working Cancel button', () => {
     var v = [];
-    v[drug_use] = [];
+    v["drug_use"] = [];
     
     var count = 0;
     function inc(){count+=1;}
@@ -442,7 +442,7 @@ describe('PatientSignUp Popup', () => {
 
   it('has working Update button', () => {
     var v = [];
-    v[drug_use] = [];
+    v['drug_use'] = [];
     const wrapper = mount(<DoctorUpdateDrugs visits={v}/>);
     expect(wrapper.find('div.Prescription-Submit')).to.have.length(1);
     var spy = sinon.spy(wrapper.instance(), "submitClick");
