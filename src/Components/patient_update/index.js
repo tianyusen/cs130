@@ -6,10 +6,10 @@ class PatientUpdate extends Component {
         super(props);
         this.state={
             personal_id:"xiangtao1995@gmail.com",
-            blood_sugar:0,
-            blood_fat:0.0,
-            blood_pressure_high:0,
-            blood_pressure_low:0,
+            blood_sugar:"",
+            blood_fat:"",
+            blood_pressure_high:"",
+            blood_pressure_low:"",
             submitClass : " UpdatePForm-Submit-Name-Default UpdatePForm-Submit-Name-Base noselect",
             
         }

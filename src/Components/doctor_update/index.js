@@ -249,18 +249,21 @@ class PatientSignUp extends Component {
                             onMouseDown={this.DBleftMousDown}
                             onMouseOver={this.DBleftHover}
                             onMouseLeave={this.DBleftDefault}
+                            id = "DBleft"
                              >DR(left)<br/>{this.Dataexit('DBleft')}</div>
                             <div className={this.state.DBrightClass}
                             onClick={this.DBrightClick}
                             onMouseDown={this.DBrightMousDown}
                             onMouseOver={this.DBrightHover}
                             onMouseLeave={this.DBrightDefault}
+                            id = "DBright"
                              >DR(right)<br/>{this.Dataexit('DBright')}</div>
                             <div className={this.state.prescriptionClass} 
                             onClick={this.prescriptionClick}
                             onMouseDown={this.prescriptionMousDown}
                             onMouseOver={this.prescriptionHover}
                             onMouseLeave={this.prescriptionDefault}
+                            id = "Prescription"
                             >Prescription<br/>{this.Dataexit('prescription')}</div>
                         </div>
                     </div>
@@ -353,7 +356,7 @@ class PatientSignUp extends Component {
 
                     
                     {(()=>{
-                        if (sessionStorage.getItem('identity') === 'doctor')
+                        if (true)
                             return this.renderImageAndPrescription();
                     })()}
                 
