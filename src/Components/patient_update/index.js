@@ -6,10 +6,10 @@ class PatientUpdate extends Component {
         super(props);
         this.state={
             personal_id:"xiangtao1995@gmail.com",
-            blood_sugar:132,
-            blood_fat:0.3,
-            blood_pressure_high:139,
-            blood_pressure_low:80,
+            blood_sugar:0,
+            blood_fat:0.0,
+            blood_pressure_high:0,
+            blood_pressure_low:0,
             submitClass : " UpdatePForm-Submit-Name-Default UpdatePForm-Submit-Name-Base noselect",
             
         }
@@ -86,7 +86,8 @@ class PatientUpdate extends Component {
                     
                     
                     <div className="UpdatePForm-Title-Cancel">
-                        <i className="fa fa-times UpdatePForm-Title-Cancel-i" aria-hidden="true"></i>    
+                        <i className="fa fa-times UpdatePForm-Title-Cancel-i" aria-hidden="true" onClick={()=>{
+                        this.props.DoctorUpdateForm()}} ></i>    
                     </div>
                     <div className="UpdatePForm-Title-Name noselect">New Record</div>
                 </div>

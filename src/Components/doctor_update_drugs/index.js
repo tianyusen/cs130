@@ -118,7 +118,7 @@ class DoctorUpdateDrugs extends Component {
             <div className="Prescription-Note">
                         <div className="Prescription-Item-Name noselect">Notes:</div>
                         <div className="Prescription-Note-Lower">
-                            <textarea className="Prescription-Note-Input "  type="text"name="len" 
+                            <textarea className="Prescription-Note-Input "  type="text"name="note" 
                             value={this.state.len}
                             onInput={(e)=>this.setState({len: e.target.value})} />
                         </div>
