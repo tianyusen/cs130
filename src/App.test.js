@@ -12,10 +12,12 @@ import DoctorUpdate from './Components/doctor_update';
 import LargePatientCard from './Components/large_patient_card';
 import PatientSignUp from './Components/patient_sign_up';
 import Login from './Pages/LoginPage/Login';
+import Logout from './Components/logout';
+import NameCard from './Pages/PatientsRecord/NameCard';
 
 import Demography from './Pages/Demography';
 import LoginPage from './Pages/LoginPage';
-import PatientOverView from './Pages/PatientOverView';
+// import PatientOverView from './Pages/PatientOverView';
 import PatientsRecord from './Pages/PatientsRecord';
 
 import axios from 'axios';
@@ -65,10 +67,6 @@ it('Page LoginPage', () => {
   shallow(<LoginPage />);
 });
 
-it('Page PatientOverView', () => {
-  shallow(<PatientOverView />);
-});
-
 it('Page PatientsRecord', () => {
   shallow(<PatientsRecord />);
 });
@@ -77,19 +75,7 @@ it('Page PatientsRecord', () => {
 /*
   Logic testing
 */
-test('Fetch patient records from back-end', () => {
 
-  axios.get('http://localhost:9000/patients', {
-            //headers: {'Authorization': 'Bearer ' + localStorage.getItem('token')},
-            })
-            .then((response)=>{
-                //do soemthign with respnse
-                 expect(response.data).toEqual(expect.any(Array));
-            })
-            .catch(function(error) {
-        
-        });
-});
 
 test('Fetch patient data from back-end', () => {
 
@@ -105,6 +91,7 @@ test('Fetch patient data from back-end', () => {
         });
 });
 
+
 // Component: login
 describe('<LoginPage/>', () => {
   it('LoginPage renders one <Login /> components', () => {
@@ -112,39 +99,124 @@ describe('<LoginPage/>', () => {
     expect(wrapper.find(Login)).to.have.length(1);
   });
 
-  it('Login has login and register buttons', () => {
+  it('Login render login and register buttons and clicking button renders the correct form', () => {
     const wrapper = mount(<Login />);
     expect(wrapper.find('#login-form-link')).to.have.length(1);
     expect(wrapper.find('#register-form-link')).to.have.length(1);
+    sinon.spy(wrapper.instance(), 'handleAuthActionSwitch');
+    wrapper.find('#login-form-link').simulate('click');
+    wrapper.find('#register-form-link').simulate('click');
+    expect(wrapper.instance().handleAuthActionSwitch).to.have.property('callCount', 2);
   });
 
 
-  it('simulates click events', () => {
-    // const onButtonClick = sinon.spy();
+  it('simulates click login as patient events: directs to patient page', () => {
+    const onButtonClick = sinon.spy();
     const wrapper = mount(
-      <Login />
+      <Login PatientSignOut={onButtonClick}/>
     );
     wrapper.setState({auth_action: 'login'});
     expect(wrapper.find('#signin-form')).to.have.length(1);
     wrapper.find('#login-patient').simulate('click');
-    // expect(PatientSignOut.calledOnce)
-    // wrapper.find('button').simulate('click');
-    // expect(onButtonClick.calledOnce).to.equal(true);
+    expect(onButtonClick).to.have.property('callCount', 1);
   });
-  
-  
-  // expect(wrapper.find('.foo')).to.have.length(1);
-  // expect(wrapper.find('.bar')).to.have.length(3);
 
-  // // compound selector
-  // expect(wrapper.find('div.some-class')).to.have.length(3);
+  it('simulates click login as doctor events: directs to doctor page', () => {
+    const onButtonClick = sinon.spy();
+    const wrapper = mount(
+      <Login DoctorSignOut={onButtonClick}/>
+    );
+    wrapper.setState({auth_action: 'login'});
+    expect(wrapper.find('#signin-form')).to.have.length(1);
+    wrapper.find('#login-doctor').simulate('click');
+    expect(onButtonClick).to.have.property('callCount', 1);
+  });
 
 
- 
-   
+  it('simulates click register as doctor events: directs to doctor page', () => {
+    const onButtonClick = sinon.spy();
+    const wrapper = mount(
+      <Login RegisterSignOut={onButtonClick}/>
+    );
+    wrapper.setState({auth_action: 'register'});
+    expect(wrapper.find('#register-form')).to.have.length(1);
+    wrapper.find('#register').simulate('click');
+    expect(onButtonClick).to.have.property('callCount', 1);
+  });
+
 });
 
-// Login test
-
 // Patient Record Test
+describe('<PatientsRecord />', () => {
+  it('PatientsRecord renders one <Logo /> components', () => {
+    const wrapper = shallow(<PatientsRecord />);
+    expect(wrapper.find(Logo)).to.have.length(1);
+  });
+
+  it('PatientsRecord renders one <Add /> components', () => {
+    const wrapper = shallow(<PatientsRecord />);
+    expect(wrapper.find(Add)).to.have.length(1);
+  });
+
+  it('PatientsRecord renders one <SearchBar /> components', () => {
+    const wrapper = shallow(<PatientsRecord />);
+    expect(wrapper.find(SearchBar)).to.have.length(1);
+  });
+
+  it('PatientsRecord renders one <Logout /> components', () => {
+    const wrapper = shallow(<PatientsRecord />);
+    expect(wrapper.find(Logout)).to.have.length(1);
+  });
+
+
+  it('<Logout /> can Logout successfully on button click', () => {
+    const onButtonClick = sinon.spy();
+    const wrapper = mount(
+      <Logout GeneralLogout={onButtonClick}/>
+    );
+    wrapper.find('#logout-button').simulate('click');
+    expect(onButtonClick).to.have.property('callCount', 1);
+  });
+
+  it('<NameCard /> has correct components.', () => {
+    const blood_sugar = 80;
+    const blood_fat = 120;
+    const blood_pressure = 100;
+    const wrapper = mount(
+      <NameCard 
+        blood_sugar={blood_sugar}
+        blood_fat={blood_fat}
+        blood_pressure={blood_pressure}
+      />
+    );
+    expect(wrapper.find('#userphoto')).to.have.length(1);
+    expect(wrapper.find('#username')).to.have.length(1);
+    expect(wrapper.find('#userbirthday')).to.have.length(1);
+    expect(wrapper.find('#userage')).to.have.length(1);
+    expect(wrapper.find('#userbp')).to.have.length(1);
+    expect(wrapper.find('#userbf')).to.have.length(1);
+    expect(wrapper.find('#userbs')).to.have.length(1);
+    
+  });
+
+  
+
+  test('Fetch patient records from back-end', () => {
+    axios.get('http://localhost:9000/patients', {
+              //headers: {'Authorization': 'Bearer ' + localStorage.getItem('token')},
+              })
+              .then((response)=>{
+                  //do soemthign with respnse
+                  expect(response.data).toEqual(expect.any(Array));
+              })
+              .catch(function(error) {
+          
+          });
+  });
+
+
+
+
+});
+
 // Patient Overview Test
