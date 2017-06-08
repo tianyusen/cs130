@@ -13,7 +13,13 @@ var d = 0;
 
 driver.get('http://localhost:3000').then(function(){driver.sleep(d);});
 
+driver.findElement(By.name('userid')).sendKeys('WrongWrongWrong').then(function(){driver.sleep(d);});
+driver.findElement(By.name('password')).sendKeys('123457').then(function(){driver.sleep(d);});
+driver.findElement(By.name('login-patient')).click().then(function(){driver.sleep(d);});
+
+driver.findElement(By.name('userid')).sendKeys(Keys.chord(Keys.CONTROL, "a")).then(function(){driver.sleep(d);});
 driver.findElement(By.name('userid')).sendKeys('007').then(function(){driver.sleep(d);});
+driver.findElement(By.name('password')).sendKeys(Keys.chord(Keys.CONTROL, "a")).then(function(){driver.sleep(d);});
 driver.findElement(By.name('password')).sendKeys('123456').then(function(){driver.sleep(d);});
 driver.findElement(By.name('login-patient')).click().then(function(){driver.sleep(d);});
 driver.wait(until.urlIs('http://localhost:3000/patientoverview')).then(function(){driver.sleep(d);});
