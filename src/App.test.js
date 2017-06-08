@@ -2,7 +2,9 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './App';
 import { shallow } from 'enzyme';
+import { mount } from 'enzyme';
 import { expect } from 'chai';
+import sinon from 'sinon';
 import SearchBar from './Components/SearchBar';
 import Add from './Components/Add';
 import Logo from './Components/Logo';
@@ -110,23 +112,35 @@ describe('<LoginPage/>', () => {
     expect(wrapper.find(Login)).to.have.length(1);
   });
 
-  // it('Login component renders login and register button when passed in', () => {
-  //   const wrapper = shallow(
-  //     <Login/>
-  //   );
-  //   expect(wrapper.find("login-form-link")).to.have.length(1);
-  // });
-
-
-  it('Login simulate click login event', () => {
-    const wrapper = shallow(<Login />);
-    // expect(wrapper.find(Login)).to.have.length(1);
+  it('Login has login and register buttons', () => {
+    const wrapper = mount(<Login />);
+    expect(wrapper.find('#login-form-link')).to.have.length(1);
+    expect(wrapper.find('#register-form-link')).to.have.length(1);
   });
 
-  it('Login simulate click register event', () => {
-    const wrapper = shallow(<LoginPage />);
-    // expect(wrapper.find(Login)).to.have.length(1);
+
+  it('simulates click events', () => {
+    // const onButtonClick = sinon.spy();
+    const wrapper = mount(
+      <Login />
+    );
+    wrapper.setState({auth_action: 'login'});
+    expect(wrapper.find('#signin-form')).to.have.length(1);
+    wrapper.find('#login-patient').simulate('click');
+    // expect(PatientSignOut.calledOnce)
+    // wrapper.find('button').simulate('click');
+    // expect(onButtonClick.calledOnce).to.equal(true);
   });
+  
+  
+  // expect(wrapper.find('.foo')).to.have.length(1);
+  // expect(wrapper.find('.bar')).to.have.length(3);
+
+  // // compound selector
+  // expect(wrapper.find('div.some-class')).to.have.length(3);
+
+
+ 
    
 });
 

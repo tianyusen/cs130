@@ -89,14 +89,14 @@ class Login extends Component {
                         <div className = "login-group">
                             <input
                                 onClick={this.props.PatientSignOut} 
-                                className="btn btn-primary btn-block" type="submit" value="Login As Patient" name="login-patient"/>
+                                className="btn btn-primary btn-block" type="submit" value="Login As Patient" id="login-patient"/>
                         </div>
                     </div>
                     <div className="col-sm-6">
                         <div className = "login-group">
                             <input
                                 onClick={this.props.DoctorSignOut} 
-                                className="btn btn-primary btn-block" type="submit" value="Login As Doctor" name="login-doctor"/>
+                                className="btn btn-primary btn-block" type="submit" value="Login As Doctor"  id="login-doctor"/>
                         </div>
                     </div>
                 </div>
