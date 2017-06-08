@@ -9,20 +9,46 @@ class Login extends Component {
         }
     }
 
+    renderErrorMessage(){
+        return(
+            <div>
+            <p className="text-danger text-center">
+                UserID, Password, Identity combination doesn't exist
+                <br />
+                Please enter again.
+            </p>
+            </div>
+        )
+    }
+
     renderRegister(){
         return (
             <div className = "register-block" id="register-form">
+                
                 <div className = "input-group" >
                     <span className="input-group-addon"><i className="fa fa-user-o"></i></span>
-                    <input className="form-control" type="text" placeholder="123456789" name="userid"/>
+                    <input 
+                        value={this.props.username}
+                        onInput={(e)=>this.props.setUsername(e.target.value)}
+                        className="form-control" 
+                        type="text" 
+                        placeholder="123456789" 
+                        name="userid"
+                    />
                 </div>
                 <div className = "input-group" >
                     <span className="input-group-addon"><i className="fa fa-key"></i></span>
-                    <input className="form-control" type="password" name="password"/>
+                    <input 
+                        value={this.props.password}
+                        onInput={(e)=>this.props.setPassword(e.target.value)}
+                        className="form-control" 
+                        type="password" 
+                        name="password"
+                    />
                 </div>
                 <div className = "login-group">
                     <input
-                        onClick={this.props.DoctorSignOut} 
+                        onClick={this.props.RegisterSignOut} 
                         className="btn btn-primary btn-block" type="submit" value="Register" name="register"/>
                 </div>
             </div>
@@ -32,13 +58,31 @@ class Login extends Component {
     renderLogin(){
         return(
             <div className = "sign-in-block" id="signin-form">
+                <div>
+                    {(()=>{
+                        if (this.props.error === true)
+                            return this.renderErrorMessage();
+                    })()}
+                </div>
                 <div className = "input-group" >
                     <span className="input-group-addon"><i className="fa fa-user-o"></i></span>
-                    <input className="form-control" type="text" placeholder="123456789" name="userid"/>
+                    <input 
+                        value={this.props.username}
+                        onInput={(e)=>this.props.setUsername(e.target.value)}
+                        className="form-control" 
+                        type="text" 
+                        placeholder="123456789"
+                        name="userid"/>
                 </div>
                 <div className = "input-group" >
                     <span className="input-group-addon"><i className="fa fa-key"></i></span>
-                    <input className="form-control" type="password" name="password"/>
+                    <input 
+                        value={this.props.password}
+                        onInput={(e)=>this.props.setPassword(e.target.value)}
+                        className="form-control" 
+                        type="password"  
+                        name="password"
+                    />
                 </div>
                 <div className="row">
                     <div className="col-sm-6">

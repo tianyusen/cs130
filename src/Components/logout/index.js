@@ -6,7 +6,7 @@ class Logout extends Component {
         return (
             <button type="button" onClick={()=>{
                         this.props.GeneralLogout()
-                    }} className="btn btn-info btn-lg" >
+                    }} className="btn btn-info btn-lg buttonstyle" >
                 Log out
             </button>
         );
