@@ -4,9 +4,13 @@ import './style.css';
 class Logout extends Component {
     render() {
         return (
-            <button type="button" onClick={()=>{
-                        this.props.GeneralLogout()
-                    }} className="btn btn-info btn-lg buttonstyle" >
+            <button 
+                id = "logout-button"
+                type="button" 
+                onClick={()=>{
+                    this.props.GeneralLogout()
+                }} 
+                className="btn btn-info btn-lg buttonstyle" >
                 Log out
             </button>
         );

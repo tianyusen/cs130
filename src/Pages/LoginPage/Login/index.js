@@ -49,7 +49,7 @@ class Login extends Component {
                 <div className = "login-group">
                     <input
                         onClick={this.props.RegisterSignOut} 
-                        className="btn btn-primary btn-block" type="submit" value="Register" name="register"/>
+                        className="btn btn-primary btn-block" type="submit" value="Register" id="register"/>
                 </div>
             </div>
         )
